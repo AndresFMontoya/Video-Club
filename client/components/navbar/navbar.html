@@ -1,20 +1,80 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">start-up</a>
+<header class="Header">
+  <!--Toolbar -->
+    <div id="" class="Toolbar">
+        <div class="Container-toolbar">
+            <div class="ToolbarMobile">
+              <div class="PhoneNumbers"><i class="fa fa-phone Toolbar-tel"></i>
+                <p class="Phone1">(57) 3122104288</p>
+                <p class="Phone2">(57) 3157450959</p>
+              </div>
+            </div>
+
+            <div class="ToolbarEmail">
+              <i class="fa fa-envelope Toolbar-email"></i>
+              <p class="Email1">StartUp@gmail.com</p>
+            </div>
+
+            <!--SEARCH BAR-->
+            <div class="SearchBar-container">
+                <form class="SearchBar">
+                    <input type="search" class="SearchBar-item" placeholder="Buscar...">
+                    <button type="submit" class="SearchBar-button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
     </div>
-    <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in nav.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
+    <div class="TopBar">
+        <figure class="TopBar-containerlogo">
+            <img src="static/Images/logo.png" alt="LOGO" class="TopBar-logo">
+            <figcaption class="TopBar-slogan">Remodelamos tu Hogar</figcaption>
+        </figure>
+
+        <!--SESION BUTTONS-->
+        <div class="ButtonContainer1">
+            <a ui-sref="login" class="ButtonSesion">INICIAR SESION</a>
+        </div>
+
+        <div class="ButtonContainer2">
+            <a ui-sref="users-create" class="ButtonRegistrer">REGISTRARSE</a>
+        </div>
+    </div>
+
+    <div class="Menu-bar">
+        <a class="Bt-menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!--NAV-BAR-->
+</header>
+
+<nav class="MainMenu">
+    <ul class="MainMenu-list">
+
+        <li class="MainMenu-item  MainMenu-itemTop">
+            <a ui-sref="main" class="MainMenu-link"><span class="First"><i class="Icon fa fa-home" aria-hidden="true"></i></span>Inicio</a>
         </li>
-      </ul>
-    </div>
-  </div>
-</div>
+
+
+        <li class="MainMenu-item">
+            <a ui-sref="about-us" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>¿Quienes Somos?</a>
+        </li>
+
+
+        <li class="MainMenu-item">
+            <a ui-sref="services-page" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Servicios</a>
+        </li>
+
+
+        <li class="MainMenu-item">
+                <a ui-sref="offers-page" class="MainMenu-link"><span class="Fourth"><i class="Icon fa fa-pencil-square-o" aria-hidden="true"></i></span>Ofertas</a>
+        </li>
+
+
+        <li class="MainMenu-item">
+                <a ui-sref="contact-us" class="MainMenu-link"><span class="Fifth"><i class="Icon fa fa-phone-square" aria-hidden="true"></i></span>Contáctanos</a>
+        </li>
+    </ul>
+</nav>

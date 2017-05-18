@@ -1,0 +1,151 @@
+<section class="FormRegister">
+  <form class="form-horizontal" name="userForm" ng-submit="userForm.$valid && vm.createUsuario()" novalidate>
+
+    <div class="Profile-image">
+      <h2 class="FormRegister-title">Registro de usuarios</h2>
+      <figure class="FormRegister-image">
+        <i class="fa fa-user-circle-o FormRegister-imageUser" aria-hidden="true"></i>
+      </figure>
+
+    </div>
+
+
+    <div class="FormRegister-data" ng-switch="vm.user.idDocumentType.id">
+      <div class="DocumentType-container">
+        <select class="DocumentType-containerOption" ng-change="vm.limpiarUsuario(vm.user.idDocumentType.id)" ng-model="vm.user.idDocumentType.id" name="tipodocumento">
+          <option class="DocumentType-options" ng-value="item.id" ng-repeat="item in vm.documentTypes" ng-bind="item.name"></option>
+        </select>
+      </div>
+      <div ng-switch-when="NIT" class="sample-show-hide">
+        <md-input-container>
+          <label class="Label">Numero de NIT</label>
+          <input  onblur="op(this);" class="FormRegister-idNumber" type="text" ng-model="vm.user.identificationNumber" name="documento" ng-pattern="/^[0-9]*$/" ng-minlength="6" ng-maxlength="11" required>
+          <div class="MessagesContainer" ng-messages="userForm.documento.$error" ng-show="userForm.documento.$dirty ||  userForm.documento.$touched">
+            <div ng-message="pattern">ingrese solo numeros en este campo</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Razon social</label>
+          <input  onblur="op(this);"class="FormRegister-name" type="text" name="nombre" ng-pattern="/^[A-Za-z\s]+$/" ng-minlength="3" ng-model="vm.user.name" ng-maxlength="30" required>
+          <div class="MessagesContainer" ng-messages="userForm.nombre.$error" ng-show="userForm.nombre.$dirty ||  userForm.nombre.$touched">
+            <div class="Messages" ng-message="pattern">ingrese solo letras en este campo</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Contraseña</label>
+          <input  onblur="op(this);"class="FormRegister-password" type="password" name="password" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" ng-model="vm.user.password" required>
+          <div class="MessagesContainer" ng-messages="userForm.password.$error" ng-show="userForm.password.$dirty ||  userForm.password.$touched">
+            <div class="Messages" ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Confirmar contraseña</label>
+          <input  onblur="op(this);"class="FormRegister-passwordConfirm" type="password" name="passwordConfirm" ng-model="vm.passwordConfirm" required compare-to="vm.user.password">
+          <div class="MessagesContainer" ng-messages="userForm.passwordConfirm.$error" ng-show="userForm.passwordConfirm.$dirty ||  userForm.passwordConfirm.$touched">
+            <div class="Messages" ng-message="compareTo">la contraseña no coincide</div>
+            <div ng-message="required">este campo es requerido</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Correo electronico</label>
+          <input  onblur="op(this);"class="FormRegister-email" type="text" name="email" ng-pattern="/^([a-zA-Z0-9_\.\-+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" ng-minlength="10" ng-maxlength="50" ng-model="vm.user.email" required>
+          <div class="MessagesContainer" ng-messages="userForm.email.$error" ng-show="userForm.email.$dirty ||  userForm.email.$touched">
+            <div class="Messages" ng-message="pattern">Ingrese un correo valido</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten correos mayores<br> a 10 digitos y menores a 50</div>
+          </div>
+        </md-input-container>
+        <md-input-container>
+          <label class="Label">Confirmar correo</label>
+          <input  onblur="op(this);"class="FormRegister-emailConfirm" type="text" name="emailConfirm" ng-model="vm.emailConfirm" required compare-to="vm.user.email">
+          <div class="MessagesContainer" ng-messages="userForm.emailConfirm.$error" ng-show="userForm.emailConfirm.$dirty ||  userForm.emailConfirm.$touched">
+            <div class="Messages" ng-message="compareTo">El correo no coincide</div>
+            <div ng-message="required">este campo es requerido</div>
+          </div>
+        </md-input-container>
+        <button name="button" type="submit" ng-disabled="userForm.$invalid " class="Button-register">Registrar Ferreteria</button>
+      </div>
+
+      <div ng-switch-default class="sample-show-hide">
+        <md-input-container>
+          <label class="Label">Numero de identificacion</label>
+          <input  onblur="op(this);"class="FormRegister-idNumber" type="text" ng-model="vm.user.identificationNumber" name="documento" ng-pattern="/^[0-9]*$/" ng-minlength="6" ng-maxlength="11"required>
+          <div class="MessagesContainer" ng-messages="userForm.documento.$error" ng-show="userForm.documento.$dirty ||  userForm.documento.$touched">
+            <div ng-message="pattern">ingrese solo numeros en este campo</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div ng-message-exp="['ng-maxlength', 'minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Nombres</label>
+          <input  onblur="op(this);"class="FormRegister-name" type="text" name="nombre" ng-pattern="/^[A-Za-z\s]+$/" ng-minlength="3" ng-model="vm.user.name" ng-maxlength="30" required>
+          <div class="MessagesContainer" ng-messages="userForm.nombre.$error" ng-show="userForm.nombre.$dirty ||  userForm.nombre.$touched">
+            <div class="Messages" ng-message="pattern">ingrese solo letras en este campo</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Apellidos</label>
+          <input  onblur="op(this);"class="FormRegister-lastname" type="text" name="apellido" ng-pattern="/^[A-Za-z\s]+$/" ng-minlength="2" ng-model="vm.user.lastName" ng-maxlength="30" required>
+          <div class="MessagesContainer" ng-messages="userForm.apellido.$error" ng-show="userForm.apellido.$dirty ||  userForm.apellido.$touched">
+            <div class="Messages" ng-message="pattern">ingrese solo letras en este campo</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten apellidos mayores<br> a 2 digitos y menores a 30</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Contraseña</label>
+          <input  onblur="op(this);"class="FormRegister-password" type="password" name="password" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" ng-model="vm.user.password" required>
+          <div class="MessagesContainer" ng-messages="userForm.password.$error" ng-show="userForm.password.$dirty ||  userForm.password.$touched">
+            <div class="Messages" ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Confirmar contraseña</label>
+          <input  onblur="op(this);"class="FormRegister-passwordConfirm" type="password" name="passwordConfirm" ng-model="vm.passwordConfirm" required compare-to="vm.user.password">
+          <div class="MessagesContainer" ng-messages="userForm.passwordConfirm.$error" ng-show="userForm.passwordConfirm.$dirty ||  userForm.passwordConfirm.$touched">
+            <div class="Messages" ng-message="compareTo">la contraseña no coincide</div>
+            <div ng-message="required">este campo es requerido</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label class="Label">Correo electronico</label>
+          <input  onblur="op(this);"class="FormRegister-email" type="text" name="email" ng-pattern="/^([a-zA-Z0-9_\.\-+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" ng-minlength="10" ng-maxlength="50" ng-model="vm.user.email" required>
+          <div class="MessagesContainer" ng-messages="userForm.email.$error" ng-show="userForm.email.$dirty ||  userForm.email.$touched">
+            <div class="Messages" ng-message="pattern">Ingrese un correo valido</div>
+            <div ng-message="required">este campo es requerido</div>
+            <div class="Messages" ng-message-exp="['maxlength', 'minlength']">solo se permiten correos mayores<br> a 10 digitos y menores a 50</div>
+          </div>
+        </md-input-container>
+        <md-input-container>
+          <label class="Label">Confirmar correo</label>
+          <input  onblur="op(this);"class="FormRegister-emailConfirm" type="text" name="emailConfirm" ng-model="vm.emailConfirm" required compare-to="vm.user.email">
+          <div class="MessagesContainer" ng-messages="userForm.emailConfirm.$error" ng-show="userForm.emailConfirm.$dirty ||  userForm.emailConfirm.$touched">
+            <div class="Messages" ng-message="compareTo">El correo no coincide</div>
+            <div ng-message="required">este campo es requerido</div>
+          </div>
+        </md-input-container>
+        <button name="button" type="submit" ng-disabled="userForm.$invalid " class="Button-register">Registrar Usuario</button>
+
+      </div>
+    </div>
+  </form>
+</section>

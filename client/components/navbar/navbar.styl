@@ -1,0 +1,275 @@
+*
+    margin 0
+    padding 0
+
+.Header
+    width 100%
+    overflow hidden
+    margin 0
+
+.Toolbar
+    background #fff
+    color cadetblue
+    font-size 12px
+    padding-top 10px
+    padding-bottom 10px
+    line-height 30px
+    font-weight 700
+    border-bottom 1px solid #e6e6e6
+    text-align center
+
+.ToolbarMobile
+    display inline-block
+.MainMenu-icon
+    margin-right 10px
+.Text
+    padding 20px
+
+.PhoneNumbers
+    font-size 13px
+
+.ToolbarEmail
+    display inline-block
+    font-size 13px
+
+.Phone1, .Phone2
+    display inline-block
+    margin-right 15px
+    color chocolate
+
+.Email1
+    display inline-block
+    color chocolate
+    text-transform capitalize
+
+.Toolbar-email, .Toolbar-tel
+    margin-right 10px
+
+.TopBar
+    background #fff
+    z-index 2
+    position relative
+
+.TopBar-containerlogo
+    display inline-block
+    text-align center
+    margin 0
+    padding-bottom 20px
+
+.TopBar-logo
+    width 300px
+
+.TopBar-slogan
+    font-weight bold
+
+.ButtonContainer1, .ButtonContainer2
+    transition all .1s
+    float right
+    position relative
+    top 0
+    margin 2.56em
+    font-size 1em
+    font-weight bold
+    padding 13px
+    border-radius 5px
+    background-color #144677
+    box-shadow 0 5px 0px #2a90e4
+
+.ButtonContainer1:hover, .ButtonContainer2:hover
+    top 3px
+    box-shadow 0 2px 0px #2a90e4
+
+.ButtonSesion, .ButtonRegistrer
+    color white
+    font-size 1em
+    font-weight bold
+
+.MainMenu
+    width 100%
+    text-transform capitalize
+
+.Menu-bar
+    display none
+
+.MainMenu-list
+    list-style none
+    display table
+    background-image url('../../static/Images/main/azul6.jpg')
+    background-repeat no-repeat
+    background-size cover
+    position relative
+    width 100%
+
+.MainMenu-linkAbout
+    padding 20px 0
+
+nav
+    & > ul
+        li
+            display table-cell
+            a
+                color #fff
+                display block
+                line-height 20px
+                padding 20px
+                position relative
+                text-align center
+                text-decoration none
+                -webkit-transition all .3s ease
+                -moz-transition all .3s ease
+                -ms-transition all .3s ease
+                -o-transition all .3s ease
+                transition all .3s ease
+        & > li
+            & > a
+                span
+                    background #174459
+                    display block
+                    height 100%
+                    width 100%
+                    left 0
+                    position absolute
+                    top -60px
+                    z-index 1
+                    -webkit-transition all .3s ease
+                    -moz-transition all .3s ease
+                    -ms-transition all .3s ease
+                    -o-transition all .3s ease
+                    transition all .3s ease
+                    .Icon
+                        display block
+                        line-height 60px
+                        font-size 30px
+                &:hover
+                    & > span
+                        top 0
+                        display block
+    ul
+        li
+            a
+                .First
+                    background chocolate
+                .Second
+                    background orange
+                .Third
+                    background #f25724
+                .Fourth
+                    background darkgoldenrod
+                .Fifth
+                    background #37a4d9
+
+.MainMenu-item
+    width 20%
+
+.fa-bars
+    cursor pointer
+
+.SearchBar-container
+    float right
+    display table
+
+.SearchBar
+    display table-cell
+    vertical-align middle
+
+.SearchBar-item
+    padding 9px
+    width 250px
+    border-radius 12px
+    border-style none
+    background aliceblue
+    outline none
+
+.SearchBar-button
+    background none
+    border none
+    position relative
+    right 30px
+    outline none
+
+.ContactEmail, .ContactNetworks
+    line-height 45px
+    color white
+
+@media screen and (max-width: 800px)
+    .MainMenu-itemTop
+        border-top 1px solid rgba(255, 255, 255, .3)
+    .MainMenu
+        width 40%
+        top -60%
+        margin 0
+        position absolute
+        z-index 100
+    .MainMenu-item
+        width 100%
+        display block
+        float none
+        border-bottom 1px solid rgba(255, 255, 255, .3)
+        background rgba(62, 62, 62, 0.89)
+    .Menu-bar
+        display block
+        width 100%
+        background-image url('../../static/Images/main/azul6.jpg')
+        background-repeat no-repeat
+        background-size cover
+    .fa-bars
+        font-size 30px
+    .Bt-menu
+        display block
+        padding 20px
+        color #fff
+        text-decoration none
+        font-weight bold
+        font-size 25px
+        box-sizing border-box
+    .TopBar-containerlogo
+        width 100%
+
+@media screen and (max-width: 800px)
+  .First, .Second, .Third, .Fourth, .Fifth
+    display none
+
+@media screen and (max-width: 800px)
+  .ButtonContainer1, .ButtonContainer2
+    margin 0
+    padding 26px
+    border-radius 0
+    background transparent
+    box-shadow none
+
+@media screen and (max-width: 800px)
+  .ButtonContainer1:hover, .ButtonContainer2:hover
+    top 0
+    box-shadow none
+
+@media screen and (max-width: 800px)
+  .ButtonSesion, .ButtonRegistrer
+    color #fff
+
+@media screen and (max-width: 400px)
+    .fa-bars
+        font-size 25px
+    .MainMenu
+        width 100%
+    .MainMenu-item
+        padding 0
+    .Bt-menu
+        padding-bottom 22px
+
+@media screen and (max-width: 400px)
+  .ButtonContainer1, .ButtonContainer2
+    margin 0
+    padding 26px 11px
+    font-size 0.88em
+
+@media screen and (max-width: 925px)
+    .SearchBar-item
+        width 150px
+
+@media screen and (max-width: 665px)
+    .SearchBar-container
+        display none
+
+@media screen and (max-width: 426px)
+    .MainMenu
+        margin-top 31px
