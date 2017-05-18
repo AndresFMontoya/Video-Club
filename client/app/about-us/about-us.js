@@ -4,7 +4,7 @@
   angular.module('startUpApp')
   .config(config);
 
-  config.inject = ['$stateProvider'];
+  config.$inject = ['$stateProvider'];
 
   function config($stateProvider) {
     $stateProvider.state(

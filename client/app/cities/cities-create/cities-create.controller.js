@@ -3,11 +3,8 @@
 
   class CitiesCreateComponent {
     constructor() {
-
     }
     $onInit() {
-
-  
     }
   }
 
