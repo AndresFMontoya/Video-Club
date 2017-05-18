@@ -1,0 +1,36 @@
+<div>This is the login view.</div>
+
+<section class="Loggin" >
+        <form class="LogginForm" name="loggin" ng-submit="loggin.$valid && vm.loguearUsuario()">
+          <div class="LogginForm-data">
+            <input type="text" name="email" class="LogginForm-email" ng-pattern="/^([a-zA-Z0-9_\.\-+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" ng-model="vm.user.email" placeholder="Email">
+            <div class="Form-messages" ng-messages="loggin.email.$error" ng-show="loggin.email.$dirty ">
+                <div ng-message="pattern">
+                    <p>ingrese un email valido</p>
+                </div>
+            </div>
+            <input type="password" name="password" class="LogginForm-password"  ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" ng-model="vm.user.password" placeholder="Contraseña" >
+            <div class="Form-messages" ng-messages="loggin.password.$error" ng-show="loggin.password.$dirty ||  loggin.password.$touched">
+                <div ng-message="pattern">
+                    <p>La contraseña debe contener al menos una letra y un numero y no debe contener espacios</p>
+                </div>
+                <div ng-message="required">
+                    <p>este campo es requerido</p>
+                </div>
+                <div ng-message="minlength">
+                    <p>Debe contener al menos 6 caracteres </p>
+                </div>
+                <div ng-message="maxlength">
+                    <p>Debe contener maximo 16 caracteres </p>
+                </div>
+            </div>
+          </div>
+            <div class="LogginForm-CheckboxRemidMe">
+              <input type="checkbox" class="LogginForm-checkbox"/><p class="LogginForm-remidMe">Recordarme</p>
+            </div>
+            <div class="LogginForm-Registre">
+              <button type="submit" class="LogginForm-botton" ng-disabled="loggin.$invalid " >Ingresar</button>
+              <a href="#" class="LogginForm-forgotPassword">¿Olvidaste la contraseña?</a>
+            </div>
+        </form>
+</section>

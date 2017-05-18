@@ -13,6 +13,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+      <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -56,20 +58,219 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/satellizer/dist/satellizer.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.js"></script>
+      <script src="bower_components/angular-messages/angular-messages.js"></script>
+      <script src="bower_components/angular-material/angular-material.js"></script>
+      <script src="bower_components/flexslider/jquery.flexslider.js"></script>
+      <script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js(.tmp) app/app.js -->
       <script src="app/app.js"></script>
       <!-- injector:js -->
+  
       <script src="components/util/util.module.js"></script>
+  
+      <script src="app/about-us/about-us.controller.js"></script>
+  
+      <script src="app/about-us/about-us.js"></script>
+  
       <script src="app/app.constant.js"></script>
+  
+      <script src="app/categories/categories-create/categories-create.controller.js"></script>
+  
+      <script src="app/categories/categories-list/categories-list.controller.js"></script>
+  
+      <script src="app/categories/categories-update/categories-update.controller.js"></script>
+  
+      <script src="app/categories/categories-view/categories-view.controller.js"></script>
+  
+      <script src="app/categories/categories.js"></script>
+  
+      <script src="app/categories/categories.service.js"></script>
+  
+      <script src="app/cities/cities-create/cities-create.controller.js"></script>
+  
+      <script src="app/cities/cities-list/cities-list.controller.js"></script>
+  
+      <script src="app/cities/cities-update/cities-update.controller.js"></script>
+  
+      <script src="app/cities/cities-view/cities-view.controller.js"></script>
+  
+      <script src="app/cities/cities.js"></script>
+  
+      <script src="app/cities/cities.service.js"></script>
+  
+      <script src="app/contact-us/contact-us.controller.js"></script>
+  
+      <script src="app/contact-us/contact-us.js"></script>
+  
+      <script src="app/departments/departments-create/departments-create.controller.js"></script>
+  
+      <script src="app/departments/departments-list/departments-list.controller.js"></script>
+  
+      <script src="app/departments/departments-update/departments-update.controller.js"></script>
+  
+      <script src="app/departments/departments-view/departments-view.controller.js"></script>
+  
+      <script src="app/departments/departments.js"></script>
+  
+      <script src="app/departments/departments.service.js"></script>
+  
+      <script src="app/document-types/document-types-create/document-types-create.controller.js"></script>
+  
+      <script src="app/document-types/document-types-delete/document-types-delete.controller.js"></script>
+  
+      <script src="app/document-types/document-types-list/document-types-list.controller.js"></script>
+  
+      <script src="app/document-types/document-types-update/document-types-update.controller.js"></script>
+  
+      <script src="app/document-types/document-types-view/document-types-view.controller.js"></script>
+  
+      <script src="app/document-types/document-types.js"></script>
+  
+      <script src="app/document-types/document-types.service.js"></script>
+  
+      <script src="app/environment/environment.controller.js"></script>
+  
+      <script src="app/environment/environment.js"></script>
+  
+      <script src="app/images/images-create/images-create.controller.js"></script>
+  
+      <script src="app/images/images-delete/images-delete.controller.js"></script>
+  
+      <script src="app/images/images-list/images-list.controller.js"></script>
+  
+      <script src="app/images/images-update/images-update.controller.js"></script>
+  
+      <script src="app/images/images.js"></script>
+  
+      <script src="app/images/images.service.js"></script>
+  
+      <script src="app/login/login.controller.js"></script>
+  
+      <script src="app/login/login.js"></script>
+  
       <script src="app/main/main.controller.js"></script>
+  
       <script src="app/main/main.js"></script>
+  
+      <script src="app/offers-page/offers-page.controller.js"></script>
+  
+      <script src="app/offers-page/offers-page.js"></script>
+  
+      <script src="app/offers/offers-create/offers-create.controller.js"></script>
+  
+      <script src="app/offers/offers-delete/offers-delete.controller.js"></script>
+  
+      <script src="app/offers/offers-list/offers-list.controller.js"></script>
+  
+      <script src="app/offers/offers-update/offers-update.controller.js"></script>
+  
+      <script src="app/offers/offers-view/offers-view.controller.js"></script>
+  
+      <script src="app/offers/offers.js"></script>
+  
+      <script src="app/offers/offers.service.js"></script>
+  
+      <script src="app/packages-type/packages-type-create/packages-type-create.controller.js"></script>
+  
+      <script src="app/packages-type/packages-type-delete/packages-type-delete.controller.js"></script>
+  
+      <script src="app/packages-type/packages-type-list/packages-type-list.controller.js"></script>
+  
+      <script src="app/packages-type/packages-type-update/packages-type-update.controller.js"></script>
+  
+      <script src="app/packages-type/packages-type-view/packages-type-view.controller.js"></script>
+  
+      <script src="app/packages-type/packages-type.js"></script>
+  
+      <script src="app/packages-type/packages-type.service.js"></script>
+  
+      <script src="app/roles/roles-create/roles-create.controller.js"></script>
+  
+      <script src="app/roles/roles-delete/roles-delete.controller.js"></script>
+  
+      <script src="app/roles/roles-list/roles-list.controller.js"></script>
+  
+      <script src="app/roles/roles-update/roles-update.controller.js"></script>
+  
+      <script src="app/roles/roles-view/roles-view.controller.js"></script>
+  
+      <script src="app/roles/roles.js"></script>
+  
+      <script src="app/roles/roles.service.js"></script>
+  
+      <script src="app/services-page/services-page.controller.js"></script>
+  
+      <script src="app/services-page/services-page.js"></script>
+  
+      <script src="app/specialization/specialization-create/specialization-create.controller.js"></script>
+  
+      <script src="app/specialization/specialization-delete/specialization-delete.controller.js"></script>
+  
+      <script src="app/specialization/specialization-list/specialization-list.controller.js"></script>
+  
+      <script src="app/specialization/specialization-update/specialization-update.controller.js"></script>
+  
+      <script src="app/specialization/specialization-view/specialization-view.controller.js"></script>
+  
+      <script src="app/specialization/specialization.js"></script>
+  
+      <script src="app/specialization/specialization.services.js"></script>
+  
+      <script src="app/users/users-create/user.directive.js"></script>
+  
+      <script src="app/users/users-create/user.js"></script>
+  
+      <script src="app/users/users-create/users-create.controller.js"></script>
+  
+      <script src="app/users/users-delete/users-delete.controller.js"></script>
+  
+      <script src="app/users/users-list/users-list.controller.js"></script>
+  
+      <script src="app/users/users-update/users-update.controller.js"></script>
+  
+      <script src="app/users/users-view/users-view.controller.js"></script>
+  
+      <script src="app/users/users.js"></script>
+  
+      <script src="app/users/users.service.js"></script>
+  
+      <script src="app/works-done/works-done-create/works-done-create.controller.js"></script>
+  
+      <script src="app/works-done/works-done-delete/works-done-delete.controller.js"></script>
+  
+      <script src="app/works-done/works-done-list/works-done-list.controller.js"></script>
+  
+      <script src="app/works-done/works-done-update/works-done-update.controller.js"></script>
+  
+      <script src="app/works-done/works-done-view/works-done-view.controller.js"></script>
+  
+      <script src="app/works-done/works-done.js"></script>
+  
+      <script src="app/works-done/works-done.service.js"></script>
+  
+      <script src="auth/auth.service.js"></script>
+  
       <script src="components/footer/footer.directive.js"></script>
+  
       <script src="components/modal/modal.service.js"></script>
+  
       <script src="components/navbar/navbar.controller.js"></script>
+  
       <script src="components/navbar/navbar.directive.js"></script>
+  
+      <script src="components/navbar/navbar.js"></script>
+  
+      <script src="components/slider/slider.controller.js"></script>
+  
+      <script src="components/slider/slider.directive.js"></script>
+  
       <script src="components/util/util.service.js"></script>
+  
       <!-- endinjector -->
     <!-- endbuild -->
   </body>
