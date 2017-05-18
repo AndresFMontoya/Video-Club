@@ -3,7 +3,8 @@
 
   class CitiesCreateComponent {
     constructor() {
-      this.hola = "Hola ADSI";
+    }
+    $onInit() {
     }
   }
 
