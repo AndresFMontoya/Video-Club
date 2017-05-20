@@ -1,285 +1,217 @@
-/*--- MAIN-SECCION ---*/
+body
+    font-family 'Open Sans' sans-serif !important
 
+.Main-section
+    background-color #fff
 
-/*---INFORMACION---*/
-
-
-/*.TituloPrueba:after
-  border-color rgba(213, 21, 21, 0)
-  border-top-color black !important
-  border-width 107px 46px !important
-  margin-left -46px
-  left 50%
-  border solid transparent
-  content " "
-  height 0 !important
-  width 0 !important
-  position absolute
-  pointer-events none
-  z-index 1
-*/
+.InformationSection
+    text-align center
+    padding-top 2.5em
+    padding-bottom 2.5em
+    margin auto
+    background #fff
 
 .InformationSection-container
-  text-align center
-  padding-top 2.5em
-  padding-bottom 2.5em
-  /*width 1550px*/
-  margin auto
-
+    width 80%
+    margin auto
 
 .InformationSection-title
-  margin 0
-  text-transform uppercase
-  font-size 30px
-  background #fff
-  width 80%
-  margin auto
-
+    margin 0
+    text-transform uppercase
+    font-size 30px
+    background #fff
+    width 80%
+    margin auto
 
 .Information1, .Information2, .Information3
-  display inline-block
-  width 20%
-  height 20%
-  padding 20px
-  margin-right 1.5em
-  margin-left 1.5em
-
+    display inline-block
+    width 20%
+    height 20%
+    padding 20px
+    margin-right 1.5em
+    margin-left 1.5em
 
 .Information1
-  background-color transparent
-
+    background-color transparent
 
 .Information2
-  background-color transparent
-
+    background-color transparent
 
 .Information3
-  background-color transparent
-
+    background-color transparent
 
 .Information-title
-  text-align center
-  padding-top 15px
-  font-weight bold
-  text-transform capitalize
-
+    text-align center
+    padding-top 15px
+    font-weight bold
+    text-transform capitalize
 
 .Text1, .Text2, .Text3
-  padding-top 1em
-  font-weight normal
-
-  font-family "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif
-
+    padding-top 1em
+    font-weight normal
+    font-family "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif
 
 .Personal
-  /*color rosybrown
-  font-size 5em*/
-  width 155px
-  height 150px
-
+    font-size 5em
+    width 155px
+    height 150px
 
 .Consulta
-  /*color lightseagreen
-  font-size 5em*/
-  width 155px
-  height 150px
-
+    font-size 5em
+    width 155px
+    height 150px
 
 .Contacto
-  /*color cornflowerblue
-  font-size 5em*/
-  width 155px
-  height 150px
+    font-size 5em
+    width 155px
+    height 150px
 
+@media screen and (max-width: 800px)
+  .Information1, .Information2, .Information3
+    display inline-block
+    width 70%
+    margin-bottom 2em
 
-
-/*--- FERRETERIAS ---*/
-
-
-/*SECCION FERRETERIAS*/
-
-.IronmongerySection
-
-  text-align center
-  background-image url('../../assets/Iron-mongery/13.jpg')
-  background-attachment fixed
-  background-size cover
-  z-index 1
-  background-position 50% 50%
-  /*width 1550px*/
-  margin auto
-
-
-.Ironmongery-description
-  margin-right auto
-  margin-left auto
-  width 80%
-
-
-.Ironmongery-containerTitle
-  background white
-
-
-.Ironmongery-title
-  text-transform uppercase
-  font-size 30px
-
-
-.Ironmongery-sectionContainer
-  background-color rgba(238, 238, 238, 0.45)
-  padding-bottom 5em
-
-
-.Ironmongery-section1, .Ironmongery-section2, .Ironmongery-section3, .Ironmongery-section4
-  display inline-block
-  margin-top 3em
-  z-index 2
-
-
-.Ironmongery-image
-  height 200px
-  width 195px
-  border-radius 10px
-
-
-
-/*--- MARCAS ALIADAS ---*/
-
-.SponsorsSection
-  text-align center
-  margin auto
-  background #fff
-  width 80%
-
-
-.Sponsors-containerTitle
-  background white
-
-
-.Sponsors-title
-  text-transform uppercase
-  font-size 30px
-
-
-.Sponsors
-  padding-top 4em
-
-
-.Sponsors-section1, .Sponsors-section2, .Sponsors-section3, .Sponsors-section4
-  display inline-block
-
-
-.Sponsors-imageContainer
-  display inline-block
-
-
-.Sponsors-image
-  height 115px
-  width 195px
-
-
-
-/*--- TRABAJADORES ---*/
-
-
-/*SECCION TRABAJADORES*/
+@media screen and (max-width: 800px)
+    .Tool-title
+        width 60%
+    .InformationSection-title
+        font-size 1.6em
 
 .WorkerProfileSection
-  text-align center
-  padding-bottom 5em
-  background #fff
-  width 80%
-  margin auto
+    text-align center
+    padding-bottom 5em
+    background #fff
 
+.WorkerProfileSection-container
+    width 80%
+    margin auto
 
 .WorkerProfile-containerTitle
-  background white
-
+    background white
 
 .WorkerProfile-title
-  text-transform uppercase
-  font-size 30px
-
+    text-transform uppercase
+    font-size 30px
 
 .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6
-  display inline-block
-  margin 3em 3% 0
-  border-bottom 5px solid gray
-  /*padding 12px*/
-  background-image url('../../static/Images/main/gray.png')
-  /*background rgba(0,0,0,0.1)*/
-  /* border-bottom-left-radius 20px */
-  /* border-top-right-radius 20px */
-  box-shadow 10px 10px 14px 0px rgba(0, 0, 0, 0.55)
-
+    display inline-block
+    margin 3em 3% 0
+    border-bottom 5px solid gray
+    background-image url('../../static/Images/main/gray.png')
+    box-shadow 10px 10px 14px 0px rgba(0, 0, 0, 0.55)
 
 .Twitter, .Facebook, .Instagram, .Email
-  color green !important
-
+    color green !important
 
 .WorkerProfile-imageContainer
-  display inline-block
-  margin 0
-
+    display inline-block
+    margin 0
 
 .WorkerProfile-image
-  /*height 260px
-  width 260px*/
-  width 352px
-  height 295px
+    width 260px
+    width 352px
+    height 295px
 
-@media screen and (max-width: 400px) {
-  .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6 {
-    width: 70%;
-    margin: 0;
-  }
-  .WorkerProfile-image {
-    height: 200px;
-    width: 200px;
-  }
-}
+@media screen and (max-width: 800px)
+    .WorkerProfile-title
+        font-size 1.6em
 
-@media screen and (max-width: 718px) {
-  .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6 {
-    width: 35%;
-    margin: 25px;
-  }
-  .WorkerProfile-image {
-    height: 200px;
-    width: 200px;
-  }
-}
+@media screen and (max-width: 400px)
+  .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6
+    width 70%
+    margin 0
 
-@media screen and (max-width: 600px) {
-  .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6 {
-    margin: 24px;
-    width: auto;
-  }
-  .WorkerProfile-image {
-    height: 185px;
-    width: 185px;
-  }
-}
+@media screen and (max-width: 400px)
+    .WorkerProfile-image
+        height 200px
+        width 200px
 
-@media screen and (max-width: 800px) {
-  .Information1, .Information2, .Information3 {
-    display: inline-block;
-    width: 70%;
-    margin-bottom: 2em;
-  }
-  .Ironmongery-title {
-    font-size: 1.6em;
-  }
-  .Tool-title {
-    width: 60%;
-  }
-  .InformationSection-title {
-    font-size: 1.6em;
-  }
-  .Sponsors-title {
-    font-size: 1.6em;
-  }
-  .WorkerProfile-title {
-    font-size: 1.6em;
-  }
-}
+@media screen and (max-width: 718px)
+  .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6
+    width 35%
+    margin 25px
+
+@media screen and (max-width: 718px)
+    .WorkerProfile-image
+        height 200px
+        width 200px
+
+@media screen and (max-width: 600px)
+  .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6
+    margin 24px
+    width auto
+
+@media screen and (max-width: 600px)
+    .WorkerProfile-image
+        height 185px
+        width 185px
+
+.IronmongerySection
+    text-align center
+    background-image url('../../assets/Iron-mongery/13.jpg')
+    background-attachment fixed
+    background-size cover
+    z-index 1
+    background-position 50% 50%
+    margin auto
+
+.Ironmongery-description
+    margin-right auto
+    margin-left auto
+    width 80%
+
+.Ironmongery-containerTitle
+    background white
+
+.Ironmongery-title
+    text-transform uppercase
+    font-size 30px
+
+.Ironmongery-sectionContainer
+    background-color rgba(238, 238, 238, 0.45)
+    padding-bottom 5em
+
+.Ironmongery-section1, .Ironmongery-section2, .Ironmongery-section3, .Ironmongery-section4
+    display inline-block
+    margin-top 3em
+    z-index 2
+
+.Ironmongery-image
+    height 200px
+    width 195px
+    border-radius 10px
+
+@media screen and (max-width: 800px)
+    .Ironmongery-title
+        font-size 1.6em
+
+.SponsorsSection
+    text-align center
+    margin auto
+    background #fff
+    width 80%
+
+.Sponsors-containerTitle
+    background white
+
+.Sponsors-title
+    text-transform uppercase
+    font-size 30px
+
+.Sponsors
+    padding-top 4em
+
+.Sponsors-section1, .Sponsors-section2, .Sponsors-section3, .Sponsors-section4
+    display inline-block
+
+.Sponsors-imageContainer
+    display inline-block
+
+.Sponsors-image
+    height 115px
+    width 195px
+
+@media screen and (max-width: 800px)
+    .Sponsors-title
+        font-size 1.6em
