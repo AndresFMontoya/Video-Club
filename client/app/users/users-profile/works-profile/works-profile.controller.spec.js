@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Component: AdministrationComponent', function () {
+describe('Component: WorksProfileComponent', function () {
 
   // load the controller's module
   beforeEach(module('startUpApp'));
 
-  var AdministrationComponent, scope;
+  var WorksProfileComponent, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($componentController, $rootScope) {
     scope = $rootScope.$new();
-    AdministrationComponent = $componentController('AdministrationComponent', {
+    WorksProfileComponent = $componentController('WorksProfileComponent', {
       $scope: scope
     });
   }));
