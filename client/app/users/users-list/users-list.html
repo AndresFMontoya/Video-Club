@@ -8,12 +8,14 @@
           <tr>
             <th>Razon Social</th>
             <th>Email</th>
+            <th>Télefono</th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="item in vm.users | filter:{idDocumentType:{id:'NIT'}}">
             <td><a ui-sref="users-view({id:item.id})" ng-bind="item.name"></a> </td>
             <td>{{item.email}}</td>
+            <td>{{item.phoneNumber}}</td>
           </tr>
         </tbody>
       </table>
@@ -27,6 +29,7 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
+            <th>Télefono</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +38,7 @@
             <td><a ui-sref="users-view({id:item.id})"  ng-bind="item.name"></a></td>
             <td>{{item.lastName}}</td>
             <td>{{item.email}}</td>
+            <td>{{item.phoneNumber}}</td>
           </tr>
         </tbody>
       </table>
