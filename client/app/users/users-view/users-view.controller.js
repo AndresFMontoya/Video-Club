@@ -11,9 +11,9 @@
 
             this.usersService.get({id:this.$stateParams.id}).$promise
             .then(response=>{
-              // console.log("USUARIOS",response)
-              this.usuario=response;
-              console.log(this.usuario);
+            console.log("USUARIOS",response)
+              this.user=response;
+              console.log(this.user);
             });
 
         }

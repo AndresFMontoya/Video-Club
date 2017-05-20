@@ -12,7 +12,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="item in vm.users | filter:{idDocumentType:{id:'NIT'}}">
-            <td>{{item.name}}</td>
+            <td><a ui-sref="users-view({id:item.id})" ng-bind="item.name"></a> </td>
             <td>{{item.email}}</td>
           </tr>
         </tbody>
@@ -32,7 +32,7 @@
         <tbody>
 
           <tr ng-repeat="item in vm.users | filter:{idDocumentType:{id:'!NIT'}}">
-            <td>{{item.name}}</td>
+            <td><a ui-sref="users-view({id:item.id})"  ng-bind="item.name"></a></td>
             <td>{{item.lastName}}</td>
             <td>{{item.email}}</td>
           </tr>
