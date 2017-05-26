@@ -12,17 +12,42 @@
 
 
             <!--ADMINISTRATOR PROFILE WORKER -PERSONAL DATA- -->
+            <form class="WorkProfile-personalData-form" ng-submit="vm.editUser()">
+
               <div class="WorkProfile-personalData">
+
                 <h2 class="WorkProfile-personalDataTitle">Datos Personales</h2>
                 <div class="WorkProfile-personalDataContainer">
-                  <input type="text" name="name" value="" class="" placeholder="Nombre">
-                  <input type="text" name="name" value="" class="" placeholder="Apellido">
-                  <input type="text" name="name" value="" class="" placeholder="Teléfono">
-                  <input type="text" name="name" value="" class="" placeholder="Ciudad">
-                  <input type="text" name="name" value="" class="" placeholder="Otro...">
-                  <input type="text" name="name" value="" class="" placeholder="Otro...">
+                  <label for="identificationNumber">Numero de identificacion</label>
+                  <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="" >
+                  <label for="name">Nombres</label>
+                  <input type="text" name="name" ng-model="vm.user.name" value="" class="" placeholder="Nombre">
+                  <label for="lastName">Apellidos</label>
+                  <input type="text" name="lastName" ng-model="vm.user.lastName" value="" class="" placeholder="Apellido">
+                  <label for="city">Ciudad</label>
+                  <select class=""  ng-model="vm.user.idCity.id" name="city">
+                    <option class="" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
+                  </select>
+                  <label for="email">Email</label>
+                  <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="" placeholder="Otro...">
+                  <label for="phoneNumber">Numero telefonico</label>
+                  <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" value="" class="" placeholder="Teléfono">
+                  <label for="DocumentType">Tipo documento</label>
+                  <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="" placeholder="Otro...">
+                  <label for="gender">Sexo</label>
+                  <select name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
+                  <label for="contactSocialNetworks">Contactar por redes sociales</label>
+                  <input type="checkbox" name="contactSocialNetworks" ng-model="vm.user.contactSocialNetworks" value="" class="" placeholder="Otro...">
+                  <label for="contactEmail">Contactar por correo </label>
+                  <input type="checkbox" name="contactEmail" ng-model="vm.user.contactEmail"  class="" placeholder="Otro...">
+                  <label for="socialNetwork1">Red social 1</label>
+                  <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="" placeholder="Otro...">
+                  <label for="socialNetwork2">Red social 2</label>
+                  <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks2" value="" class="" placeholder="Otro...">
+                  <button type="submit" name="button">Editar datos</button>
                 </div>
               </div>
+            </form>
 
 
             <!--ADMINISTRATOR PROFILE WORKER - ESPECIALIZATION -->
@@ -70,6 +95,11 @@
               </div>
 
 
+
+          </md-content>
+        </md-tab>
+        <md-tab label="trabajos hechos">
+          <md-content class="md-padding">
             <!--ADMINISTRATOR PROFILE WORKER - WORK DONE -->
               <div class="WorkProfile-WorkDone">
                 <h2 class="WorkProfile-WorkDoneTitle"></h2>
@@ -92,11 +122,6 @@
                 </div>
 
               </div>
-          </md-content>
-        </md-tab>
-        <md-tab label="trabajos hechos">
-          <md-content class="md-padding">
-
           </md-content>
         </md-tab>
       </md-tabs>
