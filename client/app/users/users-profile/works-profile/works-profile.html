@@ -12,7 +12,7 @@
 
 
             <!--ADMINISTRATOR PROFILE WORKER -PERSONAL DATA- -->
-            <form name="editForm" class="WorkProfile-personalData-form" ng-submit="vm.editUser()">
+            <form name="editForm" class="WorkProfile-personalData-form" ng-submit="editForm.$valid && vm.editUser()">
 
               <div class="WorkProfile-personalData">
 
@@ -26,19 +26,20 @@
                   <div class="">
                     <label for="name">Nombres</label>
                     <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="" placeholder="Nombre">
-                    <!-- <div class="" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
+                    <div class="" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
                       <div class="" ng-message="pattern">ingrese solo letras en este campo</div>
                       <div class="" ng-message="required">este campo es requerido</div>
                       <div class="" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
-                    </div> -->
-
+                    </div>
                   </div>
 
                   <div class="">
                     <label for="lastName">Apellidos</label>
-                    <input type="text" name="lastName" ng-model="vm.user.lastName" value="" class="" placeholder="Apellido">
-                    <div ng-messages="" ng-show="" class="">
-                      <div ng-message="" class=""></div>
+                    <input type="text" name="lastName" ng-model="vm.user.lastName"  ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="" placeholder="Apellido">
+                    <div class="" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
+                      <div class="" ng-message="pattern">ingrese solo letras en este campo</div>
+                      <div class="" ng-message="required">este campo es requerido</div>
+                      <div class="" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
                     </div>
                   </div>
 
@@ -56,9 +57,11 @@
 
                   <div class="">
                     <label for="phoneNumber">Numero telefonico</label>
-                    <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" value="" class="" placeholder="Teléfono">
-                    <div ng-messages="" ng-show="" class="">
-                      <div ng-message="" class=""></div>
+                    <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber"  ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required  value="" class="" placeholder="Teléfono">
+                    <div class="" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
+                      <div ng-message="pattern">ingrese solo numeros en este campo</div>
+                      <div ng-message="required">este campo es requerido</div>
+                      <div ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
                     </div>
                   </div>
 
@@ -93,7 +96,7 @@
                   </div>
 
 
-                  <button type="submit" name="button">Editar datos</button>
+                  <button type="submit" ng-disabled="editForm.$invalid " name="button">Editar datos</button>
                 </div>
               </div>
             </form>
