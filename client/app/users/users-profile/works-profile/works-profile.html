@@ -12,7 +12,7 @@
 
 
             <!--ADMINISTRATOR PROFILE WORKER -PERSONAL DATA- -->
-            <form class="WorkProfile-personalData-form" ng-submit="vm.editUser()">
+            <form name="editForm" class="WorkProfile-personalData-form" ng-submit="vm.editUser()">
 
               <div class="WorkProfile-personalData">
 
@@ -25,12 +25,21 @@
 
                   <div class="">
                     <label for="name">Nombres</label>
-                    <input type="text" name="name" ng-model="vm.user.name" value="" class="" placeholder="Nombre">
+                    <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="" placeholder="Nombre">
+                    <!-- <div class="" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
+                      <div class="" ng-message="pattern">ingrese solo letras en este campo</div>
+                      <div class="" ng-message="required">este campo es requerido</div>
+                      <div class="" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                    </div> -->
+
                   </div>
 
                   <div class="">
                     <label for="lastName">Apellidos</label>
                     <input type="text" name="lastName" ng-model="vm.user.lastName" value="" class="" placeholder="Apellido">
+                    <div ng-messages="" ng-show="" class="">
+                      <div ng-message="" class=""></div>
+                    </div>
                   </div>
 
                   <div class="">
@@ -42,12 +51,15 @@
 
                   <div class="">
                     <label for="email">Email</label>
-                    <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="" placeholder="Otro...">
+                    <input type="text" name="email"  ng-model="vm.user.email" value="" ng-disabled="true" class="" placeholder="Otro...">
                   </div>
 
                   <div class="">
                     <label for="phoneNumber">Numero telefonico</label>
                     <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" value="" class="" placeholder="Teléfono">
+                    <div ng-messages="" ng-show="" class="">
+                      <div ng-message="" class=""></div>
+                    </div>
                   </div>
 
                   <div class="">
