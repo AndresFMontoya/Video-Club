@@ -95,6 +95,18 @@
                     <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks2" value="" class="" placeholder="Otro...">
                   </div>
 
+                  <div class="">
+                    <label for="changePasswd">Cambiar contraseña</label>
+                    <input type="checkbox" name="changePasswd" ng-model="vm.newPassw"  class="" placeholder="Otro...">
+                  </div>
+
+                  <div ng-if="vm.newPassw" class="">
+                    <label for="newPasswd">Nueva contraseña</label>
+                    <input type="text" name="newPasswd" ng-model="vm.newPassword"  class="" placeholder="Otro...">
+                    <label for="confirmPasswd">Confirmar contraseña</label>
+                    <input type="text" name="confirmPasswd" ng-model="vm.confirmPassword"  class="" placeholder="Otro...">
+                  </div>
+
 
                   <button type="submit" ng-disabled="editForm.$invalid " name="button">Editar datos</button>
                 </div>

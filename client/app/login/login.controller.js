@@ -8,7 +8,6 @@ class LoginComponent {
   }
 
   loguearUsuario(){
-
     this.AuthService.login(this.user);
   }
 }
