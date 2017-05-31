@@ -102,13 +102,24 @@
 
                   <div ng-if="vm.newPassw" class="">
                     <label for="newPasswd">Nueva contraseña</label>
-                    <input type="text" name="newPasswd" ng-model="vm.newPassword"  class="" placeholder="Otro...">
+                    <input type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword"  class="" placeholder="Otro...">
+                    <div  ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
+                      <div ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+                      <div ng-message="required">este campo es requerido</div>
+                      <div ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+                    </div>
+
+
                     <label for="confirmPasswd">Confirmar contraseña</label>
-                    <input type="text" name="confirmPasswd" ng-model="vm.confirmPassword"  class="" placeholder="Otro...">
+                    <input type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
+                    <div class="MessagesContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
+                      <div ng-message="compareTo">la contraseña no coincide</div>
+                      <div ng-message="required">este campo es requerido</div>
+                    </div>
                   </div>
 
 
-                  <button type="submit" ng-disabled="editForm.$invalid " name="button">Editar datos</button>
+                  <button type="submit"  class="Editform-button"ng-disabled="editForm.$invalid" name="button">Editar datos</button>
                 </div>
               </div>
             </form>

@@ -13,6 +13,8 @@ this.userId;
 
   $onInit(){
 
+  if (this.$auth.isAuthenticated()) {
+
     this.userId=this.$auth.getPayload().sub;
 
    this.usersService.get({id:this.userId}).$promise
@@ -23,6 +25,8 @@ this.userId;
 
        console.log("error",err);
      });
+
+  }
 
 
   }
