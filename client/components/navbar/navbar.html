@@ -36,13 +36,13 @@
 
     <!--SESION BUTTONS-->
     <div ng-if="!vm.isAuthenticated()" class="ButtonContainer1">
-      <a  ui-sref="login" class="ButtonSesion">INICIAR SESION</a>
+      <a ui-sref="login" class="ButtonSesion">INICIAR SESION</a>
 
     </div>
 
 
-    <div  ng-if="!vm.isAuthenticated()" class="ButtonContainer2">
-      <a  ui-sref="users-create" class="ButtonRegistrer">REGISTRARSE</a>
+    <div ng-if="!vm.isAuthenticated()" class="ButtonContainer2">
+      <a ui-sref="users-create" class="ButtonRegistrer">REGISTRARSE</a>
 
     </div>
     <!-- <div class="btn-group ButtonContainer3" ng-if="vm.isAuthenticated()" uib-dropdown is-open="status.isopen">
@@ -54,16 +54,16 @@
       <li role="menuitem"><a ng-click="vm.logout()">Cerrar sesion</a></li>
     </ul>
   </div> -->
-    <div class="dropdown ButtonContainer3">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <div class="dropdown ButtonContainer3" ng-if="vm.isAuthenticated()">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     {{vm.user.name+" "+vm.user.lastName}}
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a ui-sref="works-profile">Editar Perfil</a></li>
-    <li><a ng-click="vm.logout()">Cerrar sesion</a></li>
-  </ul>
-</div>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a ui-sref="works-profile">Editar Perfil</a></li>
+        <li><a role="button" ng-click="vm.logout()">Cerrar sesion</a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="Menu-bar">
