@@ -10,6 +10,7 @@
               <h2 class="WorkProfile-personalDataTitle">Datos Personales</h2>
 
               <div class="WorkProfile">
+
                 <!--ADMINISTRATOR PROFILE WORKER -IMAGE- -->
                 <figure class="WorkProfile-imageContainer">
                   <img src="assets/Main-images/engineer.png" alt="" class="WorkProfile-image" />
@@ -31,23 +32,23 @@
                     <!--DOCUMENT TYPE -->
                     <div class="WorkProfile-documentTypeContainer">
                       <label  class=""for="DocumentType">Tipo documento</label>
-                      <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="" placeholder="Otro...">
+                      <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="WorkProfile-documentTypeLabel" placeholder="Otro...">
                     </div>
 
                     <!--IDENTIFICATION -->
                     <div class="WorkProfile-identificationContainer">
                       <label class=""for="identificationNumber">Numero de identificacion</label>
-                      <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="">
+                      <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="WorkProfile-identificationLabel">
                     </div>
 
                     <!--NAME -->
                     <div class="WorkProfile-namesContainer">
                       <label class=""for="name">Nombres</label>
-                      <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="" placeholder="Nombre">
-                      <div class="" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
-                        <div class="" ng-message="pattern">ingrese solo letras en este campo</div>
-                        <div class="" ng-message="required">este campo es requerido</div>
-                        <div class="" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                      <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-nameInput" placeholder="Nombre">
+                      <div class="WorkProfile-nameError" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
+                        <div class="WorkProfile-nameError1" ng-message="pattern">ingrese solo letras en este campo</div>
+                        <div class="WorkProfile-nameError2" ng-message="required">este campo es requerido</div>
+                        <div class="WorkProfile-nameError3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
                       </div>
                     </div>
 
@@ -65,7 +66,7 @@
                     <!--GENDER -->
                     <div class="WorkProfile-genderContainer">
                       <label class=""for="gender">Sexo</label>
-                      <select name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
+                      <select class=""name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
                     </div>
 
                     <!--CITY -->
@@ -87,9 +88,9 @@
                       <label class=""for="phoneNumber">Numero telefonico</label>
                       <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="" placeholder="Teléfono">
                       <div class="" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
-                        <div ng-message="pattern">ingrese solo numeros en este campo</div>
-                        <div ng-message="required">este campo es requerido</div>
-                        <div ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+                        <div class=""ng-message="pattern">ingrese solo numeros en este campo</div>
+                        <div class=""ng-message="required">este campo es requerido</div>
+                        <div class=""ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
                       </div>
                     </div>
 
@@ -126,19 +127,19 @@
                     <!--NEW PASSWORD -->
                     <div ng-if="vm.newPassw" class="WorkProfile-newPasswordContainer">
                       <label class=""for="newPasswd">Nueva contraseña</label>
-                      <input type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
-                      <div ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
-                        <div ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
-                        <div ng-message="required">este campo es requerido</div>
-                        <div ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+                      <input class=""type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
+                      <div class=""ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
+                        <div class=""ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+                        <div class=""ng-message="required">este campo es requerido</div>
+                        <div class=""ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
                       </div>
 
                       <!--CONFIRM PASSWORD -->
                       <label class=""for="confirmPasswd">Confirmar contraseña</label>
-                      <input type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
+                      <input class=""type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
                       <div class="MessagesContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
-                        <div ng-message="compareTo">la contraseña no coincide</div>
-                        <div ng-message="required">este campo es requerido</div>
+                        <div class=""ng-message="compareTo">la contraseña no coincide</div>
+                        <div class=""ng-message="required">este campo es requerido</div>
                       </div>
                     </div>
 
