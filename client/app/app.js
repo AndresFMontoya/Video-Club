@@ -6,11 +6,9 @@ angular.module('startUpApp', [
     'ngResource',
     'ngSanitize',
     'ui.router',
-    'ui.bootstrap',
     'satellizer',
     'ngMaterial',
     'ngMessages',
-    'angular-flexslider'
   ])
   .constant("API","http://localhost:8080/BackendExpertos")
   .config(function($urlRouterProvider, $locationProvider,$authProvider,API) {

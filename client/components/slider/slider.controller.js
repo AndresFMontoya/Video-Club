@@ -1,17 +1,24 @@
 'use strict';
-class SliderController {
-  constructor($scope) {
 
-    $scope.slides = [
-        'assets/slider-images/images/4.jpg',
-        'assets/slider-images/images/9.jpg'
+(function(){
 
-      ];
+class SliderComponent {
+  constructor() {
 
   }
 
 
+$onInit(){
+
+
 }
-SliderController.$inject=["$scope"];
+}
+SliderComponent.$inject=['AuthService'];
 angular.module('startUpApp')
-  .controller('SliderController', SliderController);
+  .component('slider', {
+    templateUrl: 'components/slider/slider.html',
+    controller: SliderComponent,
+    controllerAs: 'vm'
+  });
+
+})();

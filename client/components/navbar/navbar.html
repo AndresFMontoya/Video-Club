@@ -54,15 +54,16 @@
       <li role="menuitem"><a ng-click="vm.logout()">Cerrar sesion</a></li>
     </ul>
   </div> -->
-  <span class="ButtonContainer3" ng-if="vm.isAuthenticated()" uib-dropdown on-toggle="toggled(open)">
-      <a href id="simple-dropdown" uib-dropdown-toggle>
-        {{vm.user.name+" "+vm.user.lastName}}
-      </a>
-      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-        <li role="menuitem"><a ui-sref="works-profile">Editar Perfil</a></li>
-        <li role="menuitem"><a ng-click="vm.logout()">Cerrar sesion</a></li>
-      </ul>
-    </span>
+    <div class="dropdown ButtonContainer3">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    {{vm.user.name+" "+vm.user.lastName}}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a ui-sref="works-profile">Editar Perfil</a></li>
+    <li><a ng-click="vm.logout()">Cerrar sesion</a></li>
+  </ul>
+</div>
   </div>
 
   <div class="Menu-bar">
