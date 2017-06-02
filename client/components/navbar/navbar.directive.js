@@ -1,9 +1,14 @@
-'use strict';
+(function(){
+	'use strict';
+	angular.module('startUpApp')
+	.directive('navbar',navbar)
 
-angular.module('startUpApp')
-  .directive('navbar', () => ({
-    templateUrl: 'components/navbar/navbar.html',
-    restrict: 'E',
-    controller: 'NavbarController',
-    controllerAs: 'nav'
-  }));
+	function navbar(){
+		return {
+			restrict:'EA',
+			templateUrl:'components/navbar/navbar.html',
+      controller: NavbarController,
+      controllerAs:'vm'
+		}
+	}
+})();

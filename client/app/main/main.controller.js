@@ -4,17 +4,19 @@
 
   class MainController {
 
-    constructor($http) {
-      this.$http = $http;
+    constructor($auth) {
+      this.$auth = $auth;
     }
 
     $onInit() {
+    console.log(this.$auth.isAuthenticated());
     }
   }
-
+MainController.$inject=["$auth"];
   angular.module('startUpApp')
     .component('main', {
       templateUrl: 'app/main/main.html',
-      controller: MainController
+      controller: MainController,
+      controllerAs:'vm'
     });
 })();

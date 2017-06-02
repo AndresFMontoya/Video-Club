@@ -1,0 +1,98 @@
+<!--ADMINISTRATOR PROFILE WORKER -PERSONAL DATA- -->
+<form name="editForm" class="Ironmongery-personalData-form" ng-submit="editForm.$valid && vm.editUser()">
+
+  <div class="Ironmongery-personalData">
+
+
+    <div class="Ironmongery-personalDataContainer">
+<!-- DOCUMENT TYPE-->
+      <div class="Ironmongery-documentTypeContainer">
+        <label for="DocumentType">Tipo documento</label>
+        <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="" placeholder="Otro...">
+      </div>
+
+      <div class="Ironmongery-identificationContainer">
+        <label for="identificationNumber">Numero de identificacion</label>
+        <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="">
+      </div>
+
+      <div class="Ironmongery-namesContainer">
+        <label for="name">Nombres</label>
+        <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="" placeholder="Nombre">
+        <div class="" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
+          <div class="" ng-message="pattern">ingrese solo letras en este campo</div>
+          <div class="" ng-message="required">este campo es requerido</div>
+          <div class="" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+        </div>
+      </div>
+
+      <div class="Ironmongery-cityContainer">
+        <label for="city">Ciudad</label>
+        <select class="" ng-model="vm.user.idCity.id" name="city">
+          <option class="" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
+        </select>
+      </div>
+
+      <div class="Ironmongery-emailContainer">
+        <label for="email">Email</label>
+        <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="" placeholder="Otro...">
+      </div>
+
+      <div class="Ironmongery-numberTelephoneContainer">
+        <label for="phoneNumber">Numero telefonico</label>
+        <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="" placeholder="Teléfono">
+        <div class="" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
+          <div ng-message="pattern">ingrese solo numeros en este campo</div>
+          <div ng-message="required">este campo es requerido</div>
+          <div ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+        </div>
+      </div>
+
+
+      <div class="Ironmongery-socialNetworksContainers">
+        <label for="contactSocialNetworks">Contactar por redes sociales</label>
+        <input type="checkbox" name="contactSocialNetworks" ng-model="vm.user.contactSocialNetworks" value="" class="" placeholder="Otro...">
+      </div>
+
+      <div class="Ironmongery-emailContainer">
+        <label for="contactEmail">Contactar por correo </label>
+        <input type="checkbox" name="contactEmail" ng-model="vm.user.contactEmail" class="" placeholder="Otro...">
+      </div>
+
+      <div class="Ironmongery-socialNetwork1Container">
+        <label for="socialNetwork1">Red social 1</label>
+        <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="" placeholder="Otro...">
+      </div>
+
+      <div class="Ironmongery-socialNetwork2Container">
+        <label for="socialNetwork2">Red social 2</label>
+        <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks2" value="" class="" placeholder="Otro...">
+      </div>
+
+      <div class="Ironmongery-changePasswordContainer">
+        <label for="changePasswd">Cambiar contraseña</label>
+        <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="" placeholder="Otro...">
+      </div>
+
+      <div ng-if="vm.newPassw" class="Ironmongery-newPasswordContainer">
+        <label for="newPasswd">Nueva contraseña</label>
+        <input type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
+        <div ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
+          <div ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+          <div ng-message="required">este campo es requerido</div>
+          <div ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+        </div>
+
+        <label for="confirmPasswd">Confirmar contraseña</label>
+        <input type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
+        <div class="MessagesContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
+          <div ng-message="compareTo">la contraseña no coincide</div>
+          <div ng-message="required">este campo es requerido</div>
+        </div>
+      </div>
+
+
+      <button type="submit" class="Editform-button" ng-disabled="editForm.$invalid" name="button">Editar datos</button>
+    </div>
+  </div>
+</form>

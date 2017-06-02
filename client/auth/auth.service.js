@@ -30,6 +30,18 @@ function AuthService($auth, $state) {
 
   function logout() {
 
+   return $auth.logout()
+   .then(response => {
+     console.log("logout ok",response);
+     $state.go('main');
+   }).catch(err => {
+     var error=err;
+     alert(error.data);
+     console.log("Error de logout",err);
+     $state.go('login');
+
+   })
+
   }
 
   function isAdmin() {
