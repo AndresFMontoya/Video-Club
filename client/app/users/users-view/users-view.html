@@ -5,6 +5,7 @@
     <tr>
       <th>id</th>
       <th>Razon Social</th>
+      <th>Identificación</th>
       <th>Email</th>
       <th>Télefono</th>
       <th>Ciudad</th>
@@ -13,7 +14,8 @@
   <tbody>
     <tr>
       <td>{{vm.user.id}}</td>
-      <td>{{vm.user.name}}</td>
+      <td>{{vm.user.name}} {{vm.user.lastName}}</td>
+      <td>{{vm.user.identificationNumber}}</td>
       <td>{{vm.user.email}}</td>
       <td>{{vm.user.phoneNumber}}</td>
       <td>{{vm.user.idCity.name}}</td>
