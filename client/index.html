@@ -13,8 +13,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
       <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-      <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
       <!-- endbower -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- endbuild -->
@@ -55,10 +55,10 @@
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/satellizer/dist/satellizer.js"></script>
@@ -66,8 +66,6 @@
       <script src="bower_components/angular-aria/angular-aria.js"></script>
       <script src="bower_components/angular-messages/angular-messages.js"></script>
       <script src="bower_components/angular-material/angular-material.js"></script>
-      <script src="bower_components/flexslider/jquery.flexslider.js"></script>
-      <script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
       <!-- endbower -->
 
     <!-- endbuild -->
@@ -275,11 +273,9 @@
 
       <script src="components/navbar/navbar.directive.js"></script>
 
-      <script src="components/navbar/navbar.js"></script>
-
       <script src="components/slider/slider.controller.js"></script>
 
-      <script src="components/slider/slider.directive.js"></script>
+      <script src="components/slider/slider.js"></script>
 
       <script src="components/util/util.service.js"></script>
 
