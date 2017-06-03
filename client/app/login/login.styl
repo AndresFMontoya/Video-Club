@@ -56,60 +56,51 @@
   margin-top 0.5em
   color azure
 
-  @media screen and (max-width:800px) {
-    .Loggin {
-      width: 100%;
-      background-image: url('../../../assets/User-form-images/formulario.jpg') !important;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-    .LogginForm {
-      background: none;
-      border: none;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10em 0;
-    }
-    .LogginForm-email, {
-      margin-bottom: 2em;
-    }
-    .LogginForm-email, .LogginForm-password {
-      width: 25em;
-      padding: 15px 0px 10px 0;
-      background: transparent;
-      border: 0;
-      border-bottom: 1px solid white;
-      outline: none;
-      color: white;
-      font-size: 16px;
-      display: block;
-      text-align: center;
-      border-radius: 0;
-      margin-bottom: 20px;
-    }
-    .LogginForm-forgotPassword {
-      margin-top: 1em;
-    }
-    .LogginForm-Registre {
-      margin-top: 1em;
-    }
-    .LogginForm-CheckboxRemidMe {}
-    .LogginForm-botton {
-      border-left: none;
-      border-right: none;
-    }
-  }
+@media screen and (max-width:800px)
+    .Loggin
+        width 100%
+        background-image url('../../../assets/User-form-images/formulario.jpg') !important
+        background-size cover
+        background-position 50% 50%
+    .LogginForm
+        background none
+        border none
+        width 100%
+        background-color rgba(0, 0, 0, 0.5)
+        padding 10em 0
+    .LogginForm-email
+        margin-bottom 2em
+    .LogginForm-forgotPassword
+        margin-top 1em
+    .LogginForm-Registre
+        margin-top 1em
 
-  @media screen and (max-width:600px) {
-    .LogginForm-email, .LogginForm-password {
-      width: 70%;
-      height: 90%;
-    }
-  }
+@media screen and (max-width:800px)
+  .LogginForm-email, .LogginForm-password
+      width 25em
+      padding 15px 0px 10px 0
+      background transparent
+      border 0
+      border-bottom 1px solid white
+      outline none
+      color white
+      font-size 16px
+      display block
+      text-align center
+      border-radius 0
+      margin-bottom 20px
 
-  @media screen and (max-width:500px) {
-    .LogginForm-email, .LogginForm-password {
-      width: 70%;
-      height: 130%;
-    }
-  }
+@media screen and (max-width:800px)
+    .LogginForm-botton
+        border-left none
+        border-right none
+
+@media screen and (max-width:600px)
+  .LogginForm-email, .LogginForm-password
+    width 70%
+    height 90%
+
+@media screen and (max-width:500px)
+  .LogginForm-email, .LogginForm-password
+    width 70%
+    height 130%

@@ -13,8 +13,7 @@
 
                 <!--ADMINISTRATOR PROFILE WORKER -IMAGE- -->
                 <figure class="WorkProfile-imageContainer">
-                  <img src="assets/Main-images/engineer.png" alt="" class="WorkProfile-image" />
-                </figure>
+                  <img src="assets/Main-images/engineer.png" alt=""class="WorkProfile-image">
 
                 <!--ADMINISTRATOR PROFILE WORKER - DESCRIPTION -->
                 <div class="WorkProfile-Description">
@@ -45,101 +44,103 @@
                     <div class="WorkProfile-namesContainer">
                       <label class=""for="name">Nombres</label>
                       <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-nameInput" placeholder="Nombre">
-                      <div class="WorkProfile-nameError" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
-                        <div class="WorkProfile-nameError1" ng-message="pattern">ingrese solo letras en este campo</div>
-                        <div class="WorkProfile-nameError2" ng-message="required">este campo es requerido</div>
-                        <div class="WorkProfile-nameError3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                      <div class="WorkProfile-name-validationContainer" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
+                        <div class="WorkProfile-name-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
+                        <div class="WorkProfile-name-validation2" ng-message="required">este campo es requerido</div>
+                        <div class="WorkProfile-name-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
                       </div>
                     </div>
 
                     <!--LAST NAME -->
                     <div class="WorkProfile-lastNamesContainer">
-                      <label class=""for="lastName">Apellidos</label>
-                      <input type="text" name="lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="" placeholder="Apellido">
-                      <div class="" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
-                        <div class="" ng-message="pattern">ingrese solo letras en este campo</div>
-                        <div class="" ng-message="required">este campo es requerido</div>
-                        <div class="" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                      <label class="WorkProfile-lastNameLabel"for="lastName">Apellidos</label>
+                      <input type="text" name="lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-lastNameInput" placeholder="Apellido">
+                      <div class="WorkProfile-lastName-validationContainer" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
+                        <div class="WorkProfile-lastName-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
+                        <div class="WorkProfile-lastName-validation2" ng-message="required">este campo es requerido</div>
+                        <div class="WorkProfile-lastName-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
                       </div>
                     </div>
 
                     <!--GENDER -->
                     <div class="WorkProfile-genderContainer">
-                      <label class=""for="gender">Sexo</label>
-                      <select class=""name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
+                      <label class="WorkProfile-gender"for="gender">Sexo</label>
+                      <select class="WorkProfile-genderSelect"name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
                     </div>
 
-                    <!--CITY -->
-                    <div class="WorkProfile-cityContainer">
-                      <label class=""for="city">Ciudad</label>
-                      <select class="" ng-model="vm.user.idCity.id" name="city">
-                        <option class="" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
-                      </select>
-                    </div>
+
 
                     <!--EMAIL -->
                     <div class="WorkProfile-emailContainer">
-                      <label class=""for="email">Email</label>
-                      <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="" placeholder="Otro...">
+                      <label class="WorkProfile-emailLabel"for="email">Email</label>
+                      <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="WorkProfile-emailInput" placeholder="Otro...">
                     </div>
 
                     <!--TELEPHONE NUMBER -->
                     <div class="WorkProfile-numberTelephoneContainer">
-                      <label class=""for="phoneNumber">Numero telefonico</label>
-                      <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="" placeholder="Teléfono">
-                      <div class="" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
-                        <div class=""ng-message="pattern">ingrese solo numeros en este campo</div>
-                        <div class=""ng-message="required">este campo es requerido</div>
-                        <div class=""ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+                      <label class="WorkProfile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
+                      <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="WorkProfile-phoneNumberInput" placeholder="Teléfono">
+                      <div class="WorkProfile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
+                        <div class="WorkProfile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
+                        <div class="WorkProfile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
+                        <div class="WorkProfile-phoneNumber-validation3"ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
                       </div>
                     </div>
-
-                    <!-- SOCIAL NETWORKS-->
-                    <div class="WorkProfile-socialNetworksContainers">
-                      <label class=""for="contactSocialNetworks">Contactar por redes sociales</label>
-                      <input type="checkbox" name="contactSocialNetworks" ng-model="vm.user.contactSocialNetworks" value="" class="" placeholder="Otro...">
+                    
+                    <!--CITY -->
+                    <div class="WorkProfile-cityContainer">
+                      <label class="WorkProfile-cityLabel"for="city">Ciudad</label>
+                      <select class="WorkProfile-citySelect" ng-model="vm.user.idCity.id" name="city">
+                        <option class="WorkProfile-cityOptions" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
+                      </select>
                     </div>
 
                     <!--CONTACT BY EMAIL -->
                     <div class="WorkProfile-emailContainer">
-                      <label class=""for="contactEmail">Contactar por correo </label>
-                      <input type="checkbox" name="contactEmail" ng-model="vm.user.contactEmail" class="" placeholder="Otro...">
+                      <label class="WorkProfile-emailLabel"for="contactEmail">Contactar por correo </label>
+                      <input type="checkbox" name="contactEmail" ng-model="vm.user.contactEmail" class="WorkProfile-emailInput" placeholder="Otro...">
+                    </div>
+
+                    <!-- SOCIAL NETWORKS-->
+                    <div class="WorkProfile-socialNetworksContainers">
+                      <label class="WorkProfile-socialNetworksLabel"for="contactSocialNetworks">Contactar por redes sociales</label>
+                      <input type="checkbox" name="contactSocialNetworks" ng-model="vm.user.contactSocialNetworks" value="" class="WorkProfile-socialNetworkInput" placeholder="Otro...">
                     </div>
 
                     <!--CONTACT BY EMAIL-SOCIAL NETWORK1 -->
                     <div class="WorkProfile-socialNetwork1Container">
-                      <label class=""for="socialNetwork1">Red social 1</label>
-                      <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="" placeholder="Otro...">
+                      <label class="WorkProfile-socialNetwork1-label"for="socialNetwork1">Red social 1</label>
+                      <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="WorkProfile-socialNetwork1-input" placeholder="Otro...">
                     </div>
 
                     <!--CONTACT BY EMAIL-SOCILA NETWORK2 -->
                     <div class="WorkProfile-socialNetwork2Container">
-                      <label class=""for="socialNetwork2">Red social 2</label>
-                      <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks2" value="" class="" placeholder="Otro...">
+                      <label class="WorkProfile-socialNetwork2-label"for="socialNetwork2">Red social 2</label>
+                      <input type="text" name="socialNetwork2" ng-model="vm.user.socialNetworks2" value="" class="WorkProfile-socialNetwork2-input" placeholder="Otro...">
                     </div>
 
                     <!--CHANGE PASSWORD -->
                     <div class="WorkProfile-changePasswordContainer">
-                      <label class=""for="changePasswd">Cambiar contraseña</label>
-                      <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="" placeholder="Otro...">
+                      <label class="WorkProfile-changePasswordLabel"for="changePasswd">Cambiar contraseña</label>
+                      <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="WorkProfile-changePassword-input" placeholder="Otro...">
                     </div>
 
                     <!--NEW PASSWORD -->
                     <div ng-if="vm.newPassw" class="WorkProfile-newPasswordContainer">
-                      <label class=""for="newPasswd">Nueva contraseña</label>
-                      <input class=""type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
-                      <div class=""ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
-                        <div class=""ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
-                        <div class=""ng-message="required">este campo es requerido</div>
-                        <div class=""ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+                      <label class="WorkProfile-newPasswordLabel"for="newPasswd">Nueva contraseña</label>
+                      <input class="WorkProfile-newPasswordInput"type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
+                      <div class="WorkProfile-newPassword-validationContainer"ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
+                        <div class="WorkProfile-newPassword-validation1"ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+                        <div class="WorkProfile-newPassword-validation2"ng-message="required">este campo es requerido</div>
+                        <div class="WorkProfile-newPassword-validation3"ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
                       </div>
 
                       <!--CONFIRM PASSWORD -->
-                      <label class=""for="confirmPasswd">Confirmar contraseña</label>
-                      <input class=""type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
-                      <div class="MessagesContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
-                        <div class=""ng-message="compareTo">la contraseña no coincide</div>
-                        <div class=""ng-message="required">este campo es requerido</div>
+                      <label class="WorkProfile-confirmPasswordLabel"for="confirmPasswd">Confirmar contraseña</label>
+                      <input class="WorkProfile-confirmPasswordInput"type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
+                      <div class="WorkProfile-confirmPassword-validationContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
+                        <div class="WorkProfile-confirmPassword-validation1"ng-message="compareTo">la contraseña no coincide</div>
+                        <div class="WorkProfile-confirmPassword-validation2"ng-message="required">este campo es requerido</div>
                       </div>
                     </div>
 

@@ -208,8 +208,8 @@ nav
     .MainMenu-itemTop
         border-top 1px solid rgba(255, 255, 255, .3)
     .MainMenu
+        display none
         width 40%
-        top -60%
         margin 0
         position absolute
         z-index 100
@@ -292,6 +292,6 @@ nav
     .SearchBar-container
         display none
 
-@media screen and (max-width: 426px)
+@media screen and (min-width: 800px)
     .MainMenu
-        margin-top 31px
+        display block !important
