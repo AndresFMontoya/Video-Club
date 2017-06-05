@@ -12,7 +12,6 @@ a:focus
     background #fff
     text-align center
     background-image url('../../assets/Main-images/fondo.jpg')
-    background-attachment fixed
     background-size cover
     z-index 1
     background-position 50% 50%
@@ -21,7 +20,7 @@ a:focus
 .InformationSection-container
     width 80%
     margin auto
-    
+
 
 .InformationSection-title
     margin 0
@@ -104,17 +103,22 @@ a:focus
 
 .WorkerProfile-containerTitle
     background white
+    margin 0
+    padding 25px
 
 .WorkerProfile-title
     text-transform uppercase
     font-size 30px
     color #1262b1
     font-weight bold
+    margin 0
+
 .WorkerProfile-socialNetwork
   padding-bottom 7px
+
 .WorkerProfile-section1, .WorkerProfile-section2, .WorkerProfile-section3, .WorkerProfile-section4, .WorkerProfile-section5, .WorkerProfile-section6
     display inline-block
-    margin 3em 3% 0
+    margin 3em 1.5% 0
     border-bottom 5px solid gray
     background-image url('../../static/Images/main/gray.png')
     box-shadow 10px 10px 14px 0px rgba(0, 0, 0, 0.55)
@@ -125,12 +129,25 @@ a:focus
 
 .WorkerProfile-imageContainer
     display inline-block
-    margin 0
+    margin 10px
 
 .WorkerProfile-image
-    width 260px
-    width 352px
-    height 295px
+    width 275px
+    height 275px
+.WorkerProfile-link
+    padding 10px
+    border-radius 10px
+    border 1px solid white
+    position relative
+    bottom 180px
+    color white
+    font-weight bold
+    text-decoration: none !important
+.WorkerProfile-link:hover
+  background-color: rgba(32, 74, 111, 0.75)
+  color: silver
+
+
 
 @media screen and (max-width: 800px)
     .WorkerProfile-title
@@ -168,40 +185,50 @@ a:focus
 
 .IronmongerySection
     text-align center
-    background-image url('../../assets/Iron-mongery/13.jpg')
+    background-image url('../../assets/Iron-mongery/15.jpg')
     background-attachment fixed
     background-size cover
     z-index 1
     background-position 50% 50%
     margin auto
 
+.Ironmongery-
+  &section1-Title, &section2-Title, &section3-Title, &section4-Title
+    color chocolate
+
 .Ironmongery-description
     margin-right auto
     margin-left auto
     width 80%
+    color floralwhite
+    font-size 15px
+    font-weight bold
 .IronmongeryDescription-ofert
   padding-top 16px
 .Ironmongery-containerTitle
     background white
+    margin 0
+    padding 25px
 
 .Ironmongery-title
     text-transform uppercase
     font-size 30px
     color #1262b1
     font-weight bold
+    margin 0
+
 
 .Ironmongery-sectionContainer
-    background-color rgba(238, 238, 238, 0.45)
-    padding-bottom 5em
+    background-color rgba(25, 52, 76, 0.35)
+    padding 100px 0px
 
 .Ironmongery-section1, .Ironmongery-section2, .Ironmongery-section3, .Ironmongery-section4
     display inline-block
-    margin-top 3em
     z-index 2
 
 .Ironmongery-image
-    height 200px
-    width 195px
+    height 210px
+    width 235px
     border-radius 3px
 
 @media screen and (max-width: 800px)
@@ -216,18 +243,22 @@ a:focus
 
 .Sponsors-containerTitle
     background white
+    margin 0
+    padding 25px
 
 .Sponsors-title
     text-transform uppercase
     font-size 30px
     color #1262b1
     font-weight bold
+    margin 0
 
 .Sponsors
-    padding-top 4em
+    padding 4em 0
 
 .Sponsors-section1, .Sponsors-section2, .Sponsors-section3, .Sponsors-section4
     display inline-block
+    margin: 10px 10px
 
 .Sponsors-imageContainer
     display inline-block
