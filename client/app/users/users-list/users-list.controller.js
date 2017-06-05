@@ -29,7 +29,7 @@ console.log("tipos",this.tipos);
 
     }
 
-    op(item){
+    changeState(item){
 
        this.user=item;
 
