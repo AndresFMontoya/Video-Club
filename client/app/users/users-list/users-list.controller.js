@@ -13,6 +13,7 @@
 
       }
         ];
+      this.user;
     }
     $onInit(){
 
@@ -26,6 +27,20 @@ console.log("tipos",this.tipos);
           console.log(err);
         });
 
+    }
+
+    op(item){
+
+       this.user=item;
+
+
+      this.usersService.update(this.user).$promise
+        .then(response=>{
+          console.log("usuario modificado",item);
+        }).catch(err=>{
+
+          console.log("error",err);
+        });
     }
   }
  UsersListComponent.$inject=['usersService'];

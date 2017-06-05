@@ -9,6 +9,7 @@
             <th>Razon Social</th>
             <th>Email</th>
             <th>Télefono</th>
+            <th>Activo</th>
           </tr>
         </thead>
         <tbody>
@@ -16,12 +17,14 @@
             <td><a ui-sref="users-view({id:item.id})" ng-bind="item.name"></a> </td>
             <td>{{item.email}}</td>
             <td>{{item.phoneNumber}}</td>
+            <td><md-switch class="md-primary" ng-change="vm.op(item)" ng-model="item.active" aria-label="true" ></md-switch></td>
+
           </tr>
         </tbody>
       </table>
 
   </div>
-  <div ng-switch-default  >
+  <div ng-switch-default>
 
       <table class="table table-hover" >
         <thead>
@@ -30,6 +33,7 @@
             <th>Apellido</th>
             <th>Email</th>
             <th>Télefono</th>
+            <th>Activo</th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +43,7 @@
             <td>{{item.lastName}}</td>
             <td>{{item.email}}</td>
             <td>{{item.phoneNumber}}</td>
+            <td><md-switch class="md-primary" ng-change="vm.op(item)" ng-model="item.active" aria-label="true" ></md-switch></td>
           </tr>
         </tbody>
       </table>

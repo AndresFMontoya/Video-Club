@@ -41,6 +41,7 @@
         if(this.newPassw){
           this.user.password=this.newPassword;
         }
+        this.user.active=true;
         this.usersService.update(this.user).$promise
           .then(response=>{
             console.log("usuario",this.user);
