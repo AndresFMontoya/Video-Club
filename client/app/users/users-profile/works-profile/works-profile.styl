@@ -1,3 +1,5 @@
+.md-padding
+  padding 0 !important
 .tabsdemoDynamicHeight md-content
   background #fff
 
@@ -30,9 +32,13 @@ md-tabs-canvas.md-center-tabs
 span
   color: white !important
 
+.WorkProfile
+  text-align center
+  width 30%
+  display inline-block
+  vertical-align top
 .WorkProfile-imageContainer
   display inline-block
-  width 40%
   margin 0
   text-align center
   vertical-align top
@@ -44,19 +50,57 @@ span
   width 200px
   padding 5% 0
 
+.WorkProfile-personalDataTitle
+  text-align center
+  padding 1.5em 0 1em
 
+.WorkProfile-personalData-form
+  display inline-block
+  width 55%
+  max-width 1047px
 
+.WorkProfile-containerCenter
+  width 325px
+  display block
+  margin auto
 
+.WorkProfile-containerCenter2
+  width 325px
+  display block
+  margin auto
+.WorkProfile-multyContainer1
+  width 50%
+  display inline-block
+.WorkProfile-multyContainer2
+  width 49%
+  display inline-block
+  vertical-align top
 .WorkProfile-documentTypeContainer, .WorkProfile-identificationContainer
-    display inline-block
-    text-align left
-    max-width 250px
+  display inline-block
+  text-align left
+
 
 
 .WorkProfile
 
-  &-nameLabel, &-lastNameLabel, &-lastNameLabel, &-genderLabel, &-emailLabel, &-phoneNumberLabel, &-cityLabel, &-socialNetworksLabel, &-socialNetwork1-label, &-socialNetwork2-label, &-newPasswordLabel, &-confirmPasswordLabel
+  &-nameLabel,&-identificationLabel, &-documentTypeLabel, &-lastNameLabel, &-lastNameLabel, &-genderLabel, &-emailLabel, &-phoneNumberLabel, &-cityLabel, &-socialNetworksLabel, &-socialNetwork1-label, &-socialNetwork2-label, &-newPasswordLabel, &-confirmPasswordLabel
     display block
+  &-nameIcon
+    padding 13px 16px 13px 18px !important
+  &-cityIcon
+    padding 13px 14px 12px 13px !important
+  &-genderIcon
+    padding 13px 14px 12px 14px !important
+  &-phoneIcon
+    padding 13px 16px 13px 17px !important
+  &-identificationIcon
+    padding 13px 16px 13px 16px !important
+  &-lastNameIcon
+    padding: 13px 16px 13px 16px !important
+  &-emailIcon
+    padding: 13px 14px 13px 14px !important
+  &-cityIcon
+    padding 13px 17px 12px 17px !important
 
   &-personalDataIcon
     padding: 13px 14px
@@ -73,22 +117,28 @@ span
     position relative
     right 5px
 
-.Twitter, .Facebook, .Instagram
-  color white
-  background #227fde
-  padding: 13px 14px
+  &-Twitter, &-Facebook, &-Instagram
+    color white
+    background #227fde
+    padding: 13px 14px
 
 
 .WorkProfile
-  &-documentTypeLabel, &-identificationLabel, &-nameInput, &-lastNameInput, &-newPasswordInput, &-confirmPasswordInput,  &-emailInput, &-phoneNumberInput, &-cityOptions, &-emailInput, &-socialNetworkInput, &-socialNetwork1-input,  &-socialNetwork2-input
+  &-identificationInput, &-documentTypeInput, &-nameInput, &-lastNameInput, &-newPasswordInput, &-confirmPasswordInput,  &-emailInput, &-phoneNumberInput, &-cityOptions, &-emailInput, &-socialNetworkInput, &-socialNetwork1-input,  &-socialNetwork2-input
     padding 10px 5px
     border 1px solid #545454
+    width 170px
   &-genderSelect
     padding 9px 5px
     border 1px solid #545454
+    width 170px
   &-citySelect
     padding 9px 45px
     border 1px solid #545454
+    width 170px
+
+.WorkProfile-buttonContainer
+  text-align center
 
 /*--ESPECIALIZATIONS--SECTION*/
 
@@ -118,7 +168,10 @@ span
 
 
 /*--CERFICATIONS - SECTION--*/
-
+.WorkProfile-Certifications
+  width 59%
+  margin auto
+  display inline-block
 .WorkProfile-CertificationsDoubleContainer
   margin 1em 0
 
@@ -229,7 +282,15 @@ span
   font-size 20px
   border-radius 0px 5px 5px 0px
 
-
+.WorkProfile-newPasswordContainer
+  width 220px
+  margin auto
+  text-align center
+.WorkProfile-containerChangePassword
+  text-align center
+  padding 25px 0px
+.WorkProfile-newPasswordContainer-son
+  padding 20px 0px
 .WorkProfile-WorkDoneDoubleContainer
   margin 2em 0
 
@@ -311,8 +372,9 @@ span
   color #fff
   cursor pointer
   position relative
-  top: 0
-  
+  top 0
+  border-style none
+
 .Editform-button:hover
   top: 3px
   box-shadow: 0 3px 0px darkred

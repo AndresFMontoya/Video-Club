@@ -31,10 +31,12 @@
                     <h2 class="WorkProfile-personalDataTitle">Datos Personales</h2>
 
                     <div class="WorkProfile-multyContainer1">
+                      <div class="WorkProfile-containerCenter">
+
                       <!--DOCUMENT TYPE -->
                       <div class="WorkProfile-documentTypeContainer">
-                        <label  class=""for="DocumentType">Tipo documento</label>
-                        <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="WorkProfile-documentTypeLabel" placeholder="Otro...">
+                        <label  class="WorkProfile-documentTypeLabel"for="DocumentType">Tipo documento</label>
+                        <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="WorkProfile-documentTypeInput" placeholder="">
                         <i class="fa fa-id-card WorkProfile-personalDataIcon" aria-hidden="true"></i>
                       </div>
 
@@ -42,11 +44,11 @@
                       <div class="WorkProfile-namesContainer">
                         <label class="WorkProfile-nameLabel"for="name">Nombres</label>
                         <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-nameInput" placeholder="Nombre">
-                        <i class="fa fa-user WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                        <i class="fa fa-user WorkProfile-personalDataIcon WorkProfile-nameIcon" aria-hidden="true"></i>
                         <div class="WorkProfile-name-validationContainer" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
                           <div class="WorkProfile-name-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
                           <div class="WorkProfile-name-validation2" ng-message="required">este campo es requerido</div>
-                          <div class="WorkProfile-name-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                          <div class="200pxWorkProfile-name-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
                         </div>
                       </div>
 
@@ -54,13 +56,13 @@
                       <div class="WorkProfile-genderContainer">
                         <label class="WorkProfile-genderLabel"for="gender">Sexo</label>
                         <select class="WorkProfile-genderSelect"name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
-                        <i class="fa fa-venus-mars WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                        <i class="fa fa-venus-mars WorkProfile-personalDataIcon WorkProfile-genderIcon" aria-hidden="true"></i>
                       </div>
                       <!--TELEPHONE NUMBER -->
                       <div class="WorkProfile-numberTelephoneContainer">
                         <label class="WorkProfile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
                         <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="WorkProfile-phoneNumberInput" placeholder="Teléfono">
-                        <i class="fa fa-phone WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                        <i class="fa fa-phone WorkProfile-personalDataIcon WorkProfile-phoneIcon" aria-hidden="true"></i>
                         <div class="WorkProfile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
                           <div class="WorkProfile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
                           <div class="WorkProfile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
@@ -77,54 +79,32 @@
                         <label class="WorkProfile-socialNetwork1-label"for="socialNetwork1">Red social 1</label>
                         <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="WorkProfile-socialNetwork1-input" placeholder="Otro...">
                         <div class="WorkProfile-socialNetworks">
-                          <i class="fa fa-twitter WorkProfile- Twitter" aria-hidden="true"></i>
-                          <i class="fa fa-instagram WorkProfile- Instagram" aria-hidden="true"></i>
-                          <i class="fa fa-facebook-official WorkProfile- Facebook" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <!--CHANGE PASSWORD -->
-                      <div class="WorkProfile-changePasswordContainer">
-                        <label class="WorkProfile-changePasswordLabel"for="changePasswd">Cambiar contraseña</label>
-                        <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="WorkProfile-changePassword-input" placeholder="Otro...">
-                      </div>
-
-                      <!--NEW PASSWORD -->
-                      <div ng-if="vm.newPassw" class="WorkProfile-newPasswordContainer">
-                        <label class="WorkProfile-newPasswordLabel"for="newPasswd">Nueva contraseña</label>
-                        <input class="WorkProfile-newPasswordInput"type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
-                        <i class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
-                        <div class="WorkProfile-newPassword-validationContainer"ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
-                          <div class="WorkProfile-newPassword-validation1"ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
-                          <div class="WorkProfile-newPassword-validation2"ng-message="required">este campo es requerido</div>
-                          <div class="WorkProfile-newPassword-validation3"ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
-                        </div>
-
-                        <!--CONFIRM PASSWORD -->
-                        <label class="WorkProfile-confirmPasswordLabel"for="confirmPasswd">Confirmar contraseña</label>
-                        <input class="WorkProfile-confirmPasswordInput"type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
-                        <i class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
-                        <div class="WorkProfile-confirmPassword-validationContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
-                          <div class="WorkProfile-confirmPassword-validation1"ng-message="compareTo">la contraseña no coincide</div>
-                          <div class="WorkProfile-confirmPassword-validation2"ng-message="required">este campo es requerido</div>
+                          <i class="fa fa-twitter WorkProfile-Twitter" aria-hidden="true"></i>
+                          <i class="fa fa-instagram WorkProfile-Instagram" aria-hidden="true"></i>
+                          <i class="fa fa-facebook-official WorkProfile-Facebook" aria-hidden="true"></i>
                         </div>
                       </div>
 
+                    </div>
 
                     </div>
 
                     <div class="WorkProfile-multyContainer2">
+                      <div class="WorkProfile-containerCenter2">
+
+
                       <!--IDENTIFICATION -->
                       <div class="WorkProfile-identificationContainer">
-                        <label class=""for="identificationNumber">Numero de identificacion</label>
-                        <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="WorkProfile-identificationLabel">
-                        <i class="fa fa-id-badge WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                        <label class="WorkProfile-identificationLabel"for="identificationNumber">Numero de identificacion</label>
+                        <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="WorkProfile-identificationInput">
+                        <i class="fa fa-id-badge WorkProfile-personalDataIcon WorkProfile-identificationIcon" aria-hidden="true"></i>
                       </div>
 
                       <!--LAST NAME -->
                       <div class="WorkProfile-lastNamesContainer">
                         <label class="WorkProfile-lastNameLabel"for="lastName">Apellidos</label>
                         <input type="text" name="lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-lastNameInput" placeholder="Apellido">
-                        <i class="fa fa-user WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                        <i class="fa fa-user WorkProfile-personalDataIcon WorkProfile-lastNameIcon" aria-hidden="true"></i>
                         <div class="WorkProfile-lastName-validationContainer" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
                           <div class="WorkProfile-lastName-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
                           <div class="WorkProfile-lastName-validation2" ng-message="required">este campo es requerido</div>
@@ -155,17 +135,55 @@
                         <label class="WorkProfile-socialNetwork2-label"for="socialNetwork2">Red social 2</label>
                         <input type="text" name="socialNetwork2" ng-model="vm.user.socialNetworks2" value="" class="WorkProfile-socialNetwork2-input" placeholder="Otro...">
                         <div class="WorkProfile-socialNetworks">
-                          <i class="fa fa-twitter WorkProfile- Twitter" aria-hidden="true"></i>
-                          <i class="fa fa-instagram WorkProfile- Instagram" aria-hidden="true"></i>
-                          <i class="fa fa-facebook-official WorkProfile- Facebook" aria-hidden="true"></i>
+                          <i class="fa fa-twitter WorkProfile-Twitter" aria-hidden="true"></i>
+                          <i class="fa fa-instagram WorkProfile-Instagram" aria-hidden="true"></i>
+                          <i class="fa fa-facebook-official WorkProfile-Facebook" aria-hidden="true"></i>
                         </div>
+                      </div>
+
+                      </div>
+                    </div>
+                    <div class="WorkProfile-containerChangePassword">
+                      <!--CHANGE PASSWORD -->
+                      <div class="WorkProfile-changePasswordContainer">
+                        <label class="WorkProfile-changePasswordLabel"for="changePasswd">Cambiar contraseña</label>
+                        <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="WorkProfile-changePassword-input" placeholder="Otro...">
+                      </div>
+
+                      <!--NEW PASSWORD -->
+                      <div ng-if="vm.newPassw" class="WorkProfile-newPasswordContainer">
+                        <div class="WorkProfile-newPasswordContainer-son">
+                          <label class="WorkProfile-newPasswordLabel"for="newPasswd">Nueva contraseña</label>
+                          <input class="WorkProfile-newPasswordInput"type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
+                          <i class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                          <div class="WorkProfile-newPassword-validationContainer"ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
+                            <div class="WorkProfile-newPassword-validation1"ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+                            <div class="WorkProfile-newPassword-validation2"ng-message="required">este campo es requerido</div>
+                            <div class="WorkProfile-newPassword-validation3"ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+                          </div>
+                        </div>
+
+                        <div class="WorkProfile-confirmPasswordContainer">
+                          <!--CONFIRM PASSWORD -->
+                          <label class="WorkProfile-confirmPasswordLabel"for="confirmPasswd">Confirmar contraseña</label>
+                          <input class="WorkProfile-confirmPasswordInput"type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword"  placeholder="Otro...">
+                          <i class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                          <div class="WorkProfile-confirmPassword-validationContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
+                            <div class="WorkProfile-confirmPassword-validation1"ng-message="compareTo">la contraseña no coincide</div>
+                            <div class="WorkProfile-confirmPassword-validation2"ng-message="required">este campo es requerido</div>
+                          </div>
+                        </div>
+
                       </div>
 
                     </div>
                   </div>
                 </div>
                 <!--BUTTON SAVE-->
-                <button type="submit" class="Editform-button" ng-disabled="editForm.$invalid" name="button">Editar datos</button>
+                <div class="WorkProfile-buttonContainer">
+                  <button type="submit" class="Editform-button" ng-disabled="editForm.$invalid" name="button">Editar datos</button>
+                </div>
+
               </form>
 
             </div>
@@ -226,7 +244,7 @@
               <div class="WorkProfile-WorkDoneContainer">
                 <h2 class="WorkProfile-WorkDoneTitle">Trabajo Terminado</h2>
                 <figure class="WorkProfile-WorkDoneImageContainer">
-                  <img src="" alt="X" class="WorkProfile-WorkDoneImage" id="WorkProfile-ImageFirst">
+                  <img src="assets/Works-profile/1.jpg" alt="X" class="WorkProfile-WorkDoneImage" id="WorkProfile-ImageFirst">
                 </figure>
                 <div class="WorkProfile-WorkDoneDescriptionContainer">
                   <div class="WorkProfile-WorkDoneDoubleContainer">
@@ -240,10 +258,10 @@
                 <div class="WorkProfile-WorkDoneSlider">
                   <div class="WorkProfile-WorkDoneSliderMiniatures">
                     <div class="WorkProfile-AddImage">
-                    <img src="assets/Prueba/1-min.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Prueba/1.jpg';">
-                    <img src="assets/Prueba/2-min.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Prueba/2.jpg';">
-                    <img src="assets/Prueba/3-min.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Prueba/3.jpg';">
-                    <img src="assets/Prueba/4-min.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Prueba/4.jpg';">
+                    <img src="assets/Works-profile/1.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Works-profile/1.jpg';">
+                    <img src="assets/Works-profile/2.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Works-profile/2.jpg';">
+                    <img src="assets/Works-profile/3.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Works-profile/3.jpg';">
+                    <img src="assets/Works-profile/4.jpg" class="WorkProfile-ImageMiniature" onclick="document.getElementById('WorkProfile-ImageFirst').src='assets/Works-profile/4.jpg';">
                     <input type="file" id="WorkProfile-AddImageInput"><label for="WorkProfile-AddImageInput" class="WorkProfile-AddImageLabel">Añadir</label></div>
                   </div>
                 </div>

@@ -1,133 +1,191 @@
-<section class="IronmongeryProfile-container">
-  <div class="IronmongeryProfile">
-    <!--ADMINISTRATOR PROFILE WORKER -IMAGE- -->
-    <figure class="WorkProfile-imageContainer">
-      <img src="assets/Main-images/engineer.png" alt=""class="WorkProfile-image">
-  
-  <!--ADMINISTRATOR PROFILE WORKER -PERSONAL DATA- -->
-  <form name="editForm" class="IronmongeryProfile-personalData-form" ng-submit="editForm.$valid && vm.editUser()">
+<!--ADMINISTRATOR PROFILE WORKER -->
+<section class="ironmongery-Profile-sectionContainer">
+  <div class="ironmongery-Profile-section">
+    <div class="ironmongery-Profile-personalDataContainer">
+      <div class="ironmongery-Profile">
+        <!--ADMINISTRATOR PROFILE WORKER -IMAGE- -->
+        <figure class="ironmongery-Profile-imageContainer">
+          <h2 class="ironmongery-Profile-imageTitle">Foto de Perfil</h2>
+          <img src="assets/Main-images/engineer.png" alt=""class="ironmongery-Profile-image">
+        </figure>
 
-    <div class="IronmongeryProfile-personalData">
-
-      <div class="IronmongeryProfile-personalDataContainer">
-
-        <!--DOCUMENT TYPE -->
-        <div class="IronmongeryProfile-documentTypeContainer">
-          <label class="" for="DocumentType">Tipo documento</label>
-          <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="IronmongeryProfile-documentTypeLabel" placeholder="Otro...">
+        <!--ADMINISTRATOR PROFILE WORKER - DESCRIPTION -->
+        <div class="ironmongery-Profile-Description">
+          <textarea name="name" rows="5" cols="30" class="ironmongery-Profile-DescriptionText" placeholder="Perfil del Trabajador"></textarea>
         </div>
-
-        <!--IDENTIFICATION -->
-        <div class="WorkProfile-identificationContainer">
-          <label class="" for="identificationNumber">Numero de identificacion</label>
-          <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="IronmongeryProfile-identificationLabel">
-        </div>
-
-        <!--NAME -->
-        <div class="IronmongeryProfile-namesContainer">
-          <label class="" for="name">Nombres</label>
-          <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-nameInput" placeholder="Nombre">
-          <div class="IronmongeryProfile-name-validationContainer" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
-            <div class="IronmongeryProfile-name-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
-            <div class="IronmongeryProfile-name-validation2" ng-message="required">este campo es requerido</div>
-            <div class="IronmongeryProfile-name-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br>
-              a 3 digitos y menores a 30</div>
-          </div>
-        </div>
-
-        <!--EMAIL -->
-        <div class="IronmongeryProfile-emailContainer">
-          <label class="IronmongeryProfile-emailLabel" for="email">Email</label>
-          <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="IronmongeryProfile-emailInput" placeholder="Otro...">
-        </div>
-
-        <!--TELEPHONE NUMBER -->
-        <div class="IronmongeryProfile-numberTelephoneContainer">
-          <label class="IronmongeryProfile-phoneNumberLabel" for="phoneNumber">Numero telefonico</label>
-          <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="IronmongeryProfile-phoneNumberInput" placeholder="Teléfono">
-          <div class="IronmongeryProfile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
-            <div class="IronmongeryProfile-phoneNumber-validation1" ng-message="pattern">ingrese solo numeros en este campo</div>
-            <div class="IronmongeryProfile-phoneNumber-validation2" ng-message="required">este campo es requerido</div>
-            <div class="IronmongeryProfile-phoneNumber-validation3" ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br>
-              a 6 digitos y menores a 11</div>
-          </div>
-        </div>
-
-        <!--CITY -->
-        <div class="IronmongeryProfile-cityContainer">
-          <label class="IronmongeryProfile-cityLabel" for="city">Ciudad</label>
-          <select class="IronmongeryProfile-citySelect" ng-model="vm.user.idCity.id" name="city">
-            <option class="IronmongeryProfile-cityOptions" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
-          </select>
-        </div>
-
-        <!--CONTACT BY EMAIL -->
-        <div class="IronmongeryProfile-emailContainer">
-          <label class="IronmongeryProfile-emailLabel" for="contactEmail">Contactar por correo
-          </label>
-          <input type="checkbox" name="contactEmail" ng-model="vm.user.contactEmail" class="IronmongeryProfile-emailInput" placeholder="Otro...">
-        </div>
-
-        <!-- SOCIAL NETWORKS-->
-        <div class="IronmongeryProfile-socialNetworksContainers">
-          <label class="IronmongeryProfile-socialNetworksLabel" for="contactSocialNetworks">Contactar por redes sociales</label>
-          <input type="checkbox" name="contactSocialNetworks" ng-model="vm.user.contactSocialNetworks" value="" class="IronmongeryProfile-socialNetworkInput" placeholder="Otro...">
-        </div>
-
-        <!--CONTACT BY EMAIL-SOCIAL NETWORK1 -->
-        <div class="IronmongeryProfile-socialNetwork1Container">
-          <label class="IronmongeryProfile-socialNetwork1-label" for="socialNetwork1">Red social 1</label>
-          <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="IronmongeryProfile-socialNetwork1-input" placeholder="Otro...">
-        </div>
-
-        <!--CONTACT BY EMAIL-SOCILA NETWORK2 -->
-        <div class="IronmongeryProfile-socialNetwork2Container">
-          <label class="IronmongeryProfile-socialNetwork2-label" for="socialNetwork2">Red social 2</label>
-          <input type="text" name="socialNetwork2" ng-model="vm.user.socialNetworks2" value="" class="IronmongeryProfile-socialNetwork2-input" placeholder="Otro...">
-        </div>
-
-        <!--CHANGE PASSWORD -->
-        <div class="IronmongeryProfile-changePasswordContainer">
-          <label class="IronmongeryProfile-changePasswordLabel" for="changePasswd">Cambiar contraseña</label>
-          <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="IronmongeryProfile-changePassword-input" placeholder="Otro...">
-        </div>
-
-        <!--NEW PASSWORD -->
-        <div ng-if="vm.newPassw" class="IronmongeryProfile-newPasswordContainer">
-          <label class="IronmongeryProfile-newPasswordLabel" for="newPasswd">Nueva contraseña</label>
-          <input class="IronmongeryProfile-newPasswordInput" type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
-          <div class="IronmongeryProfile-newPassword-validationContainer" ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
-            <div class="IronmongeryProfile-newPassword-validation1" ng-message="pattern">Debe contener al menos una letra
-              <br>, un numero y sin espacios</div>
-            <div class="IronmongeryProfile-newPassword-validation2" ng-message="required">este campo es requerido</div>
-            <div class="IronmongeryProfile-newPassword-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br>
-              a 6 digitos y menores a 16</div>
-          </div>
-
-          <!--CONFIRM PASSWORD -->
-          <label class="IronmongeryProfile-confirmPasswordLabel" for="confirmPasswd">Confirmar contraseña</label>
-          <input class="IronmongeryProfile-confirmPasswordInput" type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword">
-          <div class="IronmongeryProfile-confirmPassword-validationContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
-            <div class="IronmongeryProfile-confirmPassword-validation1" ng-message="compareTo">la contraseña no coincide</div>
-            <div class="IronmongeryProfile-confirmPassword-validation2" ng-message="required">este campo es requerido</div>
-          </div>
-        </div>
-
-        <!--BUTTON SAVE-->
-        <button type="submit" class="IronmongeryProfile-Editform-button" ng-disabled="editForm.$invalid" name="button">Editar datos</button>
       </div>
+
+      <!--ADMINISTRATOR PROFILE WORKER -PERSONAL DATA- -->
+      <form name="editForm" class="ironmongery-Profile-personalData-form" ng-submit="editForm.$valid && vm.editUser()">
+
+        <div class="ironmongery-Profile-personalData">
+          <div class="ironmongery-Profile-personalDataContainer">
+            <h2 class="ironmongery-Profile-personalDataTitle">Datos Personales</h2>
+
+            <div class="ironmongery-Profile-multyContainer1">
+              <div class="ironmongery-Profile-containerCenter">
+
+              <!--DOCUMENT TYPE -->
+              <div class="ironmongery-Profile-documentTypeContainer">
+                <label  class="ironmongery-Profile-documentTypeLabel"for="DocumentType">Tipo documento</label>
+                <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="ironmongery-Profile-documentTypeInput" placeholder="">
+                <i class="fa fa-id-card ironmongery-Profile-personalDataIcon" aria-hidden="true"></i>
+              </div>
+
+              <!--NAME -->
+              <div class="ironmongery-Profile-namesContainer">
+                <label class="ironmongery-Profile-nameLabel"for="name">Nombres</label>
+                <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="ironmongery-Profile-nameInput" placeholder="Nombre">
+                <i class="fa fa-user ironmongery-Profile-personalDataIcon ironmongery-Profile-nameIcon" aria-hidden="true"></i>
+                <div class="ironmongery-Profile-name-validationContainer" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
+                  <div class="ironmongery-Profile-name-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
+                  <div class="ironmongery-Profile-name-validation2" ng-message="required">este campo es requerido</div>
+                  <div class="200pxironmongery-Profile-name-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                </div>
+              </div>
+
+              <!--TELEPHONE NUMBER -->
+              <div class="ironmongery-Profile-numberTelephoneContainer">
+                <label class="ironmongery-Profile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
+                <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="ironmongery-Profile-phoneNumberInput" placeholder="Teléfono">
+                <i class="fa fa-phone ironmongery-Profile-personalDataIcon ironmongery-Profile-phoneIcon" aria-hidden="true"></i>
+                <div class="ironmongery-Profile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
+                  <div class="ironmongery-Profile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
+                  <div class="ironmongery-Profile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
+                  <div class="ironmongery-Profile-phoneNumber-validation3"ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+                </div>
+              </div>
+              <!-- SOCIAL NETWORKS-->
+              <div class="ironmongery-Profile-socialNetworksContainers">
+                <label class="ironmongery-Profile-socialNetworksLabel"for="contactSocialNetworks">Contactar por redes sociales</label>
+                <input type="checkbox" name="contactSocialNetworks" ng-model="vm.user.contactSocialNetworks" value="" class="ironmongery-Profile-socialNetworkInput" placeholder="Otro...">
+              </div>
+              <!--CONTACT BY EMAIL-SOCIAL NETWORK1 -->
+              <div class="ironmongery-Profile-socialNetwork1Container">
+                <label class="ironmongery-Profile-socialNetwork1-label"for="socialNetwork1">Red social 1</label>
+                <input type="text" name="socialNetwork1" ng-model="vm.user.socialNetworks1" value="" class="ironmongery-Profile-socialNetwork1-input" placeholder="Otro...">
+                <div class="ironmongery-Profile-socialNetworks">
+                  <i class="fa fa-twitter ironmongery-Profile-Twitter" aria-hidden="true"></i>
+                  <i class="fa fa-instagram ironmongery-Profile-Instagram" aria-hidden="true"></i>
+                  <i class="fa fa-facebook-official ironmongery-Profile-Facebook" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            <div class="ironmongery-Profile-multyContainer2">
+              <div class="ironmongery-Profile-containerCenter2">
+              <!--IDENTIFICATION -->
+              <div class="ironmongery-Profile-identificationContainer">
+                <label class="ironmongery-Profile-identificationLabel"for="identificationNumber">Numero de identificacion</label>
+                <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="ironmongery-Profile-identificationInput">
+                <i class="fa fa-id-badge ironmongery-Profile-personalDataIcon ironmongery-Profile-identificationIcon" aria-hidden="true"></i>
+              </div>
+
+              <!--EMAIL -->
+              <div class="ironmongery-Profile-emailContainer">
+                <label class="ironmongery-Profile-emailLabel"for="email">Email</label>
+                <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="ironmongery-Profile-emailInput" placeholder="Otro...">
+                <i class="fa fa-envelope ironmongery-Profile-personalDataIcon ironmongery-Profile-emailIcon" aria-hidden="true"></i>
+              </div>
+              <!--CITY -->
+              <div class="ironmongery-Profile-cityContainer">
+                <label class="ironmongery-Profile-cityLabel"for="city">Ciudad</label>
+                <select class="ironmongery-Profile-citySelect" ng-model="vm.user.idCity.id" name="city">
+                  <option class="ironmongery-Profile-cityOptions" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
+                </select>
+                <i class="fa fa-map-marker ironmongery-Profile-personalDataIcon ironmongery-Profile-cityIcon" aria-hidden="true"></i>
+              </div>
+              <!--CONTACT BY EMAIL -->
+              <div class="ironmongery-Profile-emailContainer">
+                <label class="ironmongery-Profile-emailLabel"for="contactEmail">Contactar por correo </label>
+                <input type="checkbox" name="contactEmail" ng-model="vm.user.contactEmail" class="ironmongery-Profile-emailInput" placeholder="Otro...">
+              </div>
+              <!--CONTACT BY EMAIL-SOCILA NETWORK2 -->
+              <div class="ironmongery-Profile-socialNetwork2Container">
+                <label class="ironmongery-Profile-socialNetwork2-label"for="socialNetwork2">Red social 2</label>
+                <input type="text" name="socialNetwork2" ng-model="vm.user.socialNetworks2" value="" class="ironmongery-Profile-socialNetwork2-input" placeholder="Otro...">
+                <div class="ironmongery-Profile-socialNetworks">
+                  <i class="fa fa-twitter ironmongery-Profile-Twitter" aria-hidden="true"></i>
+                  <i class="fa fa-instagram ironmongery-Profile-Instagram" aria-hidden="true"></i>
+                  <i class="fa fa-facebook-official ironmongery-Profile-Facebook" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              </div>
+            </div>
+            <div class="ironmongery-Profile-containerChangePassword">
+              <!--CHANGE PASSWORD -->
+              <div class="ironmongery-Profile-changePasswordContainer">
+                <label class="ironmongery-Profile-changePasswordLabel"for="changePasswd">Cambiar contraseña</label>
+                <input type="checkbox" name="changePasswd" ng-model="vm.newPassw" class="ironmongery-Profile-changePassword-input" placeholder="Otro...">
+              </div>
+
+              <!--NEW PASSWORD -->
+              <div ng-if="vm.newPassw" class="ironmongery-Profile-newPasswordContainer">
+                <div class="ironmongery-Profile-newPasswordContainer-son">
+                  <label class="ironmongery-Profile-newPasswordLabel"for="newPasswd">Nueva contraseña</label>
+                  <input class="ironmongery-Profile-newPasswordInput"type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
+                  <i class="fa fa-lock ironmongery-Profile-personalDataIcon" aria-hidden="true"></i>
+                  <div class="ironmongery-Profile-newPassword-validationContainer"ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
+                    <div class="ironmongery-Profile-newPassword-validation1"ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
+                    <div class="ironmongery-Profile-newPassword-validation2"ng-message="required">este campo es requerido</div>
+                    <div class="ironmongery-Profile-newPassword-validation3"ng-message-exp="['maxlength', 'minlength']">solo se permiten contraseñas mayores<br> a 6 digitos y menores a 16</div>
+                  </div>
+                </div>
+
+                <div class="ironmongery-Profile-confirmPasswordContainer">
+                  <!--CONFIRM PASSWORD -->
+                  <label class="ironmongery-Profile-confirmPasswordLabel"for="confirmPasswd">Confirmar contraseña</label>
+                  <input class="ironmongery-Profile-confirmPasswordInput"type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword"  placeholder="Otro...">
+                  <i class="fa fa-lock ironmongery-Profile-personalDataIcon" aria-hidden="true"></i>
+                  <div class="ironmongery-Profile-confirmPassword-validationContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
+                    <div class="ironmongery-Profile-confirmPassword-validation1"ng-message="compareTo">la contraseña no coincide</div>
+                    <div class="ironmongery-Profile-confirmPassword-validation2"ng-message="required">este campo es requerido</div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--BUTTON SAVE-->
+        <div class="ironmongery-Profile-buttonContainer">
+          <button type="submit" class="Editform-button" ng-disabled="editForm.$invalid" name="button">Editar datos</button>
+        </div>
+      </form>
     </div>
-  </form>
 
-  <div class="IronmongeryProfile-WorkDoneSlider">
-    <img src="" alt="Imagen" class="IronmongeryProfile-WorkDoneSlider-image1">
-    <img src="" alt="Imagen" class="IronmongeryProfile-WorkDoneSlider-image2">
-    <img src="" alt="Imagen" class="IronmongeryProfile-WorkDoneSlider-image3">
-    <img src="" alt="Imagen" class="IronmongeryProfile-WorkDoneSlider-image4">
-    <a href="#">
-      <i class="IronmongeryProfile-plusImage fa fa-plus" aria-hidden="true">Agregar</i>
-    </a>
+        <!--ADMINISTRATOR PROFILE WORKER - WORK DONE -->
+        <div class="ironmongery-Profile-WorkDone">
+          <div class="ironmongery-Profile-WorkDoneContainer">
+            <h2 class="ironmongery-Profile-WorkDoneTitle">Trabajo Terminado</h2>
+            <figure class="ironmongery-Profile-WorkDoneImageContainer">
+              <img src="assets/Works-profile/1.jpg" alt="X" class="ironmongery-Profile-WorkDoneImage" id="ironmongery-Profile-ImageFirst">
+            </figure>
+            <div class="ironmongery-Profile-WorkDoneDescriptionContainer">
+              <div class="ironmongery-Profile-WorkDoneDoubleContainer">
+                <input class="ironmongery-Profile-WorkDoneInput" type="number" name="" value="" placeholder="$ Precio"><i class="fa fa-usd ironmongery-Profile-WorkDoneIncon" aria-hidden="true"></i>
+              </div>
+              <div class="ironmongery-Profile-WorkDoneDescriptionDoubleContainer">
+                <textarea name="name" class="ironmongery-Profile-WorkDoneDescription" placeholder="Descripción"></textarea>
+                <div class="ironmongery-Profile-AddButton">Agregar</div>
+              </div>
+            </div>
+            <div class="ironmongery-Profile-WorkDoneSlider">
+              <div class="ironmongery-Profile-WorkDoneSliderMiniatures">
+                <div class="ironmongery-Profile-AddImage">
+                <img src="assets/Works-profile/1.jpg" class="ironmongery-Profile-ImageMiniature" onclick="document.getElementById('ironmongery-Profile-ImageFirst').src='assets/Works-profile/1.jpg';">
+                <img src="assets/Works-profile/2.jpg" class="ironmongery-Profile-ImageMiniature" onclick="document.getElementById('ironmongery-Profile-ImageFirst').src='assets/Works-profile/2.jpg';">
+                <img src="assets/Works-profile/3.jpg" class="ironmongery-Profile-ImageMiniature" onclick="document.getElementById('ironmongery-Profile-ImageFirst').src='assets/Works-profile/3.jpg';">
+                <img src="assets/Works-profile/4.jpg" class="ironmongery-Profile-ImageMiniature" onclick="document.getElementById('ironmongery-Profile-ImageFirst').src='assets/Works-profile/4.jpg';">
+                <input type="file" id="ironmongery-Profile-AddImageInput"><label for="ironmongery-Profile-AddImageInput" class="ironmongery-Profile-AddImageLabel">Añadir</label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
   </div>
-
-</div>
 </section>
