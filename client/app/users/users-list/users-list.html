@@ -43,7 +43,7 @@
             <td>{{item.lastName}}</td>
             <td>{{item.email}}</td>
             <td>{{item.phoneNumber}}</td>
-            <td><md-switch class="md-primary" ng-change="vm.changeState(item)" ng-model="item.active" aria-label="true" ></md-switch></td>
+            <td><a ui-sref="users-update({id:item.id})">editar</a></td>
           </tr>
         </tbody>
       </table>

@@ -17,7 +17,7 @@
 			template:'<users-list></users-list>'
 		})
     .state('users-update',{
-			url:'/users-update',
+			url:'/users-update/:id',
 			template:'<users-update></users-update>'
 		})
     .state('users-remove',{
