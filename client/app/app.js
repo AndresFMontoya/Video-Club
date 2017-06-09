@@ -12,7 +12,7 @@ angular.module('startUpApp', [
   ])
   .constant("API","http://localhost:8080/BackendExpertos")
   .config(function($urlRouterProvider, $locationProvider,$authProvider,API) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('not-found');
     //Config satellizer
     $authProvider.loginUrl = API +'/api/auth/login';
     $authProvider.tokenName='token';
@@ -33,15 +33,15 @@ angular.module('startUpApp', [
           $state.go('ironmongery-profile');
         }
       }else{
-        if (toState.name === "users-update") {
+        if (!$auth.isAuthenticated() &&toState.name === "users-update") {
           e.preventDefault();
-          $state.go('main');
-        } else if(toState.name === "ironmongery-profile") {
+          $state.go('not-found');
+        } else if(!$auth.isAuthenticated() && toState.name === "ironmongery-profile") {
           e.preventDefault();
-          $state.go('main');
-        } else if(toState.name === "works-profile") {
+          $state.go('not-found');
+        } else if(!$auth.isAuthenticated() && toState.name === "works-profile") {
           e.preventDefault();
-          $state.go('main');
+          $state.go('not-found');
         }
       }
      });
