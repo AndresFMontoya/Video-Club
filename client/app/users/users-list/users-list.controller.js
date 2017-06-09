@@ -4,7 +4,6 @@
   class UsersListComponent {
     constructor(usersService) {
       this.usersService = usersService;
-
       this.tipos = [{
         model : "ferreterias"
       },{

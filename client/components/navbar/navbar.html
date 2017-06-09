@@ -51,7 +51,8 @@
     <span class="caret"></span>
   </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a ui-sref="works-profile">Editar Perfil</a></li>
+        <li ng-if="vm.AuthService.isTrab() || vm.AuthService.isAdmin()"><a ui-sref="works-profile">Editar Perfil</a></li>
+        <li ng-if="vm.AuthService.isFerr()"><a ui-sref="ironmongery-profile">Editar Perfil</a></li>
         <li><a role="button" ng-click="vm.logout()" href="">Cerrar sesion</a></li>
       </ul>
     </div>

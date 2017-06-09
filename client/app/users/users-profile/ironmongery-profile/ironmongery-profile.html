@@ -34,8 +34,8 @@
 
               <!--NAME -->
               <div class="ironmongery-Profile-namesContainer">
-                <label class="ironmongery-Profile-nameLabel"for="name">Nombres</label>
-                <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="ironmongery-Profile-nameInput" placeholder="Nombre">
+                <label class="ironmongery-Profile-nameLabel"for="name">Razon social</label>
+                <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="ironmongery-Profile-nameInput" placeholder="Razon social">
                 <i class="fa fa-user ironmongery-Profile-personalDataIcon ironmongery-Profile-nameIcon" aria-hidden="true"></i>
                 <div class="ironmongery-Profile-name-validationContainer" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
                   <div class="ironmongery-Profile-name-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
@@ -78,7 +78,7 @@
               <div class="ironmongery-Profile-containerCenter2">
               <!--IDENTIFICATION -->
               <div class="ironmongery-Profile-identificationContainer">
-                <label class="ironmongery-Profile-identificationLabel"for="identificationNumber">Numero de identificacion</label>
+                <label class="ironmongery-Profile-identificationLabel"for="identificationNumber">Numero de NIT</label>
                 <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="ironmongery-Profile-identificationInput">
                 <i class="fa fa-id-badge ironmongery-Profile-personalDataIcon ironmongery-Profile-identificationIcon" aria-hidden="true"></i>
               </div>

@@ -2,8 +2,9 @@
   'use strict';
 
   class UserUpdateComponent {
-    constructor($auth, usersService, citiesService, $stateParams, $mdDialog) {
+    constructor($auth, usersService, citiesService, $stateParams, $mdDialog,AuthService) {
       this.usersService = usersService;
+      this.AuthService=AuthService;
       this.$auth = $auth;
       this.userId;
       this.gender = ["Masculino", "Femenino"];
@@ -15,6 +16,12 @@
 
 
     $onInit() {
+
+      if (this.AuthService.isAdmin()) {
+
+      } else {
+
+      }
 
       this.citiesService.query().$promise
         .then(response => {
@@ -65,7 +72,7 @@
         .ok('Modificar')
         .cancel('Cancelar');
 
-      this.$mdDialog.show(this.confirm).then(function() {
+      this.$mdDialog.show(this.confirm).then(()=> {
 
         if (this.newPassw) {
           this.user.password = this.newPassword;
@@ -80,9 +87,9 @@
             console.log("error", err);
           });
 
-      }.bind(this), function() {
+      },()=> {
         this.editar = false;
-      }.bind(this))
+      })
     };
 
 
