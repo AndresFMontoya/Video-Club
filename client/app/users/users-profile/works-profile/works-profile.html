@@ -27,7 +27,7 @@
               <form name="editForm" class="WorkProfile-personalData-form" ng-submit="editForm.$valid && vm.editUser()">
 
                 <div class="WorkProfile-personalData">
-                  <div class="WorkProfile-personalDataContainer">
+                  <div class="WorkProfile-formContainer">
                     <h2 class="WorkProfile-personalDataTitle">Datos Personales</h2>
 
                     <div class="WorkProfile-multyContainer1">
@@ -38,6 +38,13 @@
                         <label  class="WorkProfile-documentTypeLabel"for="DocumentType">Tipo documento</label>
                         <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="WorkProfile-documentTypeInput" placeholder="">
                         <i class="fa fa-id-card WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                      </div>
+
+                      <!--IDENTIFICATION -->
+                      <div class="WorkProfile-identificationContainer">
+                        <label class="WorkProfile-identificationLabel"for="identificationNumber">Numero de identificacion</label>
+                        <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="WorkProfile-identificationInput">
+                        <i class="fa fa-id-badge WorkProfile-personalDataIcon WorkProfile-identificationIcon" aria-hidden="true"></i>
                       </div>
 
                       <!--NAME -->
@@ -52,23 +59,19 @@
                         </div>
                       </div>
 
-                      <!--GENDER -->
-                      <div class="WorkProfile-genderContainer">
-                        <label class="WorkProfile-genderLabel"for="gender">Sexo</label>
-                        <select class="WorkProfile-genderSelect"name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
-                        <i class="fa fa-venus-mars WorkProfile-personalDataIcon WorkProfile-genderIcon" aria-hidden="true"></i>
-                      </div>
-                      <!--TELEPHONE NUMBER -->
-                      <div class="WorkProfile-numberTelephoneContainer">
-                        <label class="WorkProfile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
-                        <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="WorkProfile-phoneNumberInput" placeholder="Teléfono">
-                        <i class="fa fa-phone WorkProfile-personalDataIcon WorkProfile-phoneIcon" aria-hidden="true"></i>
-                        <div class="WorkProfile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
-                          <div class="WorkProfile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
-                          <div class="WorkProfile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
-                          <div class="WorkProfile-phoneNumber-validation3"ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+                      <!--LAST NAME -->
+                      <div class="WorkProfile-lastNamesContainer">
+                        <label class="WorkProfile-lastNameLabel"for="lastName">Apellidos</label>
+                        <input type="text" name="lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-lastNameInput" placeholder="Apellido">
+                        <i class="fa fa-user WorkProfile-personalDataIcon WorkProfile-lastNameIcon" aria-hidden="true"></i>
+                        <div class="WorkProfile-lastName-validationContainer" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
+                          <div class="WorkProfile-lastName-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
+                          <div class="WorkProfile-lastName-validation2" ng-message="required">este campo es requerido</div>
+                          <div class="WorkProfile-lastName-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
                         </div>
                       </div>
+
+
                       <!-- SOCIAL NETWORKS-->
                       <div class="WorkProfile-socialNetworksContainers">
                         <label class="WorkProfile-socialNetworksLabel"for="contactSocialNetworks">Contactar por redes sociales</label>
@@ -92,25 +95,25 @@
                     <div class="WorkProfile-multyContainer2">
                       <div class="WorkProfile-containerCenter2">
 
-
-                      <!--IDENTIFICATION -->
-                      <div class="WorkProfile-identificationContainer">
-                        <label class="WorkProfile-identificationLabel"for="identificationNumber">Numero de identificacion</label>
-                        <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="WorkProfile-identificationInput">
-                        <i class="fa fa-id-badge WorkProfile-personalDataIcon WorkProfile-identificationIcon" aria-hidden="true"></i>
-                      </div>
-
-                      <!--LAST NAME -->
-                      <div class="WorkProfile-lastNamesContainer">
-                        <label class="WorkProfile-lastNameLabel"for="lastName">Apellidos</label>
-                        <input type="text" name="lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-lastNameInput" placeholder="Apellido">
-                        <i class="fa fa-user WorkProfile-personalDataIcon WorkProfile-lastNameIcon" aria-hidden="true"></i>
-                        <div class="WorkProfile-lastName-validationContainer" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
-                          <div class="WorkProfile-lastName-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
-                          <div class="WorkProfile-lastName-validation2" ng-message="required">este campo es requerido</div>
-                          <div class="WorkProfile-lastName-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
+                        <!--GENDER -->
+                        <div class="WorkProfile-genderContainer">
+                          <label class="WorkProfile-genderLabel"for="gender">Sexo</label>
+                          <select class="WorkProfile-genderSelect"name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
+                          <i class="fa fa-venus-mars WorkProfile-personalDataIcon WorkProfile-genderIcon" aria-hidden="true"></i>
                         </div>
-                      </div>
+
+                        <!--TELEPHONE NUMBER -->
+                        <div class="WorkProfile-numberTelephoneContainer">
+                          <label class="WorkProfile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
+                          <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="WorkProfile-phoneNumberInput" placeholder="Teléfono">
+                          <i class="fa fa-phone WorkProfile-personalDataIcon WorkProfile-phoneIcon" aria-hidden="true"></i>
+                          <div class="WorkProfile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
+                            <div class="WorkProfile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
+                            <div class="WorkProfile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
+                            <div class="WorkProfile-phoneNumber-validation3"ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+                          </div>
+                        </div>
+
                       <!--EMAIL -->
                       <div class="WorkProfile-emailContainer">
                         <label class="WorkProfile-emailLabel"for="email">Email</label>
@@ -135,9 +138,9 @@
                         <label class="WorkProfile-socialNetwork2-label"for="socialNetwork2">Red social 2</label>
                         <input type="text" name="socialNetwork2" ng-model="vm.user.socialNetworks2" value="" class="WorkProfile-socialNetwork2-input" placeholder="Otro...">
                         <div class="WorkProfile-socialNetworks">
-                          <i class="fa fa-twitter WorkProfile-Twitter" aria-hidden="true"></i>
-                          <i class="fa fa-instagram WorkProfile-Instagram" aria-hidden="true"></i>
-                          <i class="fa fa-facebook-official WorkProfile-Facebook" aria-hidden="true"></i>
+                          <i class="fa fa-twitter WorkProfile-Twitter WorkProfile-Twitter2" aria-hidden="true"></i>
+                          <i class="fa fa-instagram WorkProfile-Instagram WorkProfile-Instagram2" aria-hidden="true"></i>
+                          <i class="fa fa-facebook-official WorkProfile-Facebook WorkProfile-Facebook2" aria-hidden="true"></i>
                         </div>
                       </div>
 
