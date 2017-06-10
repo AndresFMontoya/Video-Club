@@ -50,13 +50,18 @@ span
   width 200px
   padding 5% 0
 
+.WorkProfile-DescriptionText
+  resize none
+  text-align center
+
 .WorkProfile-personalDataTitle
   text-align center
   padding 1.5em 0 1em
+  margin 0
 
 .WorkProfile-personalData-form
   display inline-block
-  width 55%
+  width 69%
   max-width 1047px
 
 .WorkProfile-containerCenter
@@ -75,11 +80,6 @@ span
   width 49%
   display inline-block
   vertical-align top
-.WorkProfile-documentTypeContainer, .WorkProfile-identificationContainer
-  display inline-block
-  text-align left
-
-
 
 .WorkProfile
 
@@ -183,7 +183,7 @@ span
   margin 4em auto
   border-radius 5px
   box-shadow 0px -2px 0px #2d66a0
-
+  min-width 400px
 
 .WorkProfile-certificationsInput
   max-width 300px
@@ -386,3 +386,79 @@ button.Editform-button[disabled]
 
 button.Editform-button:not(disabled)
   background green
+
+@media screen and (max-width: 1000px)
+    .WorkProfile
+        display block
+        margin auto
+        width 100%
+
+    .WorkProfile-personalData-form
+        display block
+        margin auto
+        width 100%
+
+    .WorkProfile-multyContainer1, .WorkProfile-multyContainer2
+        width 40%
+        display inline-block
+
+    .WorkProfile-formContainer
+      text-align center
+
+    .WorkProfile
+
+      &-imageContainer
+        display block
+        margin auto
+        width 100%
+      &-documentTypeContainer, &-identificationContainer, &-namesContainer, &-lastNamesContainer ,&-genderContainer, &-numberTelephoneContainer, &-emailContainer, &-cityContainer, &-socialNetworksContainers
+        margin 1.5em auto
+        width 220px
+      &-socialNetwork1Container, &-socialNetwork2Container
+        width 310px
+        margin auto
+      &-socialNetworksContainers
+        text-align center
+      &-Facebook
+        padding 13px 16px 13px 18px !important
+      &-Instagram, &-Twitter
+        display none
+      &-Instagram2
+        display block !important
+        padding 13px 16px 13px 18px !important
+      &-Twitter2, &-Facebook2
+        display none
+@media screen and (max-width: 800px)
+    .WorkProfile
+
+      &-Specializations
+        display block
+        margin auto
+      &-Certifications
+        display block
+        width 100%
+        margin 0 auto 5em
+      &-CertificationsContainer
+        display block
+        width 80%
+        margin auto
+        min-width inherit
+      &-CertificationsDoubleContainer
+        width 60%
+        margin 15px auto
+      &-certificationsInput
+        margin 15px auto !important
+        width 100%
+      &-certificationsLabel
+        display block
+        width 100%
+        margin auto
+        max-width 300px
+
+    .WorkProfile-multyContainer1, .WorkProfile-multyContainer2
+        width 100%
+        display block
+        margin auto
+@media screen and (max-width: 450px)
+    .WorkProfile-CertificationsDoubleContainer
+      width 80%
