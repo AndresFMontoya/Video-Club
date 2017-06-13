@@ -267,9 +267,10 @@ span
 
 .WorkProfile-WorkDoneInput
   padding 16px 10px
-  border-radius 5px 0 0 5px
+  border-radius 0 5px 5px 0
   border 1px solid darkgray
   width: 50%
+  margin-left -5px
 
 
 .WorkProfile-WorkDoneIncon
@@ -280,7 +281,7 @@ span
   background #227fde
   color white
   font-size 20px
-  border-radius 0px 5px 5px 0px
+  border-radius 5px 0px 0px 5px
 
 .WorkProfile-newPasswordContainer
   width 220px
@@ -459,6 +460,12 @@ button.Editform-button:not(disabled)
         width 100%
         display block
         margin auto
+
+    .WorkProfile-WorkDoneContainer
+      width 100%
+      margin auto
+    .WorkProfile-SpecializationsTitle
+      text-align center
 @media screen and (max-width: 450px)
     .WorkProfile-CertificationsDoubleContainer
       width 80%
