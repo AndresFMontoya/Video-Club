@@ -29,6 +29,11 @@
       'update': {
         method: 'PUT'
       }
+      ,getUsers:{
+			url:API+'/api/users/rol',
+			method:'GET',
+			isArray:true
+		}
     })
 
   }
