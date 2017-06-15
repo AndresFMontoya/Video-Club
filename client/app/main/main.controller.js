@@ -4,15 +4,24 @@
 
   class MainController {
 
-    constructor($auth) {
+    constructor($auth,matchmedia) {
       this.$auth = $auth;
+      this.matchmedia=matchmedia;
+      this.tablet = this.matchmedia.isTablet();
+      this.matchmedia.on('(max-width: 800px)', function(mediaQueryList){
+    console.log(mediaQueryList.matches);
+  });
     }
 
     $onInit() {
-    console.log(this.$auth.isAuthenticated());
+      if(this.tablet){
+	console.log("tablet");
+}
+
     }
+
   }
-MainController.$inject=["$auth"];
+MainController.$inject=["$auth","matchmedia"];
   angular.module('startUpApp')
     .component('main', {
       templateUrl: 'app/main/main.html',
