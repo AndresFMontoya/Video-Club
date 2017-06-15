@@ -32,6 +32,13 @@
                 <i class="fa fa-id-card ironmongery-Profile-personalDataIcon" aria-hidden="true"></i>
               </div>
 
+              <!-- IDENTIFICATION -->
+              <div class="ironmongery-Profile-identificationContainer">
+                <label class="ironmongery-Profile-identificationLabel"for="identificationNumber">Numero de NIT</label>
+                <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="ironmongery-Profile-identificationInput">
+                <i class="fa fa-id-badge ironmongery-Profile-personalDataIcon ironmongery-Profile-identificationIcon" aria-hidden="true"></i>
+              </div>
+
               <!--NAME -->
               <div class="ironmongery-Profile-namesContainer">
                 <label class="ironmongery-Profile-nameLabel"for="name">Razon social</label>
@@ -44,17 +51,6 @@
                 </div>
               </div>
 
-              <!--TELEPHONE NUMBER -->
-              <div class="ironmongery-Profile-numberTelephoneContainer">
-                <label class="ironmongery-Profile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
-                <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="ironmongery-Profile-phoneNumberInput" placeholder="Teléfono">
-                <i class="fa fa-phone ironmongery-Profile-personalDataIcon ironmongery-Profile-phoneIcon" aria-hidden="true"></i>
-                <div class="ironmongery-Profile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
-                  <div class="ironmongery-Profile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
-                  <div class="ironmongery-Profile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
-                  <div class="ironmongery-Profile-phoneNumber-validation3"ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
-                </div>
-              </div>
               <!-- SOCIAL NETWORKS-->
               <div class="ironmongery-Profile-socialNetworksContainers">
                 <label class="ironmongery-Profile-socialNetworksLabel"for="contactSocialNetworks">Contactar por redes sociales</label>
@@ -76,19 +72,25 @@
 
             <div class="ironmongery-Profile-multyContainer2">
               <div class="ironmongery-Profile-containerCenter2">
-              <!--IDENTIFICATION -->
-              <div class="ironmongery-Profile-identificationContainer">
-                <label class="ironmongery-Profile-identificationLabel"for="identificationNumber">Numero de NIT</label>
-                <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="ironmongery-Profile-identificationInput">
-                <i class="fa fa-id-badge ironmongery-Profile-personalDataIcon ironmongery-Profile-identificationIcon" aria-hidden="true"></i>
-              </div>
 
-              <!--EMAIL -->
-              <div class="ironmongery-Profile-emailContainer">
-                <label class="ironmongery-Profile-emailLabel"for="email">Email</label>
-                <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="ironmongery-Profile-emailInput" placeholder="Otro...">
-                <i class="fa fa-envelope ironmongery-Profile-personalDataIcon ironmongery-Profile-emailIcon" aria-hidden="true"></i>
-              </div>
+                <!--EMAIL -->
+                <div class="ironmongery-Profile-emailContainer">
+                  <label class="ironmongery-Profile-emailLabel"for="email">Email</label>
+                  <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="ironmongery-Profile-emailInput" placeholder="Otro...">
+                  <i class="fa fa-envelope ironmongery-Profile-personalDataIcon ironmongery-Profile-emailIcon" aria-hidden="true"></i>
+                </div>
+                <!--TELEPHONE NUMBER -->
+                <div class="ironmongery-Profile-numberTelephoneContainer">
+                  <label class="ironmongery-Profile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
+                  <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="ironmongery-Profile-phoneNumberInput" placeholder="Teléfono">
+                  <i class="fa fa-phone ironmongery-Profile-personalDataIcon ironmongery-Profile-phoneIcon" aria-hidden="true"></i>
+                  <div class="ironmongery-Profile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
+                    <div class="ironmongery-Profile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
+                    <div class="ironmongery-Profile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
+                    <div class="ironmongery-Profile-phoneNumber-validation3"ng-message-exp="['maxlength','minlength']">solo se permiten valores mayores<br> a 6 digitos y menores a 11</div>
+                  </div>
+                </div>
+
               <!--CITY -->
               <div class="ironmongery-Profile-cityContainer">
                 <label class="ironmongery-Profile-cityLabel"for="city">Ciudad</label>
