@@ -318,7 +318,7 @@ span
   position relative
 
 
-.ironmongery-Profile-AddButton:hover
+.ironmongery-Profile-AddButton:active
   top: 3px
   box-shadow: 0 3px 0px #2d66a0
 
@@ -382,7 +382,7 @@ span
   top 0
   border-style none
 
-.Editform-button:hover
+.Editform-button:active
   top: 3px
   box-shadow: 0 3px 0px darkred
 
@@ -393,3 +393,70 @@ button.Editform-button[disabled]
 
 button.Editform-button:not(disabled)
   background green
+
+@media screen and (max-width: 1000px)
+    .ironmongery-Profile
+        display block
+        margin auto
+        width 100%
+
+    .ironmongery-Profile-personalData-form
+        display block
+        margin auto
+        width 100%
+
+    .ironmongery-Profile-multyContainer1, .ironmongery-Profile-multyContainer2
+        width 40%
+        display inline-block
+
+    .ironmongery-Profile-formContainer
+      text-align center
+
+    .ironmongery-Profile
+
+      &-imageContainer
+        display block
+        margin auto
+        width 100%
+      &-documentTypeContainer, &-identificationContainer, &-namesContainer, &-numberTelephoneContainer, &-emailContainer, &-cityContainer, &-socialNetworksContainers
+        margin 1.5em auto
+        width 220px
+        display block
+        text-align center
+      &-socialNetwork1Container, &-socialNetwork2Container
+        width 310px
+        margin auto
+      &-socialNetworksContainers
+        text-align center
+      &-Facebook
+        padding 13px 16px 13px 18px !important
+      &-Instagram, &-Twitter
+        display none
+      &-Instagram2
+        display block !important
+        padding 13px 16px 13px 18px !important
+      &-Twitter2, &-Facebook2
+        display none
+@media screen and (max-width: 800px)
+    .ironmongery-Profile
+
+      &-containerCenter
+        text-align center
+      &-containerCenter, &-containerCenter2
+        width auto
+      &-socialNetwork1Container, &-socialNetwork2Container
+        width 100%
+        text-align center
+      &-buttonContainer
+        margin 2em auto 3em
+      &-image
+        width 220px
+
+    .ironmongery-Profile-multyContainer1, .ironmongery-Profile-multyContainer2
+        width 100%
+        display block
+        margin auto
+
+    .ironmongery-Profile-WorkDoneContainer
+      width 100%
+      margin 0 auto 3em
