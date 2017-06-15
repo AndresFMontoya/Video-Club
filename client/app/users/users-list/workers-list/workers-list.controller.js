@@ -3,8 +3,14 @@
 (function(){
 
 class WorkersListComponent {
-  constructor(usersService) {
+  constructor(usersService,matchmedia) {
     this.usersService = usersService;
+    this.matchmedia=matchmedia;
+    this.matchmedia.on('(max-width: 800px)',(mediaQueryList)=>{
+    this.list=mediaQueryList.matches;
+  console.log("lista",this.list);
+
+});
   }
   $onInit(){
 

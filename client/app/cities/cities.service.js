@@ -8,7 +8,12 @@
   function citiesService($resource, API) {
     return $resource(API + "/api/cities/:id", {
       id: '@id'
-    })
-  }
+    },{
+      getCiudades:{
+  			url:API+'/api/cities/find',
+  			method:'GET',
+  			isArray:true
+  		}
+  })}
 })();
 // el inject me sirve para injectar una libreria de angular y las incluye por medio de cadenas de texto en la cual las va a comprimir.

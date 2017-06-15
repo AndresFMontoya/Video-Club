@@ -75,7 +75,8 @@
 
 
     <li class="MainMenu-item">
-      <a ui-sref="about-us" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>¿Quienes Somos?</a>
+      <a ui-sref="ironmongery-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>Listar Ferreterias</a>
+      <a ui-sref="about-us" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>¿Quienes Somos?</a>
     </li>
 
 

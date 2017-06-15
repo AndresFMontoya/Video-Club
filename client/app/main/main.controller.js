@@ -4,12 +4,13 @@
 
   class MainController {
 
-    constructor($auth,matchmedia) {
-      this.$auth = $auth;
+    constructor(matchmedia) {
       this.matchmedia=matchmedia;
       this.tablet = this.matchmedia.isTablet();
-      this.matchmedia.on('(max-width: 800px)', function(mediaQueryList){
-    console.log(mediaQueryList.matches);
+      this.matchmedia.on('(max-width: 800px)',(mediaQueryList)=>{
+      this.list=mediaQueryList.matches;
+    console.log("lista",this.list);
+
   });
     }
 
@@ -21,7 +22,7 @@
     }
 
   }
-MainController.$inject=["$auth","matchmedia"];
+MainController.$inject=["matchmedia"];
   angular.module('startUpApp')
     .component('main', {
       templateUrl: 'app/main/main.html',

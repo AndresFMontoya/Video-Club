@@ -89,6 +89,15 @@
                 <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="ironmongery-Profile-emailInput" placeholder="Otro...">
                 <i class="fa fa-envelope ironmongery-Profile-personalDataIcon ironmongery-Profile-emailIcon" aria-hidden="true"></i>
               </div>
+
+              <!--DEPARTMENT -->
+              <div class="ironmongery-Profile-departmentContainer">
+                <label class="ironmongery-Profile-departmentLabel"for="department">Departamento</label>
+                <select class="ironmongery-Profile-departmentSelect" ng-model="vm.idDepartment" ng-change="vm.getCiudad()" name="department">
+                  <option class="ironmongery-Profile-departmentOptions" ng-value="item.id" ng-repeat="item in vm.departments" ng-bind="item.name"></option>
+                </select>
+                <i class="fa fa-map-marker ironmongery-Profile-personalDataIcon ironmongery-Profile-departmentIcon" aria-hidden="true"></i>
+              </div>
               <!--CITY -->
               <div class="ironmongery-Profile-cityContainer">
                 <label class="ironmongery-Profile-cityLabel"for="city">Ciudad</label>

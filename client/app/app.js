@@ -22,11 +22,10 @@ angular.module('startUpApp', [
   })
 //   .run(function($state,$rootScope, $auth,routeManager) {
 //      $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
-//
-//       if ($auth.isAuthenticated()) {
-//         if (($auth.getPayload().roles.indexOf("TRAB") !== -1 || $auth.getPayload().roles.indexOf("FERR") !== -1) && routeManager.loggedTrabFerr.indexOf(toState.name)!== -1) {
+//         if (($auth.getPayload().roles.indexOf("TRAB") !== -1 || $auth.getPayload().roles.indexOf("FERR") !== -1) && (routeManager.loggedTrabFerr.indexOf(toState.name)!== -1)) {
 //           e.preventDefault();
 //           $state.go('main');
+//
 //         } else if($auth.getPayload().roles.indexOf("TRAB")!== -1 && toState.name === "ironmongery-profile") {
 //           e.preventDefault();
 //           $state.go('works-profile');

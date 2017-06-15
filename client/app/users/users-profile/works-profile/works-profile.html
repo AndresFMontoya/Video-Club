@@ -120,6 +120,14 @@
                         <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="WorkProfile-emailInput" placeholder="Otro...">
                         <i class="fa fa-envelope WorkProfile-personalDataIcon WorkProfile-emailIcon" aria-hidden="true"></i>
                       </div>
+                      <!--DEPARTMENT -->
+                     <div class="WorkProfile-departmentContainer">
+                       <label class="WorkProfile-departmentLabel"for="department">Departamento</label>
+                       <select class="WorkProfile-departmentSelect" ng-model="vm.idDepartment" ng-change="vm.getCiudad()" name="department">
+                         <option class="WorkProfile-departmentOptions" ng-value="item.id" ng-repeat="item in vm.departments" ng-bind="item.name"></option>
+                       </select>
+                       <i class="fa fa-map-marker WorkProfile-personalDataIcon WorkProfile-departmentIcon" aria-hidden="true"></i>
+                     </div>
                       <!--CITY -->
                       <div class="WorkProfile-cityContainer">
                         <label class="WorkProfile-cityLabel"for="city">Ciudad</label>
@@ -157,7 +165,7 @@
                       <div ng-if="vm.newPassw" class="WorkProfile-newPasswordContainer">
                         <div class="WorkProfile-newPasswordContainer-son">
                           <label class="WorkProfile-newPasswordLabel"for="newPasswd">Nueva contraseña</label>
-                          <input class="WorkProfile-newPasswordInput"type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
+                          <input  class="WorkProfile-newPasswordInput"type="password" name="newPasswd" ng-minlength="6" ng-maxlength="16" ng-pattern="/^(?=.*\d)(?=.*[a-zA-z])(?!.*\s).*$/" required ng-model="vm.newPassword" class="" placeholder="Otro...">
                           <i class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
                           <div class="WorkProfile-newPassword-validationContainer"ng-messages="editForm.newPasswd.$error" ng-show="editForm.newPasswd.$dirty">
                             <div class="WorkProfile-newPassword-validation1"ng-message="pattern">Debe contener al menos una letra <br>, un numero y sin espacios</div>
@@ -169,8 +177,8 @@
                         <div class="WorkProfile-confirmPasswordContainer">
                           <!--CONFIRM PASSWORD -->
                           <label class="WorkProfile-confirmPasswordLabel"for="confirmPasswd">Confirmar contraseña</label>
-                          <input class="WorkProfile-confirmPasswordInput"type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword"  placeholder="Otro...">
-                          <i class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                          <input  class="WorkProfile-confirmPasswordInput"type="password" name="confirmPasswd" ng-model="vm.confirmPasswd" required compare-to="vm.newPassword"  placeholder="Otro...">
+                          <i  class="fa fa-lock WorkProfile-personalDataIcon" aria-hidden="true"></i>
                           <div class="WorkProfile-confirmPassword-validationContainer" ng-messages="editForm.confirmPasswd.$error" ng-show="editForm.confirmPasswd.$dirty">
                             <div class="WorkProfile-confirmPassword-validation1"ng-message="compareTo">la contraseña no coincide</div>
                             <div class="WorkProfile-confirmPassword-validation2"ng-message="required">este campo es requerido</div>
