@@ -10,7 +10,7 @@ angular.module('startUpApp', [
     'ngMaterial',
     'ngMessages',
   ])
-  .constant("API","http://localhost:8080/BackendExpertos")
+  .constant("API","http://localhost:8080/adecuahogar-backend")
   .config(function($urlRouterProvider, $locationProvider,$authProvider,API) {
     $urlRouterProvider.otherwise('not-found');
     //Config satellizer
