@@ -15,7 +15,9 @@ a:focus
     background #2283e1
 
 .InformationSection-container
-    display block
+    display flex
+    justify-content space-between
+    width 85%
     margin auto
 
 
@@ -35,6 +37,7 @@ a:focus
     width 33%
     height 20%
     padding 20px
+    max-width 500px
 
 .Information1
     background-color transparent
@@ -73,15 +76,17 @@ a:focus
     font-size 5em
     width 155px
     height 150px
-@media screen and (max-width: 1120px)
-  .InformationSection-container
-    margin-right 2.5em
-    margin-left 2.5em
+
 @media screen and (max-width: 800px)
+  .InformationSection-container
+    display block
   .Information1, .Information2, .Information3
     display inline-block
     width 70%
     margin-bottom 2em
+  .Information-title
+    text-align justify
+
 
 @media screen and (max-width: 800px)
     .Tool-title
