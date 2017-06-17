@@ -14,6 +14,9 @@ describe('Component: IronmongeryProfileComponent', function () {
       $scope: scope
     });
   }));
+  getCity(){
+
+  }
 
   it('should ...', function () {
     expect(1).to.equal(1);
