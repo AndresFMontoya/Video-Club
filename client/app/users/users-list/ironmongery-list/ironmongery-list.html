@@ -4,16 +4,19 @@
       <th>Razon Social</th>
       <th>Email</th>
       <th>Télefono</th>
+      <th>Activo</th>
+      <th>Editar</th>
+
     </tr>
   </thead>
   <tbody>
 
     <tr ng-repeat="item in vm.ironmongeries">
-      <td><a ng-bind="item.name"></a></td>
       <td>{{item.name}}</td>
       <td>{{item.email}}</td>
       <td>{{item.phoneNumber}}</td>
-      <td></td>
+      <td><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.active"></md-switch></td>
+      <td><a ui-sref="ironmongery-update({id:item.id})">editar</a></td>
     </tr>
   </tbody>
 </table>

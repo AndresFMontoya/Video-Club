@@ -47,7 +47,7 @@
     </div>
     <div class="dropdown ButtonContainer3" ng-if="vm.AuthService.isAuthenticated()">
       <button class="btn btn-default dropdown-toggle ng-cloak" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    {{vm.user.name+" "+vm.user.lastName}}
+    {{vm.AuthService.userInfo()}}
     <span class="caret"></span>
   </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -81,7 +81,9 @@
 
 
     <li class="MainMenu-item">
-      <a ui-sref="services-page" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Servicios</a>
+      <a ui-sref="workers-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Listar trabajadores</a>
+
+      <a ui-sref="services-page" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Servicios</a>
     </li>
 
 

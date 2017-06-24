@@ -33,7 +33,13 @@
 			url:API+'/api/users/rol',
 			method:'GET',
 			isArray:true
-		}
+		},
+    onIndex:{
+    method:'GET',
+    url:API+'/api/users/index',
+    isArray:true
+
+  }
     })
 
   }

@@ -53,23 +53,23 @@
     </div>
 
   <!--IMAGE # 1 -->
-    <article class="WorkerProfile-section1">
+    <article class="WorkerProfile-section" ng-repeat="item in vm.users">
       <figure class="WorkerProfile-imageContainer">
         <img src="assets/Worker-section/constructor1.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
       </figure>
       <div class="WorkerProfile-information">
-        <p class="WorkerProfile-name"> Nombre del trabajador</p>
+        <p class="WorkerProfile-name"> {{item.name+" "+item.lastName}}</p>
         <p class="WorkerProfile-specialization">Especializacion</p>
-        <p class="WorkerProfile-description">Pequeña descripcion del trabajador</p>
+        <p class="WorkerProfile-description">{{item.description}}</p>
         <a class="WorkerProfile-link"href="#">Ver mas..</a>
 
 
         <div class="WorkerProfile-socialNetwork">
-          <a class="WorkerProfile-twitter" href="http://twitter.com" target="_black" >
+          <a class="WorkerProfile-twitter" ng-href="http://{{item.twitter}}" target="_black" >
             <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-facebook" href="http://facebook.com" target="_black" >
+          <a class="WorkerProfile-facebook" ng-href="http://{{item.facebook}}" target="_black" >
             <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-instagram" href="https://www.instagram.com" target="_black" >
+          <a class="WorkerProfile-instagram" ng-href="http://{{item.instagram}}" target="_black" >
             <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
           <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
             <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
@@ -77,129 +77,6 @@
       </div>
 
     </article>
-
-
-
-    <!--IMAGE # 2 -->
-    <article class="WorkerProfile-section2">
-      <figure class="WorkerProfile-imageContainer">
-        <img src="assets/Worker-section/obrero1.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
-      </figure>
-      <div class="WorkerProfile-information">
-        <p class="WorkerProfile-name"> Nombre del trabajador</p>
-        <p class="WorkerProfile-specialization">Especializacion</p>
-        <p class="WorkerProfile-description">Pequeña descripcion del trabajador</p>
-        <a class="WorkerProfile-link"href="#">Ver mas..</a>
-      </div>
-      <div class="WorkerProfile-socialNetwork">
-        <a class="WorkerProfile-twitter" href="http://twitter.com" target="_black" >
-          <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-        <a class="WorkerProfile-facebook" href="http://facebook.com" target="_black" >
-          <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-        <a class="WorkerProfile-instagram" href="https://www.instagram.com" target="_black" >
-          <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
-        <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
-          <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
-     </div>
-    </article>
-
-    <!--IMAGE # 3 -->
-      <article class="WorkerProfile-section3">
-        <figure class="WorkerProfile-imageContainer">
-          <img src="assets/Worker-section/obrera2.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
-        </figure>
-        <div class="WorkerProfile-information">
-          <p class="WorkerProfile-name"> Nombre del trabajador</p>
-          <p class="WorkerProfile-specialization">Especializacion</p>
-          <p class="WorkerProfile-description">Pequeña descripcion del trabajador</p>
-          <a class="WorkerProfile-link"href="#">Ver mas..</a>
-        </div>
-        <div class="WorkerProfile-socialNetwork">
-          <a class="WorkerProfile-twitter" href="http://twitter.com" target="_black" >
-            <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-facebook" href="http://facebook.com" target="_black" >
-            <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-instagram" href="https://www.instagram.com" target="_black" >
-            <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
-            <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
-       </div>
-      </article>
-
-
-
-
-
-
-      <!--IMAGE # 6 -->
-      <article class="WorkerProfile-section6">
-        <figure class="WorkerProfile-imageContainer">
-          <img src="assets/Worker-section/obrero1.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
-        </figure>
-        <div class="WorkerProfile-information">
-          <p class="WorkerProfile-name"> Nombre del trabajador</p>
-          <p class="WorkerProfile-specialization">Especializacion</p>
-          <p class="WorkerProfile-description">Pequeña descripcion del trabajador</p>
-          <a class="WorkerProfile-link"href="#">Ver mas..</a>
-        </div>
-        <div class="WorkerProfile-socialNetwork">
-          <a class="WorkerProfile-twitter" href="http://twitter.com" target="_black" >
-            <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-facebook" href="http://facebook.com" target="_black" >
-            <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-instagram" href="https://www.instagram.com" target="_black" >
-            <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
-            <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
-       </div>
-      </article>
-
-      <!--IMAGE # 4 -->
-        <article class="WorkerProfile-section4">
-          <figure class="WorkerProfile-imageContainer">
-            <img src="assets/Worker-section/obrera2.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
-          </figure>
-          <div class="WorkerProfile-information">
-            <p class="WorkerProfile-name"> Nombre del trabajador</p>
-            <p class="WorkerProfile-specialization">Especializacion</p>
-            <p class="WorkerProfile-description">Pequeña descripcion del trabajador</p>
-            <a class="WorkerProfile-link"href="#">Ver mas..</a>
-          </div>
-          <div class="WorkerProfile-socialNetwork">
-            <a class="WorkerProfile-twitter" href="http://twitter.com" target="_black" >
-              <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-            <a class="WorkerProfile-facebook" href="http://facebook.com" target="_black" >
-              <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-            <a class="WorkerProfile-instagram" href="https://www.instagram.com" target="_black" >
-              <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
-            <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
-              <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
-         </div>
-        </article>
-
-
-        <!--IMAGE # 3 -->
-        <article class="WorkerProfile-section3">
-          <figure class="WorkerProfile-imageContainer">
-            <img src="assets/Worker-section/electricista1.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
-          </figure>
-          <div class="WorkerProfile-information">
-            <p class="WorkerProfile-name"> Nombre del trabajador</p>
-            <p class="WorkerProfile-specialization">Especializacion</p>
-            <p class="WorkerProfile-description">Pequeña descripcion del trabajador</p>
-            <a class="WorkerProfile-link"href="#">Ver mas..</a>
-          </div>
-          <div class="WorkerProfile-socialNetwork">
-            <a class="WorkerProfile-twitter" href="http://twitter.com" target="_black" >
-              <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-            <a class="WorkerProfile-facebook" href="http://facebook.com" target="_black" >
-              <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-            <a class="WorkerProfile-instagram" href="https://www.instagram.com" target="_black" >
-              <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
-            <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
-              <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
-         </div>
-        </article>
       </div>
 
   </section>

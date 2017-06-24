@@ -13,7 +13,8 @@ function AuthService($auth, $state, usersService) {
     isAdmin: isAdmin,
     isAuthenticated: isAuthenticated,
     isTrab: isTrab,
-    isFerr: isFerr
+    isFerr: isFerr,
+    userInfo:userInfo
 
   }
 
@@ -54,6 +55,15 @@ function AuthService($auth, $state, usersService) {
     if ($auth.isAuthenticated()) {
       return true;
     } else {
+      return false;
+    }
+  }
+
+  function userInfo() {
+
+    if (auth.isAuthenticated()) {
+      return $auth.getPayload().user;
+    } else{
       return false;
     }
   }

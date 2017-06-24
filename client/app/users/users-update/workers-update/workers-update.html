@@ -1,5 +1,11 @@
 <div>This is the workers-update view.</div>
 
+<form  ng-submit="vm.op()">
+
+<input type="text" name="" ng-model="vm.user.name">
+<button type="submit" name="button">enviar</button>
+</form>
+
 <md-button ng-if="vm.editar" class="md-primary md-raised" ng-disabled="updateForm.$invalid" ng-click="vm.showConfirm($event)" >
     Modificar
 </md-button>

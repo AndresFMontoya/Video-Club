@@ -3,9 +3,12 @@
 (function(){
 
 class WorkersUpdateComponent {
-  constructor($mdDialog) {
+  constructor($mdDialog,usersService,$auth) {
     this.$mdDialog = $mdDialog;
     this.editar = false;
+    this.usersService=usersService;
+    this.rol;
+    this.$auth=$auth;
   }
 
   $onInit() {
@@ -13,6 +16,19 @@ class WorkersUpdateComponent {
 
   }
 
+op(){
+this.rol=this.$auth.getPayload().roles;
+  this.usersService.op({op:this.rol},this.user).$promise
+    .then(response => {
+      console.log("op", response);
+    })
+    .catch(err => {
+      console.log("ERROR", err)
+      this.validacion = err;
+      alert(this.validacion.data)
+    });
+
+}
   modificar() {
 
    if (this.editar == false) {
