@@ -14,7 +14,7 @@ class WorkersListComponent {
   }
   $onInit(){
 
-    this.usersService.getUsers({idRol:'TRAB'}).$promise
+    this.usersService.getWorkers().$promise
     .then(response => {
       console.log("trabajadores",response);
       this.workers = response;

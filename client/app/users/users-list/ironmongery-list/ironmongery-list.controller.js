@@ -8,7 +8,7 @@ class IronmongeryListComponent {
   }
   $onInit(){
 
-    this.usersService.getUsers({idRol:'FERR'}).$promise
+    this.usersService.getIronmongeries().$promise
     .then(response => {
       console.log("ferreterias",response);
       this.ironmongeries = response;

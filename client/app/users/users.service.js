@@ -29,11 +29,16 @@
       'update': {
         method: 'PUT'
       }
-      ,getUsers:{
-			url:API+'/api/users/rol',
+      ,getIronmongeries:{
+			url:API+'/api/users/ironmongeries',
 			method:'GET',
 			isArray:true
 		},
+    getWorkers:{
+    url:API+'/api/users/workers',
+    method:'GET',
+    isArray:true
+  },
     onIndex:{
     method:'GET',
     url:API+'/api/users/index',
