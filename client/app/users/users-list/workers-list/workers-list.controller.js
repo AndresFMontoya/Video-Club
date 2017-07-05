@@ -14,12 +14,26 @@ class WorkersListComponent {
   }
   $onInit(){
 
-    this.usersService.getUsers({idRol:'TRAB'}).$promise
+    this.usersService.getWorkers().$promise
     .then(response => {
       console.log("trabajadores",response);
       this.workers = response;
     })
     .catch(err => console.error(err));
+  }
+
+  updateState(item){
+
+console.log("item",item);
+    this.usersService.update(item).$promise
+      .then(response => {
+        console.log("usuario", item);
+        this.editar = false;
+      }).catch(err => {
+
+        console.log("error", err);
+      });
+
   }
 }
 

@@ -6,20 +6,26 @@
       <th>Apellido</th>
       <th>Email</th>
       <th>Télefono</th>
+      <th>En portada</th>
       <th>Activo</th>
+      <th>Editar</th>
+
     </tr>
   </thead>
   <tbody>
 
     <tr ng-repeat="item in vm.workers">
-      <td><a ng-bind="item.name"></a></td>
+      <td>{{item.name}}</td>
       <td>{{item.lastName}}</td>
       <td>{{item.email}}</td>
       <td>{{item.phoneNumber}}</td>
-      <td><a ui-sref="users-update({id:item.id})">editar</a></td>
+      <td><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.onIndex"></md-switch></td>
+      <td><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.active"></md-switch></td>
+      <td><a ui-sref="workers-update({id:item.id})">editar</a></td>
     </tr>
   </tbody>
 </table>
+
 <div class="" ng-if="vm.list">
   <ul>
     <li ng-repeat="item in vm.workers"><a href="#">{{item.name+" "+ item.lastName}}</a></li>

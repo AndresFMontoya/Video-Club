@@ -4,25 +4,22 @@
 
   class MainController {
 
-    constructor(matchmedia) {
-      this.matchmedia=matchmedia;
-      this.tablet = this.matchmedia.isTablet();
-      this.matchmedia.on('(max-width: 800px)',(mediaQueryList)=>{
-      this.list=mediaQueryList.matches;
-    console.log("lista",this.list);
+    constructor(usersService) {
+      this.usersService = usersService;
 
-  });
     }
+    $onInit(){
 
-    $onInit() {
-      if(this.tablet){
-	console.log("tablet");
-}
-
+      this.usersService.onIndex().$promise
+      .then(response => {
+        console.log("trabajadores",response);
+        this.users = response;
+      })
+      .catch(err => console.error(err));
     }
 
   }
-MainController.$inject=["matchmedia"];
+MainController.$inject=["usersService"];
   angular.module('startUpApp')
     .component('main', {
       templateUrl: 'app/main/main.html',

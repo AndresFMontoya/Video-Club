@@ -3,16 +3,17 @@
 (function(){
 
 class WorkersUpdateComponent {
-  constructor($mdDialog) {
+  constructor($mdDialog,usersService,$auth) {
     this.$mdDialog = $mdDialog;
     this.editar = false;
+    this.usersService=usersService;
+    this.$auth=$auth;
   }
 
   $onInit() {
 
 
   }
-
   modificar() {
 
    if (this.editar == false) {

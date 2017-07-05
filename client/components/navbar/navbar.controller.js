@@ -37,23 +37,6 @@
           });
         }
       });
-
-
-      if (this.AuthService.isAuthenticated()) {
-
-        this.userId = this.$auth.getPayload().sub;
-
-        this.usersService.get({
-            id: this.userId
-          }).$promise
-          .then(response => {
-            this.user = response;
-            console.log("usuario", this.user);
-          }).catch(err => {
-
-            console.log("error", err);
-          });
-      }
     }
 
 
