@@ -4,14 +4,12 @@
 
 
 .Services-Section
-  text-align center
   margin auto
-  height 19em
-
 
 .ServiceTitle
   margin 15px 0px
   text-transform uppercase
+  text-align center
 
 
 .Services-Subtitle
@@ -19,52 +17,20 @@
   text-transform uppercase
   font-weight bold
 
+.Services-SublistContainer1
+  display flex
+  justify-content space-between
 
-.Services-ListContainer li a
-  background-color chocolate
-  color white
-  text-decoration none
-  padding 10px 15px
-  display block
-  margin 0px -2px
-  width 165px
+.Services-list1, .Services-list2, .Services-list3, .Services-list4
+  margin 0 7em
 
-
-.Services-ListContainer li a:hover 
-  background-color #434343
-
-
-.Services-ListContainer>li
-  display inline-block
-
-
-ul, ol
+.Services-list1 > ul >li, .Services-list2 > ul >li, .Services-list3 > ul > li, .Services-list4 > ul >li
   list-style none
-
-
-.Services-ListContainer li ul
-  display none
-  position absolute
-  min-width 140px
-
-
-.Services-ListContainer li:hover>ul
-  display block
-
-
-.Services-ListContainer li ul li
-  position relative
-
-
-.Services-ListContainer li ul li ul
-  right -195px
-  top 0px
-
-
-.Services-Sublist1
-
-Services-ListContainer
-  position absolute
-  z-index 200
-  width 100%
-  text-align center
+  
+  & > a
+    color black
+    text-decoration none
+    font-size 16px
+.Services-listTitle1, .Services-listTitle2, .Services-listTitle3, .Services-listTitle4
+  text-transform uppercase
+  font-weight 600

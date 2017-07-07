@@ -1,33 +1,43 @@
-<div>This is the workers-list view.</div>
-<table class="table table-hover" ng-if="!vm.list">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Email</th>
-      <th>Télefono</th>
-      <th>En portada</th>
-      <th>Activo</th>
-      <th>Editar</th>
+<!-- //LIST OF EXPERTS WORKERS// -->
+<section class="WorkersList">
+  <div class="WorkersList-top">
+    <img class="WorkersList-image"src="assets/Workers-list/List.png" alt="" />
+    <h2 class="WorkersList-title">Nuestros <b class="WorkersList-title2">Expertos</b></h2>
 
-    </tr>
-  </thead>
-  <tbody>
+  </div>
 
-    <tr ng-repeat="item in vm.workers">
-      <td>{{item.name}}</td>
-      <td>{{item.lastName}}</td>
-      <td>{{item.email}}</td>
-      <td>{{item.phoneNumber}}</td>
-      <td><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.onIndex"></md-switch></td>
-      <td><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.active"></md-switch></td>
-      <td><a ui-sref="workers-update({id:item.id})">editar</a></td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-hover" ng-if="!vm.list">
 
-<div class="" ng-if="vm.list">
-  <ul>
-    <li ng-repeat="item in vm.workers"><a href="#">{{item.name+" "+ item.lastName}}</a></li>
-  </ul>
-</div>
+    <thead class="WorkersList-tableHeadAtrib">
+      <tr class="WorkersList-atribAll">
+        <th class="WorkersList-tableAtrib">Nombre</th>
+        <th class="WorkersList-tableAtrib">Apellido</th>
+        <th class="WorkersList-tableAtrib">Email</th>
+        <th class="WorkersList-tableAtrib">Télefono</th>
+        <th class="WorkersList-tableAtrib">En portada</th>
+        <th class="WorkersList-tableAtrib">Activo</th>
+        <th class="WorkersList-tableAtrib">Editar</th>
+
+      </tr>
+    </thead>
+
+    <tbody class="WorkersList-tableBody">
+      <tr  class="WorkersList-data"ng-repeat="item in vm.workers">
+        <td class="WorkersList-name">{{item.name}}</td>
+        <td class="WorkersList-lastName">{{item.lastName}}</td>
+        <td class="">{{item.email}}</td>
+        <td class="">{{item.phoneNumber}}</td>
+        <td class=""><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.onIndex"></md-switch></td>
+        <td class=""><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.active"></md-switch></td>
+        <td class=""><a ui-sref="workers-update({id:item.id})">editar</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="" ng-if="vm.list">
+    <ul>
+      <li ng-repeat="item in vm.workers"><a href="#">{{item.name+" "+ item.lastName}}</a></li>
+    </ul>
+  </div>
+
+</section>
