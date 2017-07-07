@@ -55,7 +55,7 @@
   <!--IMAGE # 1 -->
     <article class="WorkerProfile-section" ng-repeat="item in vm.users">
       <figure class="WorkerProfile-imageContainer">
-        <img src="assets/Worker-section/constructor1.jpg" alt="Avatar Perfil" class="WorkerProfile-image"/>
+        <img  data-ng-src="{{item.imageType}},{{item.imageProfile}}" alt="Avatar Perfil" class="WorkerProfile-image"/>
       </figure>
       <div class="WorkerProfile-information">
         <p class="WorkerProfile-name"> {{item.name+" "+item.lastName}}</p>

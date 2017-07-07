@@ -1,5 +1,33 @@
 <!--ADMINISTRATOR PROFILE WORKER -->
 <section class="WorkProfile-sectionContainer">
+<!-- Modal para modificar la img a subir -->
+  <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Subir foto de perfil</h4>
+        </div>
+        <div class="modal-body">
+
+
+          <div class="cropArea img-responsive">
+            <img-crop image="vm.image" result-image="vm.croppedImage" area-type="circle" aspect-ratio="1.33" init-max-area="true" result-image-size='{w: 400,h: 400}' chargement="'Cargando'">
+            </img-crop>
+          </div>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.cancelar()">Cancelar</button>
+          <label class="btn btn-default" for="foto-input">Subir Foto</label>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.editUser()">Guardar</button>
+          <input type="file" id="foto-input" style="visibility:hidden;" accept="image/*" on-read-img="vm.imageLoad($fileContent)">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="WorkProfile-section">
     <md-content>
       <md-tabs md-center-tabs="true" md-dynamic-height md-border-bottom>
@@ -14,12 +42,15 @@
                 <!--ADMINISTRATOR PROFILE WORKER -IMAGE- -->
                 <figure class="WorkProfile-imageContainer">
                   <h2 class="WorkProfile-imageTitle">Foto de Perfil</h2>
-                  <img src="assets/Main-images/engineer.png" alt=""class="WorkProfile-image">
+                  <img ng-if="vm.user.imageType != null" data-ng-src="{{vm.user.imageType}},{{vm.user.imageProfile}}" alt=""class="WorkProfile-image">
+                  <img ng-if="vm.user.imageType== null" src="assets/Main-images/engineer.png" alt=""class="WorkProfile-image">
                 </figure>
+                <!-- boton para abrir el modal -->
+                <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#myModal">Editar imagen</button>
 
                 <!--ADMINISTRATOR PROFILE WORKER - DESCRIPTION -->
                 <div class="WorkProfile-Description">
-                  <textarea name="name" rows="5" cols="30" class="WorkProfile-DescriptionText" placeholder="Perfil del Trabajador"></textarea>
+                  <textarea name="name" rows="5" cols="30" ng-model="vm.user.description" class="WorkProfile-DescriptionText" placeholder="Perfil del Trabajador"></textarea>
                 </div>
               </div>
 
@@ -37,21 +68,23 @@
                       <div class="WorkProfile-documentTypeContainer">
                         <label  class="WorkProfile-documentTypeLabel"for="DocumentType">Tipo documento</label>
                         <input type="text" name="DocumentType" ng-disabled="true" ng-model="vm.user.idDocumentType.id" value="" class="WorkProfile-documentTypeInput" placeholder="">
-                        <i class="fa fa-id-card WorkProfile-personalDataIcon" aria-hidden="true"></i>
+                        <i class="fa fa-lock WorkProfile-personalDataIcon " aria-hidden="true"></i>
                       </div>
 
                       <!--IDENTIFICATION -->
                       <div class="WorkProfile-identificationContainer">
                         <label class="WorkProfile-identificationLabel"for="identificationNumber">Numero de identificacion</label>
                         <input type="text" name="identificationNumber" ng-model="vm.user.identificationNumber" ng-disabled="true" value="" class="WorkProfile-identificationInput">
-                        <i class="fa fa-id-badge WorkProfile-personalDataIcon WorkProfile-identificationIcon" aria-hidden="true"></i>
+                        <i class="fa fa-lock WorkProfile-personalDataIcon " aria-hidden="true"></i>
                       </div>
 
                       <!--NAME -->
                       <div class="WorkProfile-namesContainer">
+
                         <label class="WorkProfile-nameLabel"for="name">Nombres</label>
-                        <input type="text" name="name" ng-model="vm.user.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-nameInput" placeholder="Nombre">
-                        <i class="fa fa-user WorkProfile-personalDataIcon WorkProfile-nameIcon" aria-hidden="true"></i>
+                        <input type="text" name="name" ng-model="vm.user.name" ng-disabled="!vm.editar.name" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-nameInput" placeholder="Nombre">
+                        <button ng-if="!vm.editar.name" ng-click="vm.boton(vm.editar.name=true)"   class="fa fa-pencil WorkProfile-personalDataIcon WorkProfile-nameIcon" aria-hidden="true"></button>
+                        <button ng-if="vm.editar.name" type="submit" ng-disabled="editForm.name.$invalid" class="fa fa-floppy-o WorkProfile-personalDataIcon WorkProfile-nameIcon" aria-hidden="true"></button>
                         <div class="WorkProfile-name-validationContainer" ng-messages="editForm.name.$error" ng-show="editForm.name.$dirty">
                           <div class="WorkProfile-name-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
                           <div class="WorkProfile-name-validation2" ng-message="required">este campo es requerido</div>
@@ -62,9 +95,10 @@
                       <!--LAST NAME -->
                       <div class="WorkProfile-lastNamesContainer">
                         <label class="WorkProfile-lastNameLabel"for="lastName">Apellidos</label>
-                        <input type="text" name="lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-lastNameInput" placeholder="Apellido">
-                        <i class="fa fa-user WorkProfile-personalDataIcon WorkProfile-lastNameIcon" aria-hidden="true"></i>
-                        <div class="WorkProfile-lastName-validationContainer" ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
+                        <input type="text" name="lastName" ng-disabled="!vm.editar.lastName" ng-model="vm.user.lastName" ng-pattern="/^[A-Za-z\s]+$/" required ng-minlength="3" ng-maxlength="30" value="" class="WorkProfile-lastNameInput" placeholder="Apellido">
+                        <button ng-if="!vm.editar.lastName" ng-click="vm.boton(vm.editar.lastName=true)"   class="fa fa-pencil WorkProfile-personalDataIcon WorkProfile-lastNameIcon" aria-hidden="true"></button>
+                        <button ng-if="vm.editar.lastName" type="submit" ng-disabled="editForm.lastName.$invalid" class="fa fa-floppy-o WorkProfile-personalDataIcon WorkProfile-lastNameIcon" aria-hidden="true"></button>
+                        <div class="WorkProfile-lastName-validationContainer " ng-messages="editForm.lastName.$error" ng-show="editForm.lastName.$dirty">
                           <div class="WorkProfile-lastName-validation1" ng-message="pattern">ingrese solo letras en este campo</div>
                           <div class="WorkProfile-lastName-validation2" ng-message="required">este campo es requerido</div>
                           <div class="WorkProfile-lastName-validation3" ng-message-exp="['maxlength', 'minlength']">solo se permiten nombres mayores<br> a 3 digitos y menores a 30</div>
@@ -98,15 +132,18 @@
                         <!--GENDER -->
                         <div class="WorkProfile-genderContainer">
                           <label class="WorkProfile-genderLabel"for="gender">Sexo</label>
-                          <select class="WorkProfile-genderSelect"name="gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
-                          <i class="fa fa-venus-mars WorkProfile-personalDataIcon WorkProfile-genderIcon" aria-hidden="true"></i>
+                          <select class="WorkProfile-genderSelect"name="gender" ng-disabled="!vm.editar.gender" ng-model="vm.user.gender" ng-options="x for x in vm.gender"></select>
+                          <button ng-if="!vm.editar.gender" ng-click="vm.boton(vm.editar.gender=true)"   class="fa fa-pencil WorkProfile-personalDataIcon" aria-hidden="true"></button>
+                          <button ng-if="vm.editar.gender" type="submit" class="fa fa-floppy-o WorkProfile-personalDataIcon" aria-hidden="true"></button>
+
                         </div>
 
                         <!--TELEPHONE NUMBER -->
                         <div class="WorkProfile-numberTelephoneContainer">
                           <label class="WorkProfile-phoneNumberLabel"for="phoneNumber">Numero telefonico</label>
-                          <input type="text" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="WorkProfile-phoneNumberInput" placeholder="Teléfono">
-                          <i class="fa fa-phone WorkProfile-personalDataIcon WorkProfile-phoneIcon" aria-hidden="true"></i>
+                          <input type="text" name="phoneNumber" ng-disabled="!vm.editar.phoneNumber" ng-model="vm.user.phoneNumber" ng-pattern="/^[0-9]*$/" ng-minlength="7" ng-maxlength="10" required value="" class="WorkProfile-phoneNumberInput" placeholder="Teléfono">
+                          <button ng-if="!vm.editar.phoneNumber" ng-click="vm.boton(vm.editar.phoneNumber=true)"   class="fa fa-pencil WorkProfile-personalDataIcon" aria-hidden="true"></button>
+                          <button ng-if="vm.editar.phoneNumber" type="submit" ng-disabled="editForm.phoneNumber.$invalid" class="fa fa-floppy-o WorkProfile-personalDataIcon" aria-hidden="true"></button>
                           <div class="WorkProfile-phoneNumber-validationContainer" ng-messages="editForm.phoneNumber.$error" ng-show="editForm.phoneNumber.$dirty">
                             <div class="WorkProfile-phoneNumber-validation1"ng-message="pattern">ingrese solo numeros en este campo</div>
                             <div class="WorkProfile-phoneNumber-validation2"ng-message="required">este campo es requerido</div>
@@ -118,7 +155,7 @@
                       <div class="WorkProfile-emailContainer">
                         <label class="WorkProfile-emailLabel"for="email">Email</label>
                         <input type="text" name="email" ng-model="vm.user.email" value="" ng-disabled="true" class="WorkProfile-emailInput" placeholder="Otro...">
-                        <i class="fa fa-envelope WorkProfile-personalDataIcon WorkProfile-emailIcon" aria-hidden="true"></i>
+                          <i class="fa fa-lock WorkProfile-personalDataIcon " aria-hidden="true"></i>
                       </div>
                       <!--DEPARTMENT -->
                      <!-- <div class="WorkProfile-departmentContainer">
@@ -131,10 +168,11 @@
                       <!--CITY -->
                       <div class="WorkProfile-cityContainer">
                         <label class="WorkProfile-cityLabel"for="city">Ciudad</label>
-                        <select class="WorkProfile-citySelect" ng-model="vm.user.idCity.id" name="city">
+                        <select class="WorkProfile-citySelect" ng-disabled="!vm.editar.city" ng-model="vm.user.idCity.id" name="city">
                           <option class="WorkProfile-cityOptions" ng-value="item.id" ng-repeat="item in vm.cities" ng-bind="item.name"></option>
                         </select>
-                        <i class="fa fa-map-marker WorkProfile-personalDataIcon WorkProfile-cityIcon" aria-hidden="true"></i>
+                        <button ng-if="!vm.editar.city" ng-click="vm.boton(vm.editar.city=true)"   class="fa fa-pencil WorkProfile-personalDataIcon" aria-hidden="true"></button>
+                        <button ng-if="vm.editar.city" type="submit" class="fa fa-floppy-o WorkProfile-personalDataIcon" aria-hidden="true"></button>
                       </div>
                       <!--CONTACT BY EMAIL -->
                       <div class="WorkProfile-emailContainer">

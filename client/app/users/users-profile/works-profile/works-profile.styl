@@ -1,3 +1,14 @@
+.fa-lock
+  padding  13px 17px 13px 14px !important
+
+button[disabled]
+  background red
+.cropArea
+      background #E4E4E4
+      overflow hidden
+      width 500px
+      height 350px
+
 .md-padding
   padding 0 !important
 .tabsdemoDynamicHeight md-content
@@ -86,7 +97,7 @@ span
   &-nameLabel,&-identificationLabel, &-documentTypeLabel, &-lastNameLabel, &-lastNameLabel, &-genderLabel, &-emailLabel, &-phoneNumberLabel, &-cityLabel,&-departmentLabel, &-socialNetworksLabel, &-socialNetwork1-label, &-socialNetwork2-label, &-newPasswordLabel, &-confirmPasswordLabel
     display block
   &-nameIcon
-    padding 13px 16px 13px 18px !important
+    bottom 0px!important
   &-cityIcon
     padding 13px 14px 12px 13px !important
   &-departmentIcon
@@ -98,7 +109,7 @@ span
   &-identificationIcon
     padding 13px 16px 13px 16px !important
   &-lastNameIcon
-    padding: 13px 16px 13px 16px !important
+    bottom 0px!important
   &-emailIcon
     padding: 13px 14px 13px 14px !important
   &-cityIcon
@@ -131,11 +142,11 @@ span
     border 1px solid #545454
     width 170px
   &-genderSelect
-    padding 9px 5px
+    padding 9px 5px 10px 5px
     border 1px solid #545454
     width 170px
   &-citySelect
-    padding 9px 5px
+    padding 9px 5px 10px 5px
     border 1px solid #545454
     width 170px
   &-departmentSelect
@@ -267,6 +278,9 @@ span
 .WorkProfile-WorkDoneDescriptionContainer
   text-align center
 
+.WorkProfile-imageButton
+  display block
+
 
 .WorkProfile-WorkDoneDescription
   margin 0 2em
@@ -397,7 +411,7 @@ span
 
 
 
-button.Editform-button[disabled]
+button[disabled]
   background red
 
 button.Editform-button:not(disabled)

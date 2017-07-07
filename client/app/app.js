@@ -9,7 +9,9 @@ angular.module('startUpApp', [
     'satellizer',
     'ngMaterial',
     'ngMessages',
-    'matchmedia-ng'
+    'matchmedia-ng',
+    'ngImgCrop',
+    'ngFileSaver'
   ])
   .constant("API","http://localhost:8080/adecuahogar-backend")
   .config(function($urlRouterProvider, $locationProvider,$authProvider,API) {
