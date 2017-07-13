@@ -10,10 +10,17 @@ a:focus
 .InformationSection
     text-align center
     padding-top 2.5em
-    padding-bottom 2.5em
+    padding-bottom 1em
     margin auto
     background white
 
+.InformationSection::after
+  content " "
+  width 74em
+  height 2px
+  display block
+  background-color #e5e5ea
+  margin 14px auto 0
 
 .InformationSection-container
     display flex
@@ -30,6 +37,14 @@ a:focus
     color #1e64aa
     font-weight bold
     margin-bottom 7px
+    padding-bottom 1em
+.InformationSection-title::after
+  content " "
+  width 59px
+  height 2px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 
 .Contratacion-main
   font-size 7em
@@ -47,6 +62,30 @@ a:focus
   margin 0
   font-weight bold
   color #1e64aa
+.Busca-container::after
+  border-radius 100%
+  content " "
+  width 66px
+  height 5px
+  display block
+  background-color #e5e5ea
+  margin: 8px auto 0
+.Contratacion-container::after
+  border-radius 100%
+  content " "
+  width 66px
+  height 5px
+  display block
+  background-color #e5e5ea
+  margin: 8px auto 0
+.Dolar-container::after
+  border-radius 100%
+  content " "
+  width 66px
+  height 5px
+  display block
+  background-color #e5e5ea
+  margin: 8px auto 0
 
 .Information1, .Information2, .Information3
     display inline-block
@@ -56,14 +95,16 @@ a:focus
     max-width 500px
 
 .Information1
-    background-color transparent
-    vertical-align top
+  background-color transparent
+  vertical-align top
+  border-right 1px solid #e5e5ea
 
 .Information2
-    background-color transparent
+  background-color transparent
+  border-right 1px solid #e5e5ea
 
 .Information3
-    background-color transparent
+  background-color transparent
 
 .Information-title
     text-align center
@@ -131,6 +172,13 @@ a:focus
     color #1262b1
     font-weight bold
     margin 0
+.WorkerProfile-title::after
+  content " "
+  width 59px
+  height 2px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 
 .WorkerProfile-socialNetwork
   padding-bottom 7px
@@ -230,6 +278,13 @@ a:focus
     font-weight bold
     margin 0
 
+.Ironmongery-title::after
+  content " "
+  width 59px
+  height 2px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 
 .Ironmongery-sectionContainer
     padding 50px 0px
@@ -264,6 +319,13 @@ a:focus
     color #1262b1
     font-weight bold
     margin 0
+.Sponsors-title::after
+  content " "
+  width 59px
+  height 2px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 
 .Sponsors
     padding 4em 0
