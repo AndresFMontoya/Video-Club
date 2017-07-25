@@ -231,8 +231,15 @@ span
 /*WORKS --DONE---SECTION*/
 .ironmongery-Profile-WorkDoneImageContainer
   margin 0
+  display inline-block
+  width 35em
+  height: 25em
+  border-right: 1px solid gray
 
-
+.ironmongery-Profile-flexContainer
+  display flex
+  justify-content space-between
+  height 28em
 .ironmongery-Profile-WorkDoneImage
   width 75%
   margin 2.5em auto 4em
@@ -240,27 +247,34 @@ span
   text-align center
   box-shadow 0px 0 5px 0px grey
 
-
 .ironmongery-Profile-WorkDoneContainer
   border 1px solid #227fde;
-  width 50%
+  width 95%
   margin 4em auto
   border-radius 5px
   box-shadow 0px -2px 0px #2d66a0
 
-
 .ironmongery-Profile-WorkDoneTitle
   text-align center
   margin-top 1em
-
+  color #1e64aa
+  font-weight bold
+.ironmongery-Profile-WorkDoneTitle::after
+  content: " "
+  width 59px
+  height 2px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 
 .ironmongery-Profile-WorkDoneDescriptionContainer
   text-align center
-
+  display inline-block
+  vertical-align top
 
 .ironmongery-Profile-WorkDoneDescription
   margin 0 2em
-  border-radius 5px
+  border-radius 1px
   resize none
   display block
   margin auto
@@ -272,10 +286,9 @@ span
 
 .ironmongery-Profile-WorkDoneInput
   padding 16px 10px
-  border-radius 5px 0 0 5px
+  border-radius 1px 0 0 1px
   border 1px solid darkgray
   width: 50%
-
 
 .ironmongery-Profile-WorkDoneIncon
   border 1px solid darkgray
@@ -285,7 +298,7 @@ span
   background #227fde
   color white
   font-size 20px
-  border-radius 0px 5px 5px 0px
+  border-radius 0px 1px 1px 0px
 
 
 .ironmongery-Profile-WorkDoneDoubleContainer
@@ -305,7 +318,7 @@ span
   font-size 1em
   font-weight bold
   padding 13px
-  border-radius 5px
+  border-radius 3px
   background-color #227fde
   box-shadow 0 5px 0px #2d66a0
   display inline-block
@@ -322,9 +335,10 @@ span
 
 .ironmongery-Profile-WorkDoneSlider
   padding 20px
-  width 90%;
-  margin auto
+  margin 3.5em
   box-sizing: border-box
+  display inline-block
+
 
 
 .ironmongery-Profile-WorkDoneSliderMiniatures
