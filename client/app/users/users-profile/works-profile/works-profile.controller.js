@@ -111,6 +111,7 @@
           }
         }
     }
+
 }
 WorksProfileComponent.$inject=['$auth','usersService','citiesService','departmentsService'];
 angular.module('startUpApp')
