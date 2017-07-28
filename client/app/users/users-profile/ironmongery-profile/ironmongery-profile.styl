@@ -31,6 +31,14 @@ md-tabs-canvas.md-center-tabs
 
 span
   color: white !important
+
+.ironmongery-ProfileContainer::after
+  content ""
+  width 85%
+  background gray
+  height 1px
+  display block
+  margin 1.5em auto 0
 .ironmongery-Profile-sectionContainer
   background white
 
@@ -232,14 +240,16 @@ span
 .ironmongery-Profile-WorkDoneImageContainer
   margin 0
   display inline-block
-  width 35em
-  height: 25em
-  border-right: 1px solid gray
+  width 33.33333%
+  height 25em
+  border-right 1px solid gray
 
 .ironmongery-Profile-flexContainer
   display flex
   justify-content space-between
   height 28em
+
+
 .ironmongery-Profile-WorkDoneImage
   width 75%
   margin 2.5em auto 4em
@@ -269,8 +279,8 @@ span
 
 .ironmongery-Profile-WorkDoneDescriptionContainer
   text-align center
-  display inline-block
-  vertical-align top
+  width 33.33333%
+
 
 .ironmongery-Profile-WorkDoneDescription
   margin 0 2em
@@ -288,7 +298,8 @@ span
   padding 16px 10px
   border-radius 1px 0 0 1px
   border 1px solid darkgray
-  width: 50%
+  width 50%
+  max-width 200px
 
 .ironmongery-Profile-WorkDoneIncon
   border 1px solid darkgray
@@ -336,10 +347,10 @@ span
   padding 20px
   box-sizing: border-box
   display inline-block
-  border-left: 1px solid gray;
-  height: 25em;
-  margin-right: 3em;
-  padding-left: 4em;
+  border-left 1px solid gray
+  height 25em
+  width 33.33333%
+
 
 .ironmongery-Profile-WorkDoneSliderMiniatures
   display table
