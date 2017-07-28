@@ -332,19 +332,18 @@ span
   top: 3px
   box-shadow: 0 3px 0px #2d66a0
 
-
 .ironmongery-Profile-WorkDoneSlider
   padding 20px
-  margin 3.5em
   box-sizing: border-box
   display inline-block
-
-
+  border-left: 1px solid gray;
+  height: 25em;
+  margin-right: 3em;
+  padding-left: 4em;
 
 .ironmongery-Profile-WorkDoneSliderMiniatures
   display table
   margin 0 auto
-
 
 .ironmongery-Profile-ImageMiniature
   width: 60px
@@ -354,24 +353,26 @@ span
   padding 5px
   margin: 10px 5px
 
-
 .ironmongery-Profile-AddImage
   margin 2% 0
-  transition all .1s
+  transition all 0.1s
   font-size 1em
   font-weight bold
-  padding: 13px 0
-  border-radius 5px
+  padding 13px 0
+  border-radius 2px
   background-color #227fde
   box-shadow 0 5px 0px #2d66a0
   display block
-  color white
+  color #fff
   text-align center
-
+  margin-top 3em
 
 #ironmongery-Profile-AddImageInput
   display: none
 
+@media screen and (max-width: 1100px)
+  .ironmongery-Profile-flexContainer
+    flex-direction column
 
 .ironmongery-Profile-AddImageLabel
   display block
@@ -396,7 +397,6 @@ span
 .Editform-button:active
   top: 3px
   box-shadow: 0 3px 0px darkred
-
 
 
 button.Editform-button[disabled]
