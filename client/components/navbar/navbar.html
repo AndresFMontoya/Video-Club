@@ -64,36 +64,36 @@
         </a>
   </div>
   <!--NAV-BAR-->
+  <nav class="MainMenu">
+    <ul class="MainMenu-list">
+
+      <li class="MainMenu-item  MainMenu-itemTop">
+        <a ui-sref="main" class="MainMenu-link"><span class="First"><i class="Icon fa fa-home" aria-hidden="true"></i></span>Inicio</a>
+      </li>
+
+
+      <li class="MainMenu-item">
+        <a ui-sref="ironmongery-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>Listar Ferreterias</a>
+        <a ui-sref="about-us" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>¿Quienes Somos?</a>
+      </li>
+
+
+      <li class="MainMenu-item">
+        <a ui-sref="workers-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Listar trabajadores</a>
+
+        <a ui-sref="services-page" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Servicios</a>
+      </li>
+
+
+      <li class="MainMenu-item">
+        <a ui-sref="offers-page" class="MainMenu-link"><span class="Fourth"><i class="Icon fa fa-pencil-square-o" aria-hidden="true"></i></span>Ofertas</a>
+      </li>
+
+
+      <li class="MainMenu-item">
+        <a ui-sref="contact-us" class="MainMenu-link"><span class="Fifth"><i class="Icon fa fa-phone-square" aria-hidden="true"></i></span>Contáctanos</a>
+      </li>
+    </ul>
+  </nav>
+
 </header>
-
-<nav class="MainMenu">
-  <ul class="MainMenu-list">
-
-    <li class="MainMenu-item  MainMenu-itemTop">
-      <a ui-sref="main" class="MainMenu-link"><span class="First"><i class="Icon fa fa-home" aria-hidden="true"></i></span>Inicio</a>
-    </li>
-
-
-    <li class="MainMenu-item">
-      <a ui-sref="ironmongery-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>Listar Ferreterias</a>
-      <a ui-sref="about-us" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>¿Quienes Somos?</a>
-    </li>
-
-
-    <li class="MainMenu-item">
-      <a ui-sref="workers-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Listar trabajadores</a>
-
-      <a ui-sref="services-page" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Servicios</a>
-    </li>
-
-
-    <li class="MainMenu-item">
-      <a ui-sref="offers-page" class="MainMenu-link"><span class="Fourth"><i class="Icon fa fa-pencil-square-o" aria-hidden="true"></i></span>Ofertas</a>
-    </li>
-
-
-    <li class="MainMenu-item">
-      <a ui-sref="contact-us" class="MainMenu-link"><span class="Fifth"><i class="Icon fa fa-phone-square" aria-hidden="true"></i></span>Contáctanos</a>
-    </li>
-  </ul>
-</nav>
