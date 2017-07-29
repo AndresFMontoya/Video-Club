@@ -82,10 +82,10 @@
     margin 2.56em
     font-size 1em
     font-weight bold
-    padding 13px
+    padding 10px
     border-radius 5px
-    background-color #144677
-    box-shadow 0 5px 0px #2a90e4
+    background-color #1e64aa
+    box-shadow 0 4px 0px #2a90e4
 
 .ButtonContainer1:hover, .ButtonContainer2:hover
     top 3px
@@ -116,29 +116,66 @@
 nav
     & > ul
         li
-            // display table-cell
+            display table-cell
             a
                 color #fff
                 display block
-                line-height 20px
+                line-height 10px
+                padding 20px
                 position relative
                 text-align center
-                text-decoration none!important
+                text-decoration none
                 -webkit-transition all .3s ease
                 -moz-transition all .3s ease
                 -ms-transition all .3s ease
                 -o-transition all .3s ease
                 transition all .3s ease
-
-
+        & > li
+            & > a
+                span
+                    background #174459
+                    display block
+                    height 100%
+                    width 100%
+                    left 0
+                    position absolute
+                    top -60px
+                    z-index 1
+                    -webkit-transition all .3s ease
+                    -moz-transition all .3s ease
+                    -ms-transition all .3s ease
+                    -o-transition all .3s ease
+                    transition all .3s ease
+                    .Icon
+                        display block
+                        line-height 60px
+                        font-size 30px
+                &:hover
+                    & > span
+                        top 0
+                        display block
+    ul
+        li
+            a
+                .First
+                    background chocolate
+                .Second
+                    background orange
+                .Third
+                    background #f25724
+                .Fourth
+                    background darkgoldenrod
+                .Fifth
+                    background #37a4d9
 .MainMenu-item
   width 20%
-  padding 10px 0
+  padding 0 0
 .Nav-icon
   display block
   font-size 35px
   margin 5px
-
+.Icon
+  padding-right 7px
 .fa-bars
     cursor pointer
 
@@ -187,7 +224,7 @@ nav
     .Menu-bar
         display block
         width 100%
-        background-image url('../../static/Images/main/azul6.jpg')
+        background #1e64aa
         background-repeat no-repeat
         background-size cover
     .fa-bars
