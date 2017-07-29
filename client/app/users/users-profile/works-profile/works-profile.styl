@@ -53,14 +53,17 @@ span
   margin 0
   text-align center
   vertical-align top
-
+.WorkProfile-personalDataContainer
+  border-bottom 1px solid #1e64aa
+  padding-bottom 2em
 .WorkProfile-imageUpload
   display block
   margin 1em auto
 
 .WorkProfile-imageTitle
   padding 1.5em 0 1em
-
+  border-bottom 1px solid #1e64aa
+  color #1e64aa
 .WorkProfile-image
   width 200px
   padding 5% 0
@@ -74,7 +77,9 @@ span
 .WorkProfile-personalDataTitle
   text-align center
   padding 1.5em 0 1em
-  margin 0
+  border-bottom 1px solid #1e64aa
+  margin-bottom 1em
+  color #1e64aa
 
 .WorkProfile-personalData-form
   display inline-block
@@ -163,55 +168,19 @@ span
 .WorkProfile-buttonContainer
   text-align center
 
-/*--ESPECIALIZATIONS--SECTION*/
-
-.WorkProfile-Specializations
-  width 40%
-  text-align center
-  display inline-block
-  vertical-align top
-
-.WorkProfile-SpecializationsTitle
-  text-align center
-
-.WorkProfile-SpecializationsList
-  background #227fde
-  padding 15px 10px
-  border-radius 5px
-  color white
-  font-weight bold
-  text-transform capitalize
-  width 130px
-
-.WorkProfile-SpecializationsContainer
-  display inline-block
-  width 40%
-  text-align: center
-
-
-.WorkProfile-SpecializationsContainer
-  margin 40px 0 3em
-
-
-.WorkProfile-SpecializationsCheckbox
-  margin-right 7px
-
-
-
-
 /*--CERFICATIONS - SECTION--*/
 .WorkProfile-Certifications
-  width 59%
+  width 100%
   margin auto
   display inline-block
+
 .WorkProfile-CertificationsDoubleContainer
   margin 1em 0
-
 
 .WorkProfile-CertificationsContainer
   text-align center
   border 1px solid #227fde
-  width 50%
+  width 60%
   margin 4em auto
   border-radius 5px
   box-shadow 0px -2px 0px #2d66a0
@@ -225,14 +194,18 @@ span
   border 1px solid #545454
   box-sizing border-box
 
-
 .WorkProfile-CertificationsTitle
-  padding: 1.2em 0 0.2em 0
-
-
+  padding: 0.2em 0 0.2em 0
+  color #1e64aa
+.WorkProfile-CertificationsTitle::after
+  content: " "
+  width 3em
+  height 1px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 .WorkProfile-certificationsFile
   display: none !important
-
 
 .WorkProfile-certificationsLabel
   cursor pointer
@@ -279,8 +252,14 @@ span
 .WorkProfile-WorkDoneTitle
   text-align center
   margin-top 1em
-
-
+  color #1e64aa
+.WorkProfile-WorkDoneTitle::after
+  content: " "
+  width 4em
+  height 2px
+  display block
+  background-color #0078d2
+  margin 14px auto 0
 .WorkProfile-WorkDoneDescriptionContainer
   text-align center
 
