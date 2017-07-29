@@ -105,26 +105,22 @@
 
 .MainMenu-list
     list-style none
-    display table
-    background-image url('../../static/Images/main/azul6.jpg')
-    background-repeat no-repeat
-    background-size cover
-    position relative
+    display flex
+    background #1e64aa
     width 100%
     margin-bottom 0px
 
 .MainMenu-linkAbout
-    padding 20px 0
+    // padding 20px 0
 
 nav
     & > ul
         li
-            display table-cell
+            // display table-cell
             a
                 color #fff
                 display block
                 line-height 20px
-                padding 20px
                 position relative
                 text-align center
                 text-decoration none!important
@@ -133,46 +129,15 @@ nav
                 -ms-transition all .3s ease
                 -o-transition all .3s ease
                 transition all .3s ease
-        & > li
-            & > a
-                span
-                    background #174459
-                    display block
-                    height 100%
-                    width 100%
-                    left 0
-                    position absolute
-                    top -60px
-                    z-index 1
-                    -webkit-transition all .3s ease
-                    -moz-transition all .3s ease
-                    -ms-transition all .3s ease
-                    -o-transition all .3s ease
-                    transition all .3s ease
-                    .Icon
-                        display block
-                        line-height 60px
-                        font-size 30px
-                &:hover
-                    & > span
-                        top 0
-                        display block
-    ul
-        li
-            a
-                .First
-                    background chocolate
-                .Second
-                    background orange
-                .Third
-                    background #f25724
-                .Fourth
-                    background darkgoldenrod
-                .Fifth
-                    background #37a4d9
+
 
 .MainMenu-item
-    width 20%
+  width 20%
+  padding 10px 0
+.Nav-icon
+  display block
+  font-size 35px
+  margin 5px
 
 .fa-bars
     cursor pointer
@@ -208,7 +173,7 @@ nav
     .MainMenu-itemTop
         border-top 1px solid rgba(255, 255, 255, .3)
     .MainMenu
-        display none 
+        display none
         width 40%
         margin 0
         position absolute
