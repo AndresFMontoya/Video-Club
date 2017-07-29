@@ -70,30 +70,30 @@
   <ul class="MainMenu-list">
 
     <li class="MainMenu-item  MainMenu-itemTop">
-      <a ui-sref="main" class="MainMenu-link"><span class="First"><i class="Icon fa fa-home" aria-hidden="true"></i></span>Inicio</a>
+      <a ui-sref="main" class="MainMenu-link"><i class="Nav-icon fa fa-home" aria-hidden="true"></i>Inicio</a>
     </li>
 
 
     <li class="MainMenu-item">
-      <a ui-sref="ironmongery-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>Listar Ferreterias</a>
-      <a ui-sref="about-us" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><span class="Second"><i class="Icon fa fa-info-circle" aria-hidden="true"></i></span>¿Quienes Somos?</a>
+      <a ui-sref="ironmongery-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><i class="Nav-icon fa fa-info-circle" aria-hidden="true"></i>Listar Ferreterias</a>
+      <a ui-sref="about-us" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout"><i class="Nav-icon fa fa-info-circle" aria-hidden="true"></i>¿Quienes Somos?</a>
     </li>
 
 
     <li class="MainMenu-item">
-      <a ui-sref="workers-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Listar trabajadores</a>
+      <a ui-sref="workers-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link"><i class="Nav-icon fa fa-briefcase" aria-hidden="true"></i>Listar trabajadores</a>
 
-      <a ui-sref="services-page" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link"><span class="Third"><i class="Icon fa fa-briefcase" aria-hidden="true"></i></span>Servicios</a>
+      <a ui-sref="services-page" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link"><i class="Nav-icon fa fa-briefcase" aria-hidden="true"></i>Servicios</a>
     </li>
 
 
     <li class="MainMenu-item">
-      <a ui-sref="offers-page" class="MainMenu-link"><span class="Fourth"><i class="Icon fa fa-pencil-square-o" aria-hidden="true"></i></span>Ofertas</a>
+      <a ui-sref="offers-page" class="MainMenu-link"><i class="Nav-icon fa fa-pencil-square-o" aria-hidden="true"></i>Ofertas</a>
     </li>
 
 
     <li class="MainMenu-item">
-      <a ui-sref="contact-us" class="MainMenu-link"><span class="Fifth"><i class="Icon fa fa-phone-square" aria-hidden="true"></i></span>Contáctanos</a>
+      <a ui-sref="contact-us" class="MainMenu-link"><i class="Nav-icon fa fa-phone-square" aria-hidden="true"></i>Contáctanos</a>
     </li>
   </ul>
 </nav>
