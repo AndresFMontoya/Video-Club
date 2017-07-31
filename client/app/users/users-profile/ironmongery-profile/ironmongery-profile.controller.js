@@ -15,11 +15,12 @@
     $onInit() {
 
       //FUNCION PARA DESPLEGAR LA OPCION DE SUBIR OFERTAS
-      $(document).ready(function() {
+
         $('.ironmongery-Profile-WorkDone').click(function() {
+          console.log('click');
           $('.ironmongery-Profile-flexContainer').slideToggle();
         });
-      });
+
 
       this.departmentsService.query().$promise
         .then(response => {

@@ -23,12 +23,10 @@
 
 
     $onInit(){
-      console.log("hOLAAAAAAAAAAAAAA");
+LOG
       //FUNCION PARA DESPLEGAR LA OPCION DE SUBIR CERTIFICACIONES
-  
-
       $(document).ready(function() {
-        $('.WorkProfile-CertificationsContainer').click(function() {
+        $('.WorkProfile-CertificationsTitle').click(function() {
           $('.WorkProfile-CertificationsFiles').slideToggle();
         });
       });

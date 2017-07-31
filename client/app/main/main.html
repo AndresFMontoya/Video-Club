@@ -51,32 +51,33 @@
 
       </div>
     </div>
+    <div class="WorkerProfile-containerCards">
+      <!--IMAGE # 1 -->
+        <article class="WorkerProfile-section" ng-repeat="item in vm.users">
+          <figure class="WorkerProfile-imageContainer">
+            <img  data-ng-src="{{item.imageType}},{{item.imageProfile}}" alt="Avatar Perfil" class="WorkerProfile-image"/>
+          </figure>
+          <div class="WorkerProfile-information">
+            <p class="WorkerProfile-name"> {{item.name+" "+item.lastName}}</p>
+            <p class="WorkerProfile-specialization">Especializacion</p>
+            <p class="WorkerProfile-description">{{item.description}}</p>
 
-  <!--IMAGE # 1 -->
-    <article class="WorkerProfile-section" ng-repeat="item in vm.users">
-      <figure class="WorkerProfile-imageContainer">
-        <img  data-ng-src="{{item.imageType}},{{item.imageProfile}}" alt="Avatar Perfil" class="WorkerProfile-image"/>
-      </figure>
-      <div class="WorkerProfile-information">
-        <p class="WorkerProfile-name"> {{item.name+" "+item.lastName}}</p>
-        <p class="WorkerProfile-specialization">Especializacion</p>
-        <p class="WorkerProfile-description">{{item.description}}</p>
-        <a class="WorkerProfile-link"href="#">Ver mas..</a>
 
 
-        <div class="WorkerProfile-socialNetwork">
-          <a class="WorkerProfile-twitter" ng-href="http://{{item.twitter}}" target="_black" >
-            <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-facebook" ng-href="http://{{item.facebook}}" target="_black" >
-            <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-instagram" ng-href="http://{{item.instagram}}" target="_black" >
-            <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
-          <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
-            <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
-       </div>
-      </div>
+          </div>
+          <div class="WorkerProfile-socialNetwork">
+            <a class="WorkerProfile-twitter" ng-href="http://{{item.twitter}}" target="_black" >
+              <i class="fa fa-twitter WorkerProfile-twitter" aria-hidden="true"></i></a>
+            <a class="WorkerProfile-facebook" ng-href="http://{{item.facebook}}" target="_black" >
+              <i class="fa fa-facebook WorkerProfile-facebook" aria-hidden="true"></i></a>
+            <a class="WorkerProfile-instagram" ng-href="http://{{item.instagram}}" target="_black" >
+              <i class="fa fa-instagram WorkerProfile-instagram" aria-hidden="true"></i></a>
+            <a class="WorkerProfile-email" href="http://gmail.com" target="_black" >
+              <i class="fa fa-envelope  WorkerProfile-email" aria-hidden="true"></i></a>
+         </div>
+        </article>
+    </div>
 
-    </article>
       </div>
 
   </section>
