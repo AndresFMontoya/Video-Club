@@ -23,13 +23,12 @@
 
 
     $onInit(){
-LOG
       //FUNCION PARA DESPLEGAR LA OPCION DE SUBIR CERTIFICACIONES
-      $(document).ready(function() {
-        $('.WorkProfile-CertificationsTitle').click(function() {
+        $('.WorkProfile-personalDataContainer').click(function() {
+          console.log('click');
           $('.WorkProfile-CertificationsFiles').slideToggle();
         });
-      });
+
 
       this.departmentsService.query().$promise
         .then(response=>{
