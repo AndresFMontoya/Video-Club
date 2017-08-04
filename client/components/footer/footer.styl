@@ -155,8 +155,8 @@ a
 
 @media screen and (max-width: 800px)
   .FooterContainer
-    display inherit
-  .FooterMain:before, .FooterMain:after
+    flex-direction column
+  .Footer-contacts:before, .Footer-contacts:after
     content ""
     width 90%
     background silver
@@ -167,15 +167,17 @@ a
     display none
   .Footer-contacts
       width 100%
+      order 2
   .FooterMain
       margin 0
       color white
       width 100%
       border none
+      height inherit
   .Footer-end:before
     display none
   .Contacts
-      margin-top 20px
+    margin-top 20px
   .Footer-networks-title
       margin-top 10px
       margin-bottom 0px
