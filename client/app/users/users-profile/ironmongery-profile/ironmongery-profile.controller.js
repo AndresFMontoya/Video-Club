@@ -16,7 +16,7 @@
 
       //FUNCION PARA DESPLEGAR LA OPCION DE SUBIR OFERTAS
 
-        $('.ironmongery-Profile-WorkDone').click(function() {
+        $('.ironmongery-Profile-WorkDoneTitle').click(function() {
           console.log('click');
           $('.ironmongery-Profile-flexContainer').slideToggle();
         });
