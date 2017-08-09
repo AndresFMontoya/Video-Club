@@ -14,7 +14,8 @@ function AuthService($auth, $state, usersService) {
     isAuthenticated: isAuthenticated,
     isTrab: isTrab,
     isFerr: isFerr,
-    userInfo:userInfo
+    userInfo:userInfo,
+    getRoles: getRoles
 
   }
 
@@ -103,6 +104,14 @@ function AuthService($auth, $state, usersService) {
       }
     }
   }
+
+  function getRoles(){
+		if(auth.isAuthenticated()){
+			return $auth.getPayload().roles;
+		} else{
+			return false;
+		}
+	}
 
   return auth;
 }
