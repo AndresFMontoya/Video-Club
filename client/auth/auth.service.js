@@ -3,18 +3,19 @@
 angular.module("startUpApp")
   .factory('AuthService', AuthService)
 
-AuthService.$inject = ['$auth', '$state', 'usersService'];
+AuthService.$inject = ['$auth', '$state', 'usersService','localStorageService'];
 
-function AuthService($auth, $state, usersService) {
-
+function AuthService($auth, $state, usersService,localStorageService) {
+  var avatar;
   var auth = {
     login: login,
     logout: logout,
     isAdmin: isAdmin,
+    getImageProfile: getImageProfile,
     isAuthenticated: isAuthenticated,
     isTrab: isTrab,
     isFerr: isFerr,
-    userInfo:userInfo
+    userInfo: userInfo
 
   }
 
@@ -22,6 +23,18 @@ function AuthService($auth, $state, usersService) {
     $auth.login(user)
       .then(response => {
         console.log("login ok", response);
+        usersService.get({id:$auth.getPayload().sub}).$promise
+        .then(response =>{
+          console.log();
+
+          if (typeof response.imageProfile !== "undefined") {
+            localStorageService.set('avatar', response.imageType + ','+ response.imageProfile);
+            console.log("user",response);
+
+          }
+
+
+        })
         $state.go('main');
       }).catch(err => {
         var error = err;
@@ -32,6 +45,13 @@ function AuthService($auth, $state, usersService) {
       })
 
   }
+function getImageProfile() {
+  if($auth.isAuthenticated()){
+    return localStorageService.get('avatar');
+  }else {
+    return false;
+  }
+}
 
   function logout() {
 
@@ -40,6 +60,7 @@ function AuthService($auth, $state, usersService) {
         console.log("logout ok", response);
         console.log(auth.isAdmin());
         $state.go('main');
+        localStorageService.remove('avatar')
       }).catch(err => {
         var error = err;
         alert(error.data);

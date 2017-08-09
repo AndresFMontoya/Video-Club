@@ -11,16 +11,20 @@ angular.module('startUpApp', [
     'ngMessages',
     'matchmedia-ng',
     'ngImgCrop',
-    'ngFileSaver'
+    'ngFileSaver',
+    'LocalStorageModule'
   ])
   .constant("API","http://localhost:8080/adecuahogar-backend")
-  .config(function($urlRouterProvider, $locationProvider,$authProvider,API) {
+  .config(function($urlRouterProvider, $locationProvider,$authProvider,API,localStorageServiceProvider) {
     $urlRouterProvider.otherwise('not-found');
     //Config satellizer
     $authProvider.loginUrl = API +'/api/auth/login';
     $authProvider.tokenName='token';
     $authProvider.tokenPrefix='startUpApp';
     $locationProvider.html5Mode(true);
+
+    localStorageServiceProvider
+        .setPrefix('startUpApp');
   })
 //   .run(function($state,$rootScope, $auth,routeManager) {
 //      $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
