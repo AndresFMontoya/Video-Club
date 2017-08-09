@@ -15,7 +15,8 @@ function AuthService($auth, $state, usersService,localStorageService) {
     isAuthenticated: isAuthenticated,
     isTrab: isTrab,
     isFerr: isFerr,
-    userInfo: userInfo
+    userInfo:userInfo,
+    getRoles: getRoles
 
   }
 
@@ -124,6 +125,14 @@ function getImageProfile() {
       }
     }
   }
+
+  function getRoles(){
+		if(auth.isAuthenticated()){
+			return $auth.getPayload().roles;
+		} else{
+			return false;
+		}
+	}
 
   return auth;
 }
