@@ -17,7 +17,7 @@
         gender:false,
         city:false
     }
-
+}
 
     $onInit(){
       //FUNCION PARA DESPLEGAR LA OPCION DE SUBIR CERTIFICACIONES
