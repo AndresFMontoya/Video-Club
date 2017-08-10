@@ -30,9 +30,12 @@
     <div class="ironmongery-ProfileContainer">
       <div class="ironmongery-Profile">
         <!--ADMINISTRATOR PROFILE WORKER -IMAGE- -->
-        <figure class="ironmongery-Profile-imageContainer">
-          <h2 class="ironmongery-Profile-imageTitle">Foto de Perfil</h2>
-          <img src="assets/Ironmongery-Profile/ferreteria1.jpg" alt="" class="ironmongery-Profile-image">
+        <figure class="WorkProfile-imageContainer">
+          <h2 class="WorkProfile-imageTitle">Foto de Perfil</h2>
+          <img ng-if="vm.user.imageType != null" data-ng-src="{{vm.user.imageType}},{{vm.user.imageProfile}}" alt=""class="WorkProfile-image">
+          <img ng-if="vm.user.imageType== null" src="assets/Main-images/engineer.png" alt=""class="WorkProfile-image">
+          <!-- boton para abrir el modal -->
+          <button type="button" class="btn btn-primary btn-lg WorkProfile-imageUpload"  data-toggle="modal" data-target="#myModal">Editar imagen</button>
         </figure>
 
         <!--ADMINISTRATOR PROFILE WORKER - DESCRIPTION -->
