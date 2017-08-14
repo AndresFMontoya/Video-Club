@@ -28,6 +28,10 @@
       },
       'update': {
         method: 'PUT'
+      },
+      'recover': {
+        method: 'POST',
+        url:API+'/api/users/recover',
       }
       ,getIronmongeries:{
 			url:API+'/api/users/ironmongeries',
