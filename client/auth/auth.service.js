@@ -21,7 +21,14 @@ function AuthService($auth, $state, usersService,localStorageService) {
 
   }
 
-  function login(user, callback) {
+  function login(user,recordar, callback) {
+    if (recordar) {
+      $auth.setStorageType('localStorage');
+      localStorageService.setStorageType('localStorage');
+    } else {
+      $auth.setStorageType('sessionStorage');
+      localStorageService.setStorageType('sessionStorage');
+    }
     $auth.login(user)
       .then(response => {
         console.log("login ok", response);
