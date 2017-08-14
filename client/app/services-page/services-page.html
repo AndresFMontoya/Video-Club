@@ -5,53 +5,11 @@
       <img src="assets/contact-us/phone2.png" alt="" class="Contact-imagePhone">
       <h2 class="ServiceTitle">Servicios</h2>
     </div>
+    <div class="">
+      <ul>
+        <li ng-repeat="item in vm.especializations">{{item.name}}</li>
+      </ul>
+    </div>
 
-    <ul class="Services-ListContainer">
-      <li class="Services-Constructors"><a  class="Services-Subtitle"href="#"></a>
-        <div class="Services-SublistContainer1">
-          <div class="Services-list1">
-            <h3 class="Services-listTitle1">Expertos</h3>
-            <ul class="Services-Sublist1">
-              <li class="Services-Sublist"><a href="#">Arquitectos</a></li>
-              <li class="Services-Sublist"><a href="#">Interioristas y decoraciones</a></li>
-              <li class="Services-Sublist"><a href="#">Constructores y albañiles</a></li>
-              <li class="Services-Sublist"><a href="#">Empresas de diseño y construcción</a></li>
-            </ul>
-          </div>
-          <div class="Services-list2">
-            <h3 class="Services-listTitle2">Categorías</h3>
-            <ul class="Services-Sublist2">
-              <li class="Services-Sublist1"><a href="#">Fontaneros</a></li>
-              <li class="Services-Sublist1"><a href="#">Electricístas</a></li>
-              <li class="Services-Sublist1"><a href="#">Carpinteros</a></li>
-              <li class="Services-Sublist1"><a href="#">Pintores y decoración de paredes</a></li>
-              <li class="Services-Sublist1"><a href="#">Cocínas y baños</a></li>
-              <li class="Services-Sublist1"><a href="#">Puertas</a></li>
-              <li class="Services-Sublist1"><a href="#">Piscinas</a></li>
-              <li class="Services-Sublist1"><a href="#">Obra blanca</a></li>
-              <li class="Services-Sublist1"><a href="#">Obra negra</a></li>
-            </ul>
-          </div>
-          <div class="Services-list3">
-            <h3 class="Services-listTitle3">Exteriores</h3>
-            <ul class="Services-Sublist3">
-              <li class="Services-Sublist1"><a href="#">Jardineros</a></li>
-              <li class="Services-Sublist1"><a href="#">Suministros de jardinería</a></li>
-              <li class="Services-Sublist1"><a href="#">Piscinas</a></li>
-              <li class="Services-Sublist1"><a href="#">Patios, cubiertas y cercados</a></li>
-            </ul>
-          </div>
-          <div class="Services-list4">
-            <h3 class="Services-listTitle4">Otros</h3>
-            <ul class="Services-Sublist4">
-              <li class="Services-Sublist1"><a href="#">Materiales de construcción</a></li>
-              <li class="Services-Sublist1"><a href="#">Suministros de jardinería</a></li>
-              <li class="Services-Sublist1"><a href="#">Artículos para el hogar</a></li>
-              <li class="Services-Sublist1"><a href="#">Detalles decorativos</a></li>
-            </ul>
-          </div>
-        </div>
-      </li>
-    </ul>
   </div>
 </section>

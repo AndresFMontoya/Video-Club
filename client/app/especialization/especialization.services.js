@@ -6,7 +6,7 @@
   especializationService.inject = ["$resource", "API"];
 
   function especializationService($resource, API) {
-    return $resource(API + "/api/especialization/:id", {
+    return $resource(API + "/api/especializations/:id", {
       id: '@id'
     })
   }
