@@ -16,7 +16,8 @@ function AuthService($auth, $state, usersService,localStorageService) {
     isTrab: isTrab,
     isFerr: isFerr,
     userInfo:userInfo,
-    getRoles: getRoles
+    getRoles: getRoles,
+    getActive: getActive
 
   }
 
@@ -88,6 +89,16 @@ function getImageProfile() {
     } else{
       return false;
     }
+  }
+  function getActive() {
+    if (auth.isAuthenticated()) {
+      if ($auth.getPayload().active== 'true') {
+        return true;
+      } else {
+          return false;
+      }
+
+  }
   }
 
   function isAdmin() {

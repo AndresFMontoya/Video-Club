@@ -3,8 +3,10 @@
 (function(){
     angular.module('startUpApp')
     .run(function($rootScope, $state , AuthService){
-      $rootScope.$on('$stateChangeStart',function(event, next){
-        if(!next.authenticate){
+
+      $rootScope.$on('$stateChangeStart',function(event,next){
+
+       if(!next.authenticate){
           return;
         }
 
