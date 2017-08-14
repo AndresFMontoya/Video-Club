@@ -16,11 +16,8 @@
         phoneNumber:false,
         gender:false,
         city:false
-      }
-
-
     }
-
+}
 
     $onInit(){
       //FUNCION PARA DESPLEGAR LA OPCION DE SUBIR CERTIFICACIONES
@@ -85,7 +82,7 @@
           console.log("crop",this.croppedImage);
            console.log("imagetype",this.user.imageType);
            console.log("imageProfile",this.user.imageProfile);
-    this.user.active=true;
+
     this.usersService.update(this.user).$promise
       .then(response=>{
         console.log("usuario",this.user);

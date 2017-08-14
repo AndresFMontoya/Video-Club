@@ -66,7 +66,18 @@
       if (this.newPassw) {
         this.user.password = this.newPassword;
       }
-      this.user.active = true;
+      if (this.croppedImage) {
+
+
+                 var newImagen = this.croppedImage.split(',');
+                 this.user.imageType = newImagen[0];
+                 this.user.imageProfile = newImagen[1];
+             }
+
+            console.log("crop",this.croppedImage);
+             console.log("imagetype",this.user.imageType);
+             console.log("imageProfile",this.user.imageProfile);
+
       this.usersService.update(this.user).$promise
         .then(response => {
           console.log("usuario", this.user);
@@ -75,6 +86,9 @@
           console.log("error", err);
         });
     }
+    imageLoad($fileContent) {
+              this.image = $fileContent;
+          }
 
 
   }
