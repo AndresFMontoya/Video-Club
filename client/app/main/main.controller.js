@@ -9,7 +9,6 @@
 
     }
     $onInit(){
-
       this.usersService.onIndex().$promise
       .then(response => {
         console.log("trabajadores",response);

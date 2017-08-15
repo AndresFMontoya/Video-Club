@@ -23,6 +23,7 @@ function AuthService($auth, $state, usersService,localStorageService) {
   function login(user, callback) {
     $auth.login(user)
       .then(response => {
+          $('#myModal').modal('toggle')
         console.log("login ok", response);
         usersService.get({id:$auth.getPayload().sub}).$promise
         .then(response =>{

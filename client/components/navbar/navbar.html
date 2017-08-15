@@ -1,4 +1,18 @@
 <header class="Header">
+  <form id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-submit="vm.loguearUsuario()">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content LogginForm-container">
+          <h3 class="Login-tittle">Iniciar sesion</h3>
+          <div class="LogginForm-data">
+            <input type="text" name="user" placeholder="Correo" class="LogginForm-email" ng-model="vm.user.email">
+            <input type="password" name="password" placeholder="Contraseña" class="LogginForm-password" ng-model="vm.user.password">
+            <input id="recordarme" type="checkbox" name="recordarme" class="LogginForm-checkbox" ng-model="vm.recordarme">
+            <label for="recordarme" class="LogginForm-label"></label>Recordarme
+            <input type="submit" value="Ingresar" class="LogginForm-botton">
+          </div>
+        </div>
+      </div>
+    </form>
   <!--Toolbar -->
   <div id="" class="Toolbar">
     <div class="Container-toolbar">
@@ -34,16 +48,14 @@
       <img src="static/Images/logo.png" alt="LOGO" class="TopBar-logo">
       <figcaption class="TopBar-slogan">Remodelamos tu Hogar</figcaption>
     </figure>
-
     <!--SESION BUTTONS-->
-    <div ng-if="!vm.AuthService.isAuthenticated()" class="ButtonContainer1">
-      <a ui-sref="login" class="ButtonSesion">INICIAR SESION</a>
-
+    <div ng-if="!vm.AuthService.isAuthenticated()" data-toggle="modal" data-target=".bs-example-modal-sm" class="ButtonContainer1">
+      <a  class="ButtonSesion" id="Login">INICIAR SESION</a>
     </div>
+
 
     <div ng-if="!vm.AuthService.isAuthenticated()" class="ButtonContainer2">
       <a ui-sref="users-create" class="ButtonRegistrer">REGISTRARSE</a>
-
     </div>
     <div class="dropdown ButtonContainer3" ng-if="vm.AuthService.isAuthenticated()">
       <button class="btn btn-default dropdown-toggle ng-cloak" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
