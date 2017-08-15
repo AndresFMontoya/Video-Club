@@ -1,5 +1,5 @@
 <header class="Header">
-  <form id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-submit="vm.loguearUsuario()">
+  <form id="LoginModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-submit="vm.loguearUsuario()">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content LogginForm-container">
           <h3 class="Login-tittle">Iniciar sesion</h3>
@@ -49,8 +49,8 @@
       <figcaption class="TopBar-slogan">Remodelamos tu Hogar</figcaption>
     </figure>
     <!--SESION BUTTONS-->
-    <div ng-if="!vm.AuthService.isAuthenticated()" data-toggle="modal" data-target=".bs-example-modal-sm" class="ButtonContainer1">
-      <a  class="ButtonSesion" id="Login">INICIAR SESION</a>
+    <div ng-if="!vm.AuthService.isAuthenticated()" data-toggle="modal" data-target="#LoginModal" class="ButtonContainer1">
+      <a href="" class="ButtonSesion" id="Login">INICIAR SESION</a>
     </div>
 
 
