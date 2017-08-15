@@ -11,6 +11,7 @@ class LoginComponent {
   loguearUsuario(){
     this.AuthService.login(this.user,this.remember);
   }
+  
 }
 LoginComponent.$inject=['AuthService'];
 angular.module('startUpApp')

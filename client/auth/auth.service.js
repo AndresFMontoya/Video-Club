@@ -31,6 +31,7 @@ function AuthService($auth, $state, usersService,localStorageService) {
     }
     $auth.login(user)
       .then(response => {
+          $('#myModal').modal('toggle')
         console.log("login ok", response);
         usersService.get({id:$auth.getPayload().sub}).$promise
         .then(response =>{
@@ -55,6 +56,10 @@ function AuthService($auth, $state, usersService,localStorageService) {
 
   }
 function getImageProfile() {
+  if (sessionStorage.getItem('startUpApp_token')) {
+    $auth.setStorageType('sessionStorage');
+    localStorageService.setStorageType('sessionStorage');
+  }
   if($auth.isAuthenticated()){
     return localStorageService.get('avatar');
   }else {
@@ -63,7 +68,7 @@ function getImageProfile() {
 }
 
   function logout() {
-
+    
     return $auth.logout()
       .then(response => {
         console.log("logout ok", response);
@@ -81,6 +86,10 @@ function getImageProfile() {
   }
 
   function isAuthenticated() {
+    if (sessionStorage.getItem('startUpApp_token')) {
+      $auth.setStorageType('sessionStorage');
+      localStorageService.setStorageType('sessionStorage');
+    }
 
     if ($auth.isAuthenticated()) {
       return true;
@@ -91,6 +100,10 @@ function getImageProfile() {
 
   function userInfo() {
 
+    if (sessionStorage.getItem('startUpApp_token')) {
+      $auth.setStorageType('sessionStorage');
+      localStorageService.setStorageType('sessionStorage');
+    }
     if (auth.isAuthenticated()) {
       return $auth.getPayload().user;
     } else{
