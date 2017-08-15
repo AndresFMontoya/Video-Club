@@ -2,11 +2,11 @@
   'use strict';
 
   angular.module('startUpApp')
-    .factory('specializationService', specializationService);
-  specializationService.inject = ["$resource", "API"];
+    .factory('especializationService', especializationService);
+  especializationService.inject = ["$resource", "API"];
 
-  function specializationService($resource, API) {
-    return $resource(API + "/api/specialization/:id", {
+  function especializationService($resource, API) {
+    return $resource(API + "/api/especializations/:id", {
       id: '@id'
     })
   }

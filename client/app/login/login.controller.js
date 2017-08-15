@@ -5,10 +5,11 @@
 class LoginComponent {
   constructor(AuthService) {
     this.AuthService = AuthService;
+
   }
 
   loguearUsuario(){
-    this.AuthService.login(this.user);
+    this.AuthService.login(this.user,this.remember);
   }
   
 }

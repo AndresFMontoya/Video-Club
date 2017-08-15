@@ -6,7 +6,9 @@
 
   </div>
 
-  <table class="table table-hover" ng-if="!vm.list">
+<div class="WorkersList-table-container">
+
+  <table class="table table-hover">
 
     <thead class="WorkersList-tableHeadAtrib">
       <tr class="WorkersList-atribAll">
@@ -27,17 +29,13 @@
         <td class="WorkersList-lastName">{{item.lastName}}</td>
         <td class="">{{item.email}}</td>
         <td class="">{{item.phoneNumber}}</td>
-        <td class=""><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.onIndex"></md-switch></td>
-        <td class=""><md-switch ng-change="vm.updateState(item)" aria-label="false" ng-model="item.active"></md-switch></td>
+        <td class=""><md-switch class="md-primary" ng-change="vm.updateState(item)" aria-label="false" ng-model="item.onIndex"></md-switch></td>
+        <td class=""><md-switch class="md-primary" ng-change="vm.updateState(item)" aria-label="false" ng-model="item.active"></md-switch></td>
         <td class=""><a ui-sref="workers-update({id:item.id})">editar</a></td>
       </tr>
     </tbody>
   </table>
+</div>
 
-  <div class="" ng-if="vm.list">
-    <ul class="WorkersList-subList">
-      <li ng-repeat="item in vm.workers"><a href="#">{{item.name+" "+ item.lastName}}</a></li>
-    </ul>
-  </div>
 
 </section>

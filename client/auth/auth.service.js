@@ -16,11 +16,19 @@ function AuthService($auth, $state, usersService,localStorageService) {
     isTrab: isTrab,
     isFerr: isFerr,
     userInfo:userInfo,
-    getRoles: getRoles
+    getRoles: getRoles,
+    getActive: getActive
 
   }
 
-  function login(user, callback) {
+  function login(user,recordar, callback) {
+    if (recordar) {
+      $auth.setStorageType('localStorage');
+      localStorageService.setStorageType('localStorage');
+    } else {
+      $auth.setStorageType('sessionStorage');
+      localStorageService.setStorageType('sessionStorage');
+    }
     $auth.login(user)
       .then(response => {
           $('#myModal').modal('toggle')
@@ -89,6 +97,16 @@ function getImageProfile() {
     } else{
       return false;
     }
+  }
+  function getActive() {
+    if (auth.isAuthenticated()) {
+      if ($auth.getPayload().active== 'true') {
+        return true;
+      } else {
+          return false;
+      }
+
+  }
   }
 
   function isAdmin() {
