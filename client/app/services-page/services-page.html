@@ -6,10 +6,15 @@
       <h2 class="ServiceTitle">Servicios</h2>
     </div>
     <div class="">
-      <ul>
-        <li ng-repeat="item in vm.especializations | orderBy:'name':false">{{item.name}}</li>
+      <p ng-repeat="item in vm.departments">{{item.name}}</p>
+    </div>
+    <div class="Services-especializationContainer">
+      <ul ng-repeat="item in vm.especializations | orderBy:'name':false" >
+        <li ><a data-toggle="tooltip" href="" data-placement="top" title="{{item.description}}">{{item.name}}</a> </li>
       </ul>
     </div>
+
+    <button type="button"  data-toggle="tooltip" data-placement="top" title="Holaaaaat">Tooltip on left</button>
 
   </div>
 </section>
