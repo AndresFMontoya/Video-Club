@@ -40,7 +40,7 @@
       })
       .state('ironmongery-update', {
         url: '/ironmongery-update/:id',
-        authenticate: ["ADMIN"],
+        authenticate: ["ADMIN","FERR"],
         template: '<ironmongery-update></ironmongery-update>'
       })
       .state('workers-list', {
@@ -50,7 +50,7 @@
       })
       .state('workers-update', {
         url: '/workers-update/:id',
-        authenticate: ["ADMIN"],
+        authenticate: ["ADMIN","TRAB"],
         template: '<workers-update></workers-update>'
       });
 
