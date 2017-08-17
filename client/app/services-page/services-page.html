@@ -7,7 +7,7 @@
     </div>
     <div class="">
       <ul>
-        <li ng-repeat="item in vm.especializations">{{item.name}}</li>
+        <li ng-repeat="item in vm.especializations | orderBy:'name':false">{{item.name}}</li>
       </ul>
     </div>
 

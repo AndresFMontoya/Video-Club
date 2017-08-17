@@ -31,7 +31,7 @@ function AuthService($auth, $state, usersService,localStorageService) {
     }
     $auth.login(user)
       .then(response => {
-          $('#myModal').modal('toggle')
+          $('#LoginModal').modal('toggle')
         console.log("login ok", response);
         usersService.get({id:$auth.getPayload().sub}).$promise
         .then(response =>{
@@ -68,7 +68,7 @@ function getImageProfile() {
 }
 
   function logout() {
-    
+
     return $auth.logout()
       .then(response => {
         console.log("logout ok", response);
