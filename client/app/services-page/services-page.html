@@ -9,12 +9,18 @@
       <p ng-repeat="item in vm.departments">{{item.name}}</p>
     </div>
     <div class="Services-especializationContainer">
-      <ul ng-repeat="item in vm.especializations | orderBy:'name':false" >
-        <li ><a data-toggle="tooltip" href="" data-placement="top" title="{{item.description}}">{{item.name}}</a> </li>
-      </ul>
+      <ul >
+        <li ng-repeat="item in vm.especializations | orderBy:'name':false" >
+          <md-tooltip class="Tooltip">{{item.description}}</md-tooltip>
+          <a href="">{{item.name}}</a>
+        </li>
     </div>
 
-    <button type="button"  data-toggle="tooltip" data-placement="top" title="Holaaaaat">Tooltip on left</button>
+  </ul>
+    <button type="button"  data-toggle="tooltip" data-placement="top" title="">Tooltip on left</button>
+        <md-button class="" aria-label="">
+      <md-tooltip>Play Music</md-tooltip>
 
+    </md-button>
   </div>
 </section>
