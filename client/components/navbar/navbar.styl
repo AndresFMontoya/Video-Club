@@ -89,17 +89,18 @@
   border-radius 20px
   padding 6px	!important
 .ButtonContainer1, .ButtonContainer2
-    transition all .1s
-    float right
-    position relative
-    top 0
-    margin 2.56em
-    font-size 1em
-    font-weight bold
-    padding 10px
-    border-radius 5px
-    background-color #1e64aa
-    box-shadow 0 4px 0px #2a90e4
+  transition all .1s
+  float right
+  position relative
+  top 0
+  margin 2.56em
+  font-size 1em
+  font-weight bold
+  padding 10px
+  border-radius 5px
+  background-color #1e64aa
+  box-shadow 0 4px 0px #2a90e4
+  cursor pointer
 
 .ButtonContainer1:hover, .ButtonContainer2:hover
     top 3px
@@ -109,6 +110,7 @@
     color white
     font-size 1em
     font-weight bold
+    cursor pointer
 
 .MainMenu
     width 100%
@@ -220,6 +222,94 @@ nav
     line-height 45px
     color white
 
+@media screen and (max-width: 800px)
+    .MainMenu-list
+      display block
+    .MainMenu-itemTop
+        border-top 1px solid rgba(255, 255, 255, .3)
+    .MainMenu
+        display none
+        width 40%
+        margin 0
+        position absolute
+        z-index 100
+    .MainMenu-item
+        width 100%
+        display block
+        float none
+        border-bottom 1px solid rgba(255, 255, 255, .3)
+        background rgba(62, 62, 62, 0.89)
+    .Menu-bar
+        display block
+        width 100%
+        background-color #1e64aa
+    .fa-bars
+        font-size 30px
+    .Bt-menu
+        display block
+        padding 20px
+        color #fff
+        text-decoration none
+        font-weight bold
+        font-size 25px
+        box-sizing border-box
+    .TopBar-containerlogo
+        width 100%
+
+@media screen and (max-width: 800px)
+  .First, .Second, .Third, .Fourth, .Fifth
+    display none
+
+@media screen and (max-width: 800px)
+  .ButtonContainer1, .ButtonContainer2
+    margin 0
+    padding 26px
+    border-radius 0
+    background transparent
+    box-shadow none
+  .ButtonContainer3
+    margin 0
+    padding 26px
+    border-radius 0
+    background transparent
+    box-shadow none
+    position relative!important
+    float right
+    top 0
+
+@media screen and (max-width: 800px)
+  .ButtonContainer1:hover, .ButtonContainer2:hover
+    top 0
+    box-shadow none
+
+@media screen and (max-width: 800px)
+  .ButtonSesion, .ButtonRegistrer
+    color #fff
+
+@media screen and (max-width: 400px)
+    .fa-bars
+        font-size 25px
+    .MainMenu
+        width 100%
+    .MainMenu-item
+        padding 0
+    .Bt-menu
+        padding-bottom 22px
+
+@media screen and (max-width: 400px)
+  .ButtonContainer1, .ButtonContainer2
+    margin 0
+    padding 26px 11px
+    font-size 0.88em
+
+@media screen and (max-width: 925px)
+    .SearchBar-item
+        width 150px
+
+@media screen and (max-width: 665px)
+    .SearchBar-container
+        display none
+
 //Login Styles
 .LogginForm-container
     font-size 1em
@@ -282,38 +372,3 @@ nav
     &:checked
         & ~ label[for=recordarme]
             background #00ffe7
-
-@media screen and (max-width: 800px)
-  .ButtonContainer1:hover, .ButtonContainer2:hover
-    top 0
-    box-shadow none
-
-@media screen and (max-width: 800px)
-  .ButtonSesion, .ButtonRegistrer
-    color #fff
-
-@media screen and (max-width: 400px)
-    .fa-bars
-        font-size 25px
-    .MainMenu
-        width 100%
-    .MainMenu-item
-        padding 0
-
-@media screen and (max-width: 400px)
-  .ButtonContainer1, .ButtonContainer2
-    margin 0
-    padding 29px 11px
-    font-size 0.88em
-
-@media screen and (max-width: 925px)
-    .SearchBar-item
-        width 150px
-
-@media screen and (max-width: 665px)
-    .SearchBar-container
-        display none
-
-@media screen and (min-width: 800px)
-    .MainMenu
-        display block !important
