@@ -1,2 +1,8 @@
 
-<h2>hola desde city-create</h2>
+{{selectedItem.id}}
+     <md-autocomplete placeholder="Ciudad" md-no-cache="true"  md-item-text="item.name" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in vm.query(searchText)">
+       <md-item-template>
+         <span  md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+       </md-item-template>
+       <md-not-found> Ciudad no encontrada</md-not-found>
+     </md-autocomplete>
