@@ -3,8 +3,23 @@
 (function(){
 
 class PasswordRecoverComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor(toastr,usersService) {
+    this.toastr=toastr;
+    this.usersService=usersService;
+    this.ok=false;
+  }
+
+  enviar(){
+
+    this.usersService.recover(this.user).$promise
+      .then(response => {
+        this.ok=true;
+        this.op="op"
+        this.toastr.info("enviado","informacion");
+      }).catch(err => {
+        this.toastr.warning(err.data,"error");
+        this.op="noOp"
+      });
   }
 }
 

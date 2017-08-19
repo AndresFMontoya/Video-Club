@@ -9,7 +9,7 @@ angular.module('startUpApp', [
     'satellizer',
     'ngMaterial',
     'ngMessages',
-    'matchmedia-ng',
+    'toastr',
     'ngImgCrop',
     'ngFileSaver',
     'LocalStorageModule'
