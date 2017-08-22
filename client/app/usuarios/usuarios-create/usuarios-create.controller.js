@@ -53,6 +53,14 @@
             this.image = $fileContent;
         }
 
+        querySearch(searchText){
+          return this.ciudadesService.getCiudades({nombre:searchText}).$promise
+           .then(function(data) {
+              // Map the response object to the data object.
+              return data;
+            })
+
+            }
     }
     UsuariosCreateComponent.$inject = ['usuariosService', 'departamentosService', 'ciudadesService', 'tiposDocumentosService', '$state'];
     angular.module('videoClubApp')
