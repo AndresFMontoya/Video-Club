@@ -65,6 +65,6 @@
     return Util;
   }
 
-  angular.module('startUpApp.util')
+  angular.module('videoClubApp.util')
     .factory('Util', UtilService);
 })();

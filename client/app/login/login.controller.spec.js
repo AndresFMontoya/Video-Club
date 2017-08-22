@@ -3,7 +3,7 @@
 describe('Component: LoginComponent', function () {
 
   // load the controller's module
-  beforeEach(module('startUpApp'));
+  beforeEach(module('videoClubApp'));
 
   var LoginComponent;
 
@@ -13,6 +13,6 @@ describe('Component: LoginComponent', function () {
   }));
 
   it('should ...', function () {
-    expect(1).to.equal(1);
+    1.should.equal(1);
   });
 });

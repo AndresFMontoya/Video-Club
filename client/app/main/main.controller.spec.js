@@ -3,7 +3,7 @@
 describe('Component: mainComponent', function() {
 
   // load the controller's module
-  beforeEach(module('startUpApp'));
+  beforeEach(module('videoClubApp'));
   beforeEach(module('stateMock'));
 
   var scope;
@@ -28,6 +28,7 @@ describe('Component: mainComponent', function() {
   it('should attach a list of things to the controller', function() {
     mainComponent.$onInit();
     $httpBackend.flush();
-    mainComponent.awesomeThings.length.should.equal(4);
+    expect(mainComponent.awesomeThings.length)
+      .toBe(4);
   });
 });

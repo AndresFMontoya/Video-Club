@@ -4,25 +4,20 @@
 
   class MainController {
 
-    constructor(usersService) {
-      this.usersService = usersService;
+    constructor() {
+     
+    }
 
+    $onInit() {
+     
     }
-    $onInit(){
-      this.usersService.onIndex().$promise
-      .then(response => {
-        console.log("trabajadores",response);
-        this.users = response;
-      })
-      .catch(err => console.error(err));
-    }
+
 
   }
-MainController.$inject=["usersService"];
-  angular.module('startUpApp')
+
+  angular.module('videoClubApp')
     .component('main', {
       templateUrl: 'app/main/main.html',
-      controller: MainController,
-      controllerAs:'vm'
+      controller: MainController
     });
 })();

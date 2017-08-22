@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('startUpApp')
+angular.module('videoClubApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('login', {

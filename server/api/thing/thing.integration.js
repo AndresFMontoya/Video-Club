@@ -23,7 +23,7 @@ describe('Thing API:', function() {
     });
 
     it('should respond with JSON array', function() {
-      things.should.be.instanceOf(Array);
+      expect(things).to.be.instanceOf(Array);
     });
 
   });

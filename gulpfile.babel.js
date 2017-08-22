@@ -1,4 +1,4 @@
-// Generated on 2017-05-04 using generator-angular-fullstack 3.8.0
+// Generated on 2017-06-12 using generator-angular-fullstack 3.8.0
 'use strict';
 
 import _ from 'lodash';
@@ -438,7 +438,6 @@ gulp.task('wiredep:client', () => {
     return gulp.src(paths.client.mainView)
         .pipe(wiredep({
             exclude: [
-                /bootstrap.js/,
                 '/json3/',
                 '/es5-shim/',
                 /font-awesome\.css/,
@@ -453,7 +452,6 @@ gulp.task('wiredep:test', () => {
     return gulp.src(paths.karma)
         .pipe(wiredep({
             exclude: [
-                /bootstrap.js/,
                 '/json3/',
                 '/es5-shim/',
                 /font-awesome\.css/,
@@ -513,10 +511,9 @@ gulp.task('build:client', ['styles', 'html', 'constant', 'build:images'], () => 
                 .pipe(plugins.uglify())
             .pipe(jsFilter.restore)
             .pipe(cssFilter)
-                /*.pipe(plugins.cleanCss({
+               /* .pipe(plugins.cleanCss({
                     processImportFrom: ['!fonts.googleapis.com']
-                }))
-                */
+                }))*/
             .pipe(cssFilter.restore)
             .pipe(htmlBlock)
                 .pipe(plugins.rev())
@@ -528,7 +525,7 @@ gulp.task('build:client', ['styles', 'html', 'constant', 'build:images'], () => 
 gulp.task('html', function() {
     return gulp.src(`${clientPath}/{app,components}/**/*.html`)
         .pipe(plugins.angularTemplatecache({
-            module: 'startUpApp'
+            module: 'videoClubApp'
         }))
         .pipe(gulp.dest('.tmp'));
 });
@@ -536,7 +533,7 @@ gulp.task('html', function() {
 gulp.task('constant', function() {
   let sharedConfig = require(`./${serverPath}/config/environment/shared`);
   return plugins.ngConstant({
-    name: 'startUpApp.constants',
+    name: 'videoClubApp.constants',
     deps: [],
     wrap: true,
     stream: true,

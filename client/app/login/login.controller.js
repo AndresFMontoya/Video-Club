@@ -5,16 +5,14 @@
 class LoginComponent {
   constructor(AuthService) {
     this.AuthService = AuthService;
-
   }
-
-  loguearUsuario(){
-    this.AuthService.login(this.user,this.remember);
+  login(){
+  	this.AuthService.login(this.user);
   }
-  
 }
-LoginComponent.$inject=['AuthService'];
-angular.module('startUpApp')
+
+LoginComponent.$inject = ['AuthService'];
+angular.module('videoClubApp')
   .component('login', {
     templateUrl: 'app/login/login.html',
     controller: LoginComponent,

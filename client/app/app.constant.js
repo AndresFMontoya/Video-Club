@@ -1,5 +1,5 @@
 (function(angular, undefined) {
-  angular.module("startUpApp.constants", [])
+  angular.module("videoClubApp.constants", [])
 
 .constant("appConfig", {
 	"userRoles": [

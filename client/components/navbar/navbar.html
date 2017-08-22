@@ -1,141 +1,43 @@
-<header class="Header">
-  <form id="LoginModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-submit="vm.loguearUsuario()">
-      <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content LogginForm-container">
-          <h3 class="Login-tittle">Iniciar sesion</h3>
-          <div class="LogginForm-data">
-            <input type="text" name="user" placeholder="Correo" class="LogginForm-email" ng-model="vm.user.email">
-            <input type="password" name="password" placeholder="Contraseña" class="LogginForm-password" ng-model="vm.user.password">
-            <input id="recordarme" type="checkbox" name="recordarme" class="LogginForm-checkbox" ng-model="vm.recordarme">
-            <label for="recordarme" class="LogginForm-label"></label>Recordarme
-            <input type="submit" value="Ingresar" class="LogginForm-botton">
-          </div>
-        </div>
-      </div>
-    </form>
-  <!--Toolbar -->
-  <div id="" class="Toolbar">
-    <div class="Container-toolbar">
-      <div class="ToolbarMobile">
-        <div class="PhoneNumbers">
-          <i class="fa fa-phone Toolbar-tel"></i>
-          <p class="Phone1">(57) 3122104288</p>
-          <p class="Phone2">(57) 3157450959</p>
-        </div>
-      </div>
-
-      <div class="ToolbarEmail">
-        <i class="fa fa-envelope Toolbar-email"></i>
-
-        <p class="Email1">StartUp@gmail.com</p>
-
-      </div>
-
-      <!--SEARCH BAR-->
-      <div class="SearchBar-container">
-        <form class="SearchBar">
-          <input type="search" class="SearchBar-item" placeholder="Buscar...">
-          <button type="submit" class="SearchBar-button">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-  <div class="TopBar">
-    <figure class="TopBar-containerlogo">
-      <img src="static/Images/logo.png" alt="LOGO" class="TopBar-logo">
-      <figcaption class="TopBar-slogan">Remodelamos tu Hogar</figcaption>
-    </figure>
-    <!--SESION BUTTONS-->
-    <div ng-if="!vm.AuthService.isAuthenticated()" data-toggle="modal" data-target="#LoginModal" class="ButtonContainer1">
-      <a href="" class="ButtonSesion" id="Login">INICIAR SESION</a>
-    </div>
-
-
-    <div ng-if="!vm.AuthService.isAuthenticated()" class="ButtonContainer2">
-      <a ui-sref="users-create" class="ButtonRegistrer">REGISTRARSE</a>
-    </div>
-    <div class="dropdown ButtonContainer3" ng-if="vm.AuthService.isAuthenticated()">
-      <button class="btn btn-default dropdown-toggle ng-cloak" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <div style="display:inline-block;" ng-if="vm.AuthService.getImageProfile() !== false" class="Img-avatar">
-          <a href=""><img data-ng-src="{{vm.AuthService.getImageProfile()}}" alt=""></a>
-        </div>
-        <p style="display:inline-block;">
-          <img ng-if="!vm.AuthService.getImageProfile()" src="assets/Main-images/engineer.png" alt="" class="Img-avatarStart">
-          {{vm.AuthService.userInfo()}}
-        </p>
-        <span class="caret"></span>
+<div class="navbar navbar-default navbar-static-top" >
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="vm.isCollapsed = !vm.isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
+      <a href="/" class="navbar-brand">video-club</a>
+    </div>
+    <div uib-collapse="vm.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+            <a ui-sref="{{item.state}}">{{item.title}}</a>
+        </li>
+         <li ng-if="vm.AuthService.isAdmin()" ui-sref-active="active"><a ui-sref="usuarios-list">Usuarios</a></li>
+         <li ng-if="vm.AuthService.isAdmin()" ui-sref-active="active"><a ui-sref="usuarios-create">Nuevo usuario</a></li>
+         
+        
+            <li  class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Peliculas <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li ng-if="vm.AuthService.isAuthenticated()" ui-sref-active="active"><a ui-sref="peliculas-list">Peliculas</a></li>
+             <li ng-if="vm.AuthService.isAuthenticated()" ui-sref-active="active"><a ui-sref="peliculas-create">Add Peliculas</a></li>
 
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li ng-if="vm.AuthService.isTrab() || vm.AuthService.isAdmin()">
-          <a ui-sref="works-profile">Editar Perfil</a>
+          </ul>
         </li>
-        <li ng-if="vm.AuthService.isFerr()">
-          <a ui-sref="ironmongery-profile">Editar Perfil</a>
-        </li>
-        <li>
-          <a role="button" ng-click="vm.logout()" href="">Cerrar sesion</a>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="!vm.AuthService.isAuthenticated()"><a ui-sref="login">Login</a></li>
+        <li ng-show="vm.AuthService.isAuthenticated()" class="img-avatar"><a href=""><img ng-src="{{vm.AuthService.getImagePerfil()}}" alt=""></a></li>
+        <li ng-show="vm.AuthService.isAuthenticated()" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{vm.AuthService.datosUsuario()}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><a ng-click="vm.AuthService.logout()" href="#">Salir</a></li>
+          </ul>
         </li>
       </ul>
     </div>
   </div>
-
-  <div class="Menu-bar">
-    <a class="Bt-menu">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </a>
-  </div>
-  <!--NAV-BAR-->
-  <nav class="MainMenu">
-    <ul class="MainMenu-list">
-
-      <li class="MainMenu-item  MainMenu-itemTop">
-        <a ui-sref="main" class="MainMenu-link">
-          <span class="First">
-            <i class="Icon fa fa-home" aria-hidden="true"></i>
-          </span>Inicio</a>
-      </li>
-
-      <li class="MainMenu-item">
-        <a ui-sref="ironmongery-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout">
-          <span class="Second">
-            <i class="Icon fa fa-info-circle" aria-hidden="true"></i>
-          </span>Listar Ferreterias</a>
-        <a ui-sref="about-us" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link MainMenu-linkAbout">
-          <span class="Second">
-            <i class="Icon fa fa-info-circle" aria-hidden="true"></i>
-          </span>¿Quienes Somos?</a>
-      </li>
-
-      <li class="MainMenu-item">
-        <a ui-sref="workers-list" ng-if="vm.AuthService.isAdmin()" class="MainMenu-link">
-          <span class="Third">
-            <i class="Icon fa fa-briefcase" aria-hidden="true"></i>
-          </span>Listar trabajadores</a>
-
-        <a ui-sref="services-page" ng-if="!vm.AuthService.isAdmin()" class="MainMenu-link">
-          <span class="Third">
-            <i class="Icon fa fa-briefcase" aria-hidden="true"></i>
-          </span>Servicios</a>
-      </li>
-
-      <li class="MainMenu-item">
-        <a ui-sref="offers-page" class="MainMenu-link">
-          <span class="Fourth">
-            <i class="Icon fa fa-pencil-square-o" aria-hidden="true"></i>
-          </span>Ofertas</a>
-      </li>
-
-      <li class="MainMenu-item">
-        <a ui-sref="contact-us" class="MainMenu-link">
-          <span class="Fifth">
-            <i class="Icon fa fa-phone-square" aria-hidden="true"></i>
-          </span>Contáctanos</a>
-      </li>
-    </ul>
-  </nav>
-
-</header>
+</div>

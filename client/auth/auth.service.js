@@ -1,169 +1,97 @@
 'use strict';
 
-angular.module("startUpApp")
-  .factory('AuthService', AuthService)
+angular.module("videoClubApp")
+.factory('AuthService',AuthService);
 
-AuthService.$inject = ['$auth', '$state', 'usersService','localStorageService'];
+AuthService.$inject  = ['$auth','$state','usuariosService','localStorageService'];
+function AuthService($auth,$state,usuariosService,localStorageService){
+	var avatar;
+	var Auth = {
+		login: login,
+		logout: logout,
+		isAdmin: isAdmin,
+		idUsuario: idUsuario,
+		datosUsuario: datosUsuario,
+		getImagePerfil: getImagePerfil,
+		isAuthenticated: isAuthenticated,
+		getRoles: getRoles
+	}
 
-function AuthService($auth, $state, usersService,localStorageService) {
-  var avatar;
-  var auth = {
-    login: login,
-    logout: logout,
-    isAdmin: isAdmin,
-    getImageProfile: getImageProfile,
-    isAuthenticated: isAuthenticated,
-    isTrab: isTrab,
-    isFerr: isFerr,
-    userInfo:userInfo,
-    getRoles: getRoles,
-    getActive: getActive
+	function login(user,collback){
+		$auth.login(user)
+		.then(response => {
+			console.log("Login ok",response);
+			usuariosService.get({id:Auth.idUsuario()}).$promise
+			.then(response =>{
+				 localStorageService.set('avatar', response.tipoImagen +','+response.fotoPerfil);
+				 console.log(response);
+			})
+			$state.go('main');
+		})
+		.catch(err =>{
+			console.log("Error de login");
+			$state.go('login');
+		})
+	}
+	function getImagePerfil(){
+		if($auth.isAuthenticated()){
+			return localStorageService.get('avatar');
+		}
+	}
 
-  }
+	function logout(){
+		if($auth.isAuthenticated()){
+			$auth.logout()
+			.then(respose=>{
+				localStorageService.remove('avatar');
+				$state.go('main');
+			})
+		}
 
-  function login(user,recordar, callback) {
-    if (recordar) {
-      $auth.setStorageType('localStorage');
-      localStorageService.setStorageType('localStorage');
-    } else {
-      $auth.setStorageType('sessionStorage');
-      localStorageService.setStorageType('sessionStorage');
-    }
-    $auth.login(user)
-      .then(response => {
-          $('#LoginModal').modal('toggle')
-        console.log("login ok", response);
-        usersService.get({id:$auth.getPayload().sub}).$promise
-        .then(response =>{
-          console.log();
+	}
+	function isAdmin(){
+		if(Auth.isAuthenticated()){
 
-          if (typeof response.imageProfile !== "undefined") {
-            localStorageService.set('avatar', response.imageType + ','+ response.imageProfile);
-            console.log("user",response);
+				if($auth.getPayload().roles.indexOf("ADMIN") !== -1){
+					return true;
+				}else{
+					return false;
+				}
+		}else{
+			return false;
+		}
 
-          }
+	}
 
+	function datosUsuario(){
+		if(Auth.isAuthenticated()){
 
-        })
-        $state.go('main');
-      }).catch(err => {
-        var error = err;
-        alert(error.data);
-        console.log("Error de login", err);
-        $state.go('login');
+			return $auth.getPayload().user;
+		}
+	}
+	function idUsuario(){
+		if(Auth.isAuthenticated()){
+			return $auth.getPayload().sub;
+		} else{
+			return null;
+		}
+	}
+	function isAuthenticated(){
+		if($auth.isAuthenticated()){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
-      })
-
-  }
-function getImageProfile() {
-  if (sessionStorage.getItem('startUpApp_token')) {
-    $auth.setStorageType('sessionStorage');
-    localStorageService.setStorageType('sessionStorage');
-  }
-  if($auth.isAuthenticated()){
-    return localStorageService.get('avatar');
-  }else {
-    return false;
-  }
-}
-
-  function logout() {
-
-    return $auth.logout()
-      .then(response => {
-        console.log("logout ok", response);
-        console.log(auth.isAdmin());
-        $state.go('main');
-        localStorageService.remove('avatar')
-      }).catch(err => {
-        var error = err;
-        alert(error.data);
-        console.log("Error de logout", err);
-        $state.go('login');
-
-      })
-
-  }
-
-  function isAuthenticated() {
-    if (sessionStorage.getItem('startUpApp_token')) {
-      $auth.setStorageType('sessionStorage');
-      localStorageService.setStorageType('sessionStorage');
-    }
-
-    if ($auth.isAuthenticated()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  function userInfo() {
-
-    if (sessionStorage.getItem('startUpApp_token')) {
-      $auth.setStorageType('sessionStorage');
-      localStorageService.setStorageType('sessionStorage');
-    }
-    if (auth.isAuthenticated()) {
-      return $auth.getPayload().user;
-    } else{
-      return false;
-    }
-  }
-  function getActive() {
-    if (auth.isAuthenticated()) {
-      if ($auth.getPayload().active== 'true') {
-        return true;
-      } else {
-          return false;
-      }
-
-  }
-  }
-
-  function isAdmin() {
-
-    if ($auth.isAuthenticated()) {
-      if ($auth.getPayload().roles.indexOf("ADMIN") !== -1) {
-
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
-  function isTrab() {
-
-    if ($auth.isAuthenticated()) {
-      if ($auth.getPayload().roles.indexOf("TRAB") !== -1) {
-
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
-  function isFerr() {
-
-    if ($auth.isAuthenticated()) {
-      if ($auth.getPayload().roles.indexOf("FERR") !== -1) {
-
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
-  function getRoles(){
-		if(auth.isAuthenticated()){
+	function getRoles(){
+		if(Auth.isAuthenticated()){
 			return $auth.getPayload().roles;
 		} else{
 			return false;
 		}
 	}
 
-  return auth;
+	return Auth;
+
 }

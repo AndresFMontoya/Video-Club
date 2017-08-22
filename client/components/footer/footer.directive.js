@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('startUpApp')
+angular.module('videoClubApp')
   .directive('footer', function() {
     return {
       templateUrl: 'components/footer/footer.html',

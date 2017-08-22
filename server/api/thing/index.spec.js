@@ -23,15 +23,15 @@ var thingIndex = proxyquire('./index.js', {
 describe('Thing API Router:', function() {
 
   it('should return an express router instance', function() {
-    thingIndex.should.equal(routerStub);
+    expect(thingIndex).to.equal(routerStub);
   });
 
   describe('GET /api/things', function() {
 
     it('should route to thing.controller.index', function() {
-      routerStub.get
+      expect(routerStub.get
         .withArgs('/', 'thingCtrl.index')
-        .should.have.been.calledOnce;
+        ).to.have.been.calledOnce;
     });
 
   });
